@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="430.584">
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Validate login is successful with valid credentials" time="29.247">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+Then User navigated to the home page........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Validate user click on the View Collection screen in menu" time="28.329">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the filter Functionality" time="58.624">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+When The User enter the partyname...........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And The Search related data is displayed in the grid........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the Order Rejected functionality" time="65.933">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And Click on the Reject Icon................................................passed
+When The user enter the data in Remarks field...............................passed
+And User Click on the save button...........................................passed
+And Verify the Collection Rejected Validation msg is displayed or not.......passed
+And Verify the Rejected Status is updated or not............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="verifying both the column filters functionality and sorting functionality of a table." time="40.328">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And Verify Column names are displayed or not................................passed
+And Verify the Collection details grid headers and Sorting..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the User able to view the Collection attachment" time="62.726">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+When The User enter the partyname...........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And Click on the collection View Icon in the Action Column..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the Pagination functionality" time="145.067">
+        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']&quot;}&#10;  (Session info: chrome=124.0.6367.62)&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'&#10;System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.62, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56506}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: eafcd49a80e1e7737032ab4d9dff3bf8&#10;*** Element info: {Using=xpath, value=//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User navigates to Login page..........................................passed
+When User Select the Eldorado Agritech Company..............................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+Then By default ten records are displayed...................................passed
+And check whether it is navigating to the after page records when the user clicks on Next page icon.failed
+And check whether it is navigating to the before page records when the user clicks on before page icon.skipped
+And check whether it is displaying the last page records when the user clicks on last page icon.skipped
+And check whether it is displaying the first page records when the user clicks on first page icon.skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']"}
+  (Session info: chrome=124.0.6367.62)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.62, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56506}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: eafcd49a80e1e7737032ab4d9dff3bf8
+*** Element info: {Using=xpath, value=//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at Pages.EAPL_ViewCollection_Pages.check_whether_it_is_navigating_to_the_after_page_records_when_the_user_clicks_on_Next_page_icon(EAPL_ViewCollection_Pages.java:426)
+	at Stepdefinition.EAPL_ViewCollection.check_whether_it_is_navigating_to_the_after_page_records_when_the_user_clicks_on_Next_page_icon(EAPL_ViewCollection.java:99)
+	at ✽.check whether it is navigating to the after page records when the user clicks on Next page icon(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_View_Collection.feature:113)
+]]></failure>
+    </testcase>
+</testsuite>

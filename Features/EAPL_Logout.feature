@@ -8,4 +8,4 @@ When User enters the username and password
 And  User click on the signIn 
 Then User navigated to the home page
 When User click on User Image Icon under User icon in webpage
-And Click on Logout button
+And Click on Logout button  

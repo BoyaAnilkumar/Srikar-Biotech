@@ -91,7 +91,7 @@ import util.Utilities;
 
 		public void User_Select_the_State() throws Throwable {
 			driver.findElement(State).click();
-			driver.findElement(State_text_field).sendKeys("Andhra");
+			driver.findElement(State_text_field).sendKeys("Gujarat");
 			driver.findElement(Select_States).click();
 			utilities.MinimumWait(driver);
 //			Robot r = new Robot();
@@ -147,7 +147,7 @@ import util.Utilities;
 		public void User_enter_the_partyname() throws Throwable {
 			driver.findElement(Party).click();
 			Thread.sleep(2000);
-			driver.findElement(Party).sendKeys("Joshitha");
+			driver.findElement(Party).sendKeys("Agri");
 			Thread.sleep(2000);
 			Robot r = new Robot();
 			r.keyPress(KeyEvent.VK_DOWN);

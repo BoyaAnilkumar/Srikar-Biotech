@@ -45,8 +45,8 @@ import io.cucumber.java.en.When;
 		@When ("^User enter the Data in the filter field$")
 		public void User_enter_the_Data_in_the_filter_field() throws Throwable {
 			Item_master_Pages.User_enter_the_Data_in_the_filter_field();
-		}
-		@Then ("^User Click on the Filter icon$")
+		} 
+		@Then ("^User Click on the Filter icon$") 
 		public void User_Click_on_the_Filter_icon() throws Throwable {
 			Item_master_Pages.User_Click_on_the_Filter_icon();
 		}
