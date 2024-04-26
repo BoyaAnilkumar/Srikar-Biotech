@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="39.764">
+    <testcase classname="feature to Test User Screen functionality" name="Verifying the Cancel button functionality" time="39.487">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the Security Module.......................................passed
+And User Click on the Users screen..........................................passed
+And User click on the Add button............................................passed
+And Click on the Cancel button..............................................passed
+Then The Users screen should be displayed...................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
