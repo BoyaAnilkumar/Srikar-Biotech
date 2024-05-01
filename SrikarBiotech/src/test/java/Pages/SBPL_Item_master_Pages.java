@@ -121,9 +121,7 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 			driver.findElement(Active).click();
 			driver.findElement(Save_Button).click();
 		}
-		
-		
-		
+				
 	}
 	public void Click_on_the_Edit_Icon() throws Throwable {
 		utilities.webDriverWait(driver,Edit_Icon );		
