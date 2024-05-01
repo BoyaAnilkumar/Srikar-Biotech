@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="95.223">
+    <testcase classname="feature to Test the View Return Order Screen functionality" name="Verify the Item Partial received functionality" time="94.921">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Return Order under the Orders Module.............passed
+And The View Return Order Screen is displayed or not........................passed
+Then User Select the State..................................................passed
+And User Select the Sales Person............................................passed
+And Select the Status.......................................................passed
+And User Select the From date and To Date...................................passed
+And Click on the Search button..............................................passed
+And Click on the Order Expansion Icon.......................................passed
+And User Select the Check Box...............................................passed
+And User Click on the Partial Received Icon.................................passed
+Then The Partial Received Popup page is displayed or not when click on the Partial Received Icon.passed
+And Click on the Save button in the Partial Received popup page.............passed
+Then The Validation message is displayed or not.............................passed
+When The User enter the Partial Qty is More than the Original Qty the validation message is displayed.passed
+Given User Enter the data in the Partial Received Qty field.................passed
+Given User enter the data in the Remarks field..............................passed
+And Click on the Close button...............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
