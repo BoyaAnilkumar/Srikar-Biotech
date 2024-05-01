@@ -68,7 +68,7 @@ And Click on the Order Expansion Icon
 And Verify the Return Order expansion grid header section names are displayed or not
 And Verify the Return Order Items are displayed in the expansion grid or not
 
-@SBPL_View_Return_Order
+@SBPL_View_Return_Order1
 Scenario: Verify the Item Partial received functionality
 Given User navigates to Login page
 When User enters the username and password

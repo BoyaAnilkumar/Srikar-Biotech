@@ -30,7 +30,7 @@ And Select the From date and ToDate
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@SBPL_Confirm_Orders
+@SBPL_Confirm_Orders1
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -47,7 +47,7 @@ And Click on the Warehouse Icon
 Then User Select the Warehouse in the Change Warehouse page
 And User click on the Save Button
 
-@SBPL_Confirm_Orders1
+@SBPL_Confirm_Orders
 Scenario: Verify the Order Accepted functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -55,7 +55,7 @@ And  User click on the signIn
 And  User click on the Confirm Orders under the Orders Module
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+And The User Select the Warehouse
 When User enter the partyname
 And User Select the Status
 And Select the From date and ToDate
@@ -65,7 +65,7 @@ And Click on the Accept button
 When User enter the data in Remarks field
 And Click on the save button
 
-@SBPL_Confirm_Orders
+@SBPL_Confirm_Orders1
 Scenario: Verify the Order Rejected functionality
 Given User navigates to Login page
 When User enters the username and password
