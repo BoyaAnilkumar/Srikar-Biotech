@@ -60,8 +60,7 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		r.keyPress(KeyEvent.VK_DOWN);
 		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
-		
+		Thread.sleep(2000);		
 		
 	}
 	public void User_Select_the_Items()throws Throwable {
