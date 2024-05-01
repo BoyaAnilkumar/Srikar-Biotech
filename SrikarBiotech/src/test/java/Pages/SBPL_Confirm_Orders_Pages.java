@@ -30,7 +30,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By Search                 = By.xpath("//button[@class='btn btn-secondary me-2']");
 	By Warehouse_Icon         = By.xpath("(//button[@title='Change Warehouse'])[1]");
 	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
-	By Save_button            = By.xpath("//button[text()='Save']");
+	By Save_button            = By.xpath("(//button[text()='Save'])[6]");
     By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 	By Accept_Button          = By.xpath("//button[@title='Accepted']");
 	By Accept_Remarks_field   = By.xpath("(//textarea[@placeholder='Enter Remarks'])[2]");

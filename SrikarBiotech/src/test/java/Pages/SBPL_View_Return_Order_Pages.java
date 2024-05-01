@@ -246,9 +246,9 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		utilities.webDriverWait(driver,Item_Checkbox );	
 		driver.findElement(Item_Checkbox).click();
 		utilities.MinimumWait(driver);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,2500)", "");
-		utilities.MediumWait(driver);
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,2500)", "");
+//		utilities.MediumWait(driver);
 	}
 	public void User_Click_on_the_Partial_Received_Icon() throws Throwable {
 	

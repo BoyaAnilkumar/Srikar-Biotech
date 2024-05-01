@@ -41,7 +41,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -59,7 +59,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -68,7 +68,7 @@ And Click on the Order Expansion Icon
 And Verify the Return Order expansion grid header section names are displayed or not
 And Verify the Return Order Items are displayed in the expansion grid or not
 
-@SBPL_View_Return_Order
+@SBPL_View_Return_Order1
 Scenario: Verify the Item Partial received functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -77,7 +77,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 #When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -105,7 +105,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 #When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -131,7 +131,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 #When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -155,7 +155,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 When User enter the partyname
 And Select the Status as Partially Received
 And User Select the From date and To Date
@@ -191,8 +191,4 @@ Then By default ten records are displayed
 And check whether it is navigating to the after page records when the user clicks on Next page icon
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
-
-
-
-
 
