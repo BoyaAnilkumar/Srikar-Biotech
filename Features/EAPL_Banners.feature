@@ -8,7 +8,7 @@ When User Select the Eldorado Agritech Company
 When  User enters the username and password
 And   User click on the signIn 
 Then  User navigated to the home page
-@EAPL_Banners
+@EAPL_Banners1
 Scenario: Validate user click on the View Return Order screen in menu
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
