@@ -133,8 +133,8 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 		Robot r = new Robot();
 		r.keyPress(KeyEvent.VK_DOWN);
 		Thread.sleep(2000);
-//		r.keyPress(KeyEvent.VK_DOWN);
-//		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
 //		r.keyPress(KeyEvent.VK_DOWN);
 //		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_ENTER);

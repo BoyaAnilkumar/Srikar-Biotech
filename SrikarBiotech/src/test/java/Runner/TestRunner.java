@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				  glue="Stepdefinition",
 				  features = "Features",
 				  monochrome = true, 
-                  tags = "@Users1")
+                  tags = "@SBPL_Confirm_Orders1")
 
 
 public class TestRunner {
