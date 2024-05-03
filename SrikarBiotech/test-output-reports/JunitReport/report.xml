@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.092"/>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="43.852">
+    <testcase classname="feature to Test User Screen functionality" name="Verify the Pagination functionality" time="43.544">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the Security Module.......................................passed
+And User Click on the Users screen..........................................passed
+Then By default ten records are displayed...................................passed
+And check whether it is navigating to the after page records when the user clicks on Next page icon.passed
+And check whether it is navigating to the before page records when the user clicks on before page icon.passed
+And check whether it is displaying the last page records when the user clicks on last page icon.passed
+]]></system-out>
+    </testcase>
+</testsuite>

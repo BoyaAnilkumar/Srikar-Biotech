@@ -100,4 +100,14 @@ When User enter the data in filter field
 And Click on the Apply button
 #And Click on the Delete icon
 #And Validation message is displayed or not
-
+@Users12
+Scenario: Verify the Pagination functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Security Module
+And  User Click on the Users screen
+Then By default ten records are displayed
+And check whether it is navigating to the after page records when the user clicks on Next page icon
+And check whether it is navigating to the before page records when the user clicks on before page icon
+And check whether it is displaying the last page records when the user clicks on last page icon

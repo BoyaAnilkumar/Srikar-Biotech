@@ -34,6 +34,7 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 	By Select_Party			  = By.xpath("//span[text()='Joshitha Traders - Bommilingam']");
 	By Status                 = By.xpath("//select[@formcontrolname='statusId']");
 	By Search                 = By.xpath("//button[@class='btn btn-secondary btn-sm me-2']");
+//Warehouse_functionality
 	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
 	By Save_button1           = By.xpath("//button[text()='Save']");
 	By ViewCollection         = By.xpath("//div[@class='card-header']");
@@ -47,6 +48,7 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 	By Validation_text        = By.xpath("//h2[text()='Status Updated Successfully']");
 	By Status_Received        = By.xpath("(//span[@class='badge rounded-pill text-bg-success'])[1]");
 	By Status_Reject          =By.xpath("//span[@class='badge rounded-pill text-bg-danger']");
+//Table Column filter functionality
 	By Table                  = By.xpath("//table[@role='table']");
 	By Sort                   = By.xpath("//th[@role='columnheader']");
 	By Status_filter          = By.xpath("(//p-columnfilter)[4]");
@@ -64,6 +66,7 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 	By Status_Column_Grid     = By.xpath("(//div[@class='d-flex align-items-center justify-content-start'])[4]");
 	By Remarks_Column         = By.xpath("(//div[@class='d-flex align-items-center justify-content-start'])[5]");
 	By Action_Column          = By.xpath("//th[text()='Actions']");
+//Pagination_functionality
 	By Pagination_records     = By.xpath("//span[@class='p-element p-dropdown-label p-inputtext ng-star-inserted']");
 	By Next_Page             = By.xpath("//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']");
 	By Before_Page            = By.xpath("//button[@class='p-ripple p-element p-paginator-prev p-paginator-element p-link']");
@@ -422,7 +425,7 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 		utilities.MediumWait(driver);
 		utilities.webDriverWait(driver, Next_Page);
 		driver.findElement(Next_Page).click();
-		
+	
 	}
 	public void check_whether_it_is_navigating_to_the_before_page_records_when_the_user_clicks_on_before_page_icon() throws Throwable {
 		utilities.webDriverWait(driver, Before_Page);

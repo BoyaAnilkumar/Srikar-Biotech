@@ -3,16 +3,11 @@ package Pages;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
-import org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor.Order;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.graphbuilder.math.func.AbsFunction;
-import com.graphbuilder.math.func.AcosFunction;
-
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Valuable;
 import util.DriverFactory;
 import util.Utilities;
 

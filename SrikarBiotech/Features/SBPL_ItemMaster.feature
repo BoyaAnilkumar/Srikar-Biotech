@@ -70,3 +70,13 @@ Then Click on the Edit Icon
 When Update the category
 And Update the Items
 #And Click on the Update button
+@SBPL_Item_Master
+Scenario: Verify the Pagination functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Item Master under the Masters Module
+Then By default ten records are displayed
+And check whether it is navigating to the after page records when the user clicks on Next page icon
+And check whether it is navigating to the before page records when the user clicks on before page icon
+And check whether it is displaying the last page records when the user clicks on last page icon

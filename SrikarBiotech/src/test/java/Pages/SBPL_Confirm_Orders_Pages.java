@@ -28,9 +28,11 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By Select_Party			  = By.xpath("//span[text()='Joshitha Traders - Bommilingam']");
 	By Status                 = By.xpath("//select[@formcontrolname='statusId']");
 	By Search                 = By.xpath("//button[@class='btn btn-secondary me-2']");
+//Change Warehouse Functionality
 	By Warehouse_Icon         = By.xpath("(//button[@title='Change Warehouse'])[1]");
 	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
 	By Save_button            = By.xpath("(//button[text()='Save'])[6]");
+//Accept functionality
     By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 	By Accept_Button          = By.xpath("//button[@title='Accepted']");
 	By Accept_Remarks_field   = By.xpath("(//textarea[@placeholder='Enter Remarks'])[2]");
@@ -42,9 +44,11 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By A1                     = By.xpath("//span[@class='subHeader' and text()='Order Id']");
 	By A2                     = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[1]");
 	By Back_button            = By.xpath("//button[text()='Back']");
+//Reject functionality
 	By Reject_button          = By.xpath("//button[@title='Rejected']");
 	By Reject_remarks_field   = By.xpath("(//textarea[@placeholder='Enter Remarks'])[1]");
 	By Reject_Save_Button     = By.xpath("(//button[text()=' Save'])[1]");
+//Order history
 	By Order_ID               = By.xpath("(//small[text()='Order Id'])[1]");
 	By Date                   = By.xpath("(//small[text()='Date'])[1]");
 	By No_of_Items            = By.xpath("(//small[text()='No. Of Items'])[1]");
@@ -67,6 +71,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By Proprietor_Name_text   = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[9]");
 	By GST_value              = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[10]");
 	By Address_Text           = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[11]");
+//Expansion Icon
 	By Expansion_Icon         = By.xpath("(//button[@class='p-element p-button-text p-button-rounded p-button-plain p-button p-component p-button-icon-only'])[1]");
 	By Product_Name           = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[1]");
 	By Category               = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[2]");
