@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				  glue="Stepdefinition",
 				  features = "Features",
 				  monochrome = true, 
-                  tags = "@EAPL_View_Collection")
+                  tags = "@EAPL_Confirm_Orders")
 
 
 
@@ -20,6 +20,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 public class TestRunner {
+	
 
 }
 

@@ -54,6 +54,10 @@ import io.cucumber.java.en.When;
 	  public void User_click_on_the_Save_Button() throws Throwable{
 		  Confirm_Orders_Pages.User_click_on_the_Save_Button();
 	  }
+	  @Then ("^User should receive a confirmation message that the Warehouse has been changed$")
+	  public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable{
+		  Confirm_Orders_Pages.User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed();
+	  }
 	  @And ("^User Select the Status$")
 	  public void User_Select_the_Status() throws Throwable{
 		  Confirm_Orders_Pages.User_Select_the_Status();

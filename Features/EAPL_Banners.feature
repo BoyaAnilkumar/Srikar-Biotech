@@ -8,7 +8,7 @@ When User Select the Eldorado Agritech Company
 When  User enters the username and password
 And   User click on the signIn 
 Then  User navigated to the home page
-@EAPL_Banners1
+@EAPL_Banners
 Scenario: Validate user click on the View Return Order screen in menu
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -77,7 +77,7 @@ Then the Add Banners Page Should be displayed
 When the User enters data in the Banner name field
 And User Select the Pdf file in the Banner attachment
 Then The User Should Receive an error message
-#And User Click on the Save button in the Add banner page
+And User Click on the Save button in the Add banner page
 @EAPL_Banners
 Scenario: Validate Add Banner functionality without Select the Attachment
 Given User navigates to Login page

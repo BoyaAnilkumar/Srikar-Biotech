@@ -110,7 +110,7 @@
 						<div class="list-body">
 							<a href="#" class="item-title _500">org.openqa.selenium.NoSuchElementException</a>
 							<div class="item-except text-sm text-muted h-1x">
-								1 tests
+								2 tests
 							</div>
 							<div class="tc d-none">
 								<h5 class="mb-4">org.openqa.selenium.NoSuchElementException</h5>
@@ -125,10 +125,10 @@
 									</tr></thead>
 									<tbody>
 	
-<tr class="s-fail" test-id="158" parent-id="1">
+<tr class="s-fail" test-id="75" parent-id="1">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">And check whether it is navigating to the after page records when the user clicks on Next page icon <br/><span class="text-muted text-sm">Verify the Pagination functionality</span></td>
-	<td>0h 1m 43s+529msc</td>
+	<td class="_600">Then User Click on the Order Check box <br/><span class="text-muted text-sm">Verify the Order Accepted functionality</span></td>
+	<td>0h 1m 41s+586msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -137,15 +137,15 @@
 <tr class="details">
 	<td colspan="5">
 		
-		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']"}
-  (Session info: chrome=124.0.6367.62)
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]"}
+  (Session info: chrome=124.0.6367.118)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.62, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56506}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: eafcd49a80e1e7737032ab4d9dff3bf8
-*** Element info: {Using=xpath, value=//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.118, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58044}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 363d9c99386c73ae04a76b521cf91b2d
+*** Element info: {Using=xpath, value=(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -161,9 +161,114 @@ Session ID: eafcd49a80e1e7737032ab4d9dff3bf8
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at Pages.EAPL_ViewCollection_Pages.check_whether_it_is_navigating_to_the_after_page_records_when_the_user_clicks_on_Next_page_icon(EAPL_ViewCollection_Pages.java:426)
-	at Stepdefinition.EAPL_ViewCollection.check_whether_it_is_navigating_to_the_after_page_records_when_the_user_clicks_on_Next_page_icon(EAPL_ViewCollection.java:99)
-	at ✽.check whether it is navigating to the after page records when the user clicks on Next page icon(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_View_Collection.feature:113)
+	at Pages.EAPL_Confirm_Orders_Pages.User_Click_on_the_Order_Check_box(EAPL_Confirm_Orders_Pages.java:260)
+	at Stepdefinition.EAPL_ConfirmOrders.User_Click_on_the_Order_Check_box(EAPL_ConfirmOrders.java:67)
+	at ✽.User Click on the Order Check box(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_ConfirmOrders.feature:69)
+</textarea>
+	</td>
+</tr>
+	
+<tr class="s-fail" test-id="94" parent-id="1">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">And User click on the Confirm Orders under the Orders Module <br/><span class="text-muted text-sm">Verify the Order Rejected functionality</span></td>
+	<td>0h 1m 41s+554msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[text()='Confirm Orders'])[1]"}
+  (Session info: chrome=124.0.6367.118)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.118, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58106}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7faf84d94c0de086e60ff141c7304457
+*** Element info: {Using=xpath, value=(//span[text()='Confirm Orders'])[1]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at Pages.EAPL_Confirm_Orders_Pages.User_click_on_the_Confirm_Orders_under_the_Orders_Module(EAPL_Confirm_Orders_Pages.java:94)
+	at Stepdefinition.EAPL_ConfirmOrders.User_click_on_the_Confirm_Orders_under_the_Orders_Module(EAPL_ConfirmOrders.java:15)
+	at ✽.User click on the Confirm Orders under the Orders Module(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_ConfirmOrders.feature:80)
+</textarea>
+	</td>
+</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="list-item attr">
+						<div class="list-body">
+							<a href="#" class="item-title _500">org.openqa.selenium.ElementClickInterceptedException</a>
+							<div class="item-except text-sm text-muted h-1x">
+								1 tests
+							</div>
+							<div class="tc d-none">
+								<h5 class="mb-4">org.openqa.selenium.ElementClickInterceptedException</h5>
+								<table class="table">
+									<thead><tr>
+										<th id="status-col"></th>
+										<th>Test</th>
+										<th>Duration</th>
+										<th>Attributes</th>
+										<th>Media</th>
+										<th>Source</th>
+									</tr></thead>
+									<tbody>
+	
+<tr class="s-fail" test-id="143" parent-id="1">
+	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
+	<td class="_600">And Click on the Order history Icon <br/><span class="text-muted text-sm">Verify the Order History when the status is Accepted</span></td>
+	<td>0h 0m 4s+290msc</td>
+	<td></td>
+	<td>
+	</td>
+	<td class="static"><i class="static fa fa-external-link"></i></td>
+</tr>
+<tr class="details">
+	<td colspan="5">
+		
+		<textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1761, 1507)
+  (Session info: chrome=124.0.6367.118)
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.118, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58258}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92df0d863347040d7344bdc4eb4250cc
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at Pages.EAPL_Confirm_Orders_Pages.Click_on_the_Order_history_Icon(EAPL_Confirm_Orders_Pages.java:286)
+	at Stepdefinition.EAPL_ConfirmOrders.Click_on_the_Order_history_Icon(EAPL_ConfirmOrders.java:91)
+	at ✽.Click on the Order history Icon(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_ConfirmOrders.feature:106)
 </textarea>
 	</td>
 </tr>
@@ -191,7 +296,7 @@ Session ID: eafcd49a80e1e7737032ab4d9dff3bf8
 						            </div>
 									<ul class="nav nav-xs flex-row no-border pull-right">
 <li><a href="#" class="b-l"><span class="badge badge-pull">ExtentReports</span></a></li>
-<li><a href="#" class="b-l"><span class="badge badge-pull">Apr 26, 2024 03:57:25 pm</span></a></li>
+<li><a href="#" class="b-l"><span class="badge badge-pull">May 2, 2024 05:10:09 pm</span></a></li>
 <li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
 								    </ul>
 								</div>

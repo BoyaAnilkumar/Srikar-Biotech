@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import util.DriverFactory;
@@ -29,6 +30,9 @@ import util.Utilities;
 		By Status                 = By.xpath("//select[@formcontrolname='statusId']");
 		By Search                 = By.xpath("//button[@class='btn btn-secondary me-2']");
 		By Warehouse_Icon         = By.xpath("(//button[@title='Change Warehouse'])[1]");
+		By Warehouse_Val_Text     = By.xpath("//h2[text()='Warehouse is Mandatory']");
+		By Warehouse_Update       = By.xpath("//h2[text()='Warehouse Updated Successfully']");
+		By Warehouse_Upd_failed   = By.xpath("//h2[text()='Updation Failed']");
 		By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
 		By Save_button            = By.xpath("//button[text()='Save']");
 	    By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
@@ -82,6 +86,8 @@ import util.Utilities;
 	    By GST_Value              = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[5]"); 
 	    By Invoice_Details_Data   = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[6]"); 
 	    By Total_Price_Value      = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[7]"); 
+	    By Select_Warehouse       = By.xpath("//small[text()='Warehouse']/../p[@class='mb-0 text-secondary font-weight-bold']");
+	    By Up_Warehouse           = By.xpath("//select[@class='form-control ng-dirty ng-touched ng-valid']");
 		
 		public void User_click_on_the_Confirm_Orders_under_the_Orders_Module() throws Throwable {
 		utilities.webDriverWait(driver, Confirm_Orders);	
@@ -186,7 +192,20 @@ import util.Utilities;
 			utilities.webDriverWait(driver, Warehouse_Icon);	
 			driver.findElement(Warehouse_Icon).click();
 			utilities.MinimumWait(driver);
-			
+			utilities.webDriverWait(driver, Save_button);	
+			driver.findElement(Save_button).click();
+	
+			Boolean isPresent = driver.findElements(Warehouse_Val_Text).size()>0;
+			if (isPresent) {
+				WebElement Data = driver.findElement(Warehouse_Val_Text);
+				String test = Data.getText(); 
+				String expectedData = "Warehouse is Mandatory";
+				if (expectedData.equals(test)) {
+					System.out.println("Display the toaster msg is correct." + test);
+				} else {
+					System.out.println("Display the toaster msg is incorrect."+ test);
+				}
+			}
 		}
 
 		public void User_Select_the_Warehouse_in_the_Change_Warehouse_page() throws Throwable {
@@ -486,8 +505,6 @@ import util.Utilities;
 		    System.out.println("The GST_no is not displayed.");
 		}
 
-
-
 		String Address1 = "Address"; 
 		WebElement Address2 = driver.findElement(Address);
 		WebElement Address = driver.findElement(Address_Text);
@@ -623,4 +640,41 @@ import util.Utilities;
 		
 	}
 
+	public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable {
+		
+		if ((Up_Warehouse.equals(Select_Warehouse))) {
+			System.out.println("Warehouse updation failed.");
+		
+		
+			driver.findElement(Warehouse_field).click();
+
+			utilities.MinimumWait(driver);
+			Robot r = new Robot();
+			r.keyPress(KeyEvent.VK_DOWN);
+			Thread.sleep(2000);
+			r.keyPress(KeyEvent.VK_DOWN);
+			Thread.sleep(2000);
+			r.keyPress(KeyEvent.VK_ENTER);
+			Thread.sleep(2000);
+			utilities.MinimumWait(driver);
+			
+			utilities.webDriverWait(driver, Save_button);	
+			driver.findElement(Save_button).click();
+		}	
+		
+else {	
+	
+		Boolean isPresent1 = driver.findElements(Warehouse_Update).size()>0;
+		if (isPresent1) {
+			WebElement Data = driver.findElement(Warehouse_Update);
+			String test1 = Data.getText(); 
+			String expectedData = "Warehouse Updated Successfully";
+			if (expectedData.equals(test1)) {
+				System.out.println("Display the confirmation msg correct." + test1);
+			} else {
+				System.out.println("Display the confirmation msg is incorrect."+ test1);
+			}
 }
+}
+	}
+	}

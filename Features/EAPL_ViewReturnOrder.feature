@@ -35,7 +35,7 @@ And User Select the From date and To Date
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@EAPL_View_Return_Order
+@EAPL_View_Return_Order1
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -45,7 +45,7 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
+#And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
