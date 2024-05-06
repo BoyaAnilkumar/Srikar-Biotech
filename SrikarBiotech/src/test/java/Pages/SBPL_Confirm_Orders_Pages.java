@@ -31,7 +31,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 //Change Warehouse Functionality
 	By Warehouse_Icon         = By.xpath("(//button[@title='Change Warehouse'])[1]");
 	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
-	By Save_button            = By.xpath("(//button[text()='Save'])[6]");
+	By Save_button            = By.xpath("//button[text()='Save']");
 //Accept functionality
     By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 	By Accept_Button          = By.xpath("//button[@title='Accepted']");
@@ -206,12 +206,35 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 		utilities.MinimumWait(driver);
 		
 	}
-
+	By Warehouse_Upd_failed   = By.xpath("//h2[text()='Updation Failed']");
 	public void User_click_on_the_Save_Button() throws Throwable {
 		utilities.webDriverWait(driver, Save_button);	
 		driver.findElement(Save_button).click();
 		utilities.MinimumWait(driver);
-	
+		Boolean isPresent1 = driver.findElements(Warehouse_Upd_failed).size()>0;
+		if (isPresent1) {
+			WebElement Data = driver.findElement(Warehouse_Upd_failed);
+			String test1 = Data.getText(); 
+			String expectedData = "Updation Failed";
+			if (expectedData.equals(test1)) {
+				System.out.println("Display the name is correct." + test1);
+			
+				driver.findElement(Warehouse_field).click();
+				Thread.sleep(1000);
+				utilities.MediumWait(driver);	
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_DOWN);
+				Thread.sleep(2000);
+				r.keyPress(KeyEvent.VK_DOWN);
+				Thread.sleep(2000);
+				r.keyPress(KeyEvent.VK_ENTER);
+				Thread.sleep(2000);
+				utilities.MinimumWait(driver);
+				utilities.webDriverWait(driver, Save_button);	
+				driver.findElement(Save_button).click();
+				utilities.MinimumWait(driver);
+			}
+		}
 	}
 
 	public void User_Select_the_Status() throws Throwable {

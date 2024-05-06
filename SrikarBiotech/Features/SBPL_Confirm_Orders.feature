@@ -30,7 +30,7 @@ And Select the From date and ToDate
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@SBPL_Confirm_Orders1
+@SBPL_Confirm_Orders123
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User enters the username and password

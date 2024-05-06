@@ -100,7 +100,7 @@ When User enter the data in filter field
 And Click on the Apply button
 #And Click on the Delete icon
 #And Validation message is displayed or not
-@Users12
+@Users
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
 When User enters the username and password
