@@ -52,7 +52,7 @@ And User Click on the save button
 And Verify the Collection Accepted Validation msg is displayed or not
 And Verify the Status is updated or not
 
-@EAPL_View_Collection
+@EAPL_View_Collection12
 Scenario: Verify the Order Rejected functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company

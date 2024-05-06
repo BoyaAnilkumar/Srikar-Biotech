@@ -71,7 +71,7 @@ And Click on the Accept button
 When User enter the data in Remarks field
 And Click on the save button
 
-@EAPL_Confirm_Orders
+@EAPL_Confirm_Orders1
 Scenario: Verify the Order Rejected functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company

@@ -74,7 +74,7 @@ And Verify the Return Order expansion grid header section names are displayed or
 And Verify the Return Order Items are displayed in the expansion grid or not
 
 @EAPL_View_Return_Order
-Scenario: Verify the Item Partial received functionality
+Scenario: Verify the Item Partial Received functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
 When User enters the username and password
@@ -83,8 +83,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -97,9 +95,9 @@ Then The Validation message is displayed or not
 When The User enter the Partial Qty is More than the Original Qty the validation message is displayed
 Given User Enter the data in the Partial Received Qty field
 Given User enter the data in the Remarks field
-#And Click on the Save button in the Partial Received popup page
-#When The User enter the data in all field and Click on the Save button Partial received Successfull validation message is displayed
-And Click on the Close button
+And Click on the Save button in the Partial Received popup page
+When The User enter the data in all field and Click on the Save button Partial received Successfull validation message is displayed
+#And Click on the Close button
 #And Click on the Close Icon
 
 @EAPL_View_Return_Order
@@ -112,8 +110,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -139,8 +135,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button

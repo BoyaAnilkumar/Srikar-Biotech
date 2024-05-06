@@ -433,6 +433,8 @@ import util.Utilities;
 			}
 			
 			public void check_whether_it_is_displaying_the_last_page_records_when_the_user_clicks_on_last_page_icon() throws Throwable {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("window.scrollBy(0,1766)", "");
 				utilities.webDriverWait(driver, Last_page);
 				driver.findElement(Last_page).click();
 			}

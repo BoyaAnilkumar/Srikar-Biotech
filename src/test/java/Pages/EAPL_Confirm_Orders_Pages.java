@@ -34,7 +34,7 @@ import util.Utilities;
 		By Warehouse_Update       = By.xpath("//h2[text()='Warehouse Updated Successfully']");
 		By Warehouse_Upd_failed   = By.xpath("//h2[text()='Updation Failed']");
 		By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
-		By Save_button            = By.xpath("//button[text()='Save']");
+		By Save_button            = By.xpath("(//button[text()='Save'])[6]");
 	    By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 		By Accept_Button          = By.xpath("//button[@title='Accepted']");
 		By Accept_Remarks_field   = By.xpath("(//textarea[@placeholder='Enter Remarks'])[2]");
@@ -221,13 +221,62 @@ import util.Utilities;
 			
 		}
 
+//		public void User_click_on_the_Save_Button() throws Throwable {
+//			utilities.webDriverWait(driver, Save_button);	
+//			driver.findElement(Save_button).click();
+//			utilities.MinimumWait(driver);
+//			Boolean isPresent1 = driver.findElements(Warehouse_Upd_failed).size()>0;
+//			if (isPresent1) {
+//				WebElement Data = driver.findElement(Warehouse_Upd_failed);
+//				String test1 = Data.getText(); 
+//				String expectedData = "Updation Failed";
+//				if (expectedData.equals(test1)) {
+//					System.out.println("Display the name is correct." + test1);
+//			
+//					driver.findElement(Warehouse_field).click();
+//					Thread.sleep(1000);
+//					utilities.MediumWait(driver);	
+//					Robot r = new Robot();
+//					r.keyPress(KeyEvent.VK_DOWN);
+//					Thread.sleep(2000);
+//					r.keyPress(KeyEvent.VK_DOWN);
+//					Thread.sleep(2000);
+//					r.keyPress(KeyEvent.VK_ENTER);
+//					Thread.sleep(2000);
+//					utilities.MinimumWait(driver);
+//					utilities.webDriverWait(driver, Save_button);	
+//					driver.findElement(Save_button).click();
+//					utilities.MinimumWait(driver);
+//				}
+//			}
+			
+//		}
 		public void User_click_on_the_Save_Button() throws Throwable {
-			utilities.webDriverWait(driver, Save_button);	
-			driver.findElement(Save_button).click();
-			utilities.MinimumWait(driver);
-		
+		    utilities.webDriverWait(driver, Save_button);
+		    driver.findElement(Save_button).click();
+		    utilities.MinimumWait(driver);
+		    WebElement data = driver.findElement(Warehouse_Upd_failed);
+		    if (data.isDisplayed() && data.getText().equals("Updation Failed")) {
+		        System.out.println("Display the validation msg is correct." + data.getText());
+		        driver.findElement(Warehouse_field).click();
+		        utilities.MediumWait(driver);
+		        for (int i = 0; i < 2; i++) {
+		            new Robot().keyPress(KeyEvent.VK_DOWN);
+		            Thread.sleep(2000);
+		        }
+		        new Robot().keyPress(KeyEvent.VK_ENTER);
+		        utilities.MinimumWait(driver);
+		        utilities.webDriverWait(driver, Save_button);
+		        driver.findElement(Save_button).click();
+		        utilities.MinimumWait(driver);
+		        WebElement Data1 = driver.findElement(Warehouse_Update);
+				String test = Data1.getText(); 
+				String expectedData1 = "Warehouse Updated Successfully";
+				if (expectedData1.equals(test)) {
+					System.out.println("Display the confirmation msg." + test);  
+		    }
 		}
-
+		}
 		public void User_Select_the_Status() throws Throwable {
 			driver.findElement(Status).click();
 			Thread.sleep(1000);
@@ -271,7 +320,7 @@ import util.Utilities;
 
 		public void User_enter_the_data_in_Remarks_field() throws Throwable {
 			utilities.webDriverWait(driver, Accept_Remarks_field);	
-			driver.findElement(Accept_Remarks_field).sendKeys("Order Accpted");
+			driver.findElement(Accept_Remarks_field).sendKeys("Order Accepted");
 			utilities.MinimumWait(driver);
 		}
 

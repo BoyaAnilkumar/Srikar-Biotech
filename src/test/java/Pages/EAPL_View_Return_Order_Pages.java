@@ -242,12 +242,15 @@ import util.Utilities;
 			
 		}	
 		public void User_Select_the_Check_Box() throws Throwable {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,500)", "");
+			utilities.MediumWait(driver);
 			utilities.webDriverWait(driver,Item_Checkbox );	
 			driver.findElement(Item_Checkbox).click();
 			utilities.MinimumWait(driver);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollBy(0,2500)", "");
-			utilities.MediumWait(driver);
+//			JavascriptExecutor js = (JavascriptExecutor) driver;
+//			js.executeScript("window.scrollBy(0,3500)", "");
+//			utilities.MediumWait(driver);
 		}
 		public void User_Click_on_the_Partial_Received_Icon() throws Throwable {
 		
