@@ -26,10 +26,6 @@ public class Users_Steps {
  public void User_enter_the_Username()throws Throwable {
  Users.User_enter_the_Username();
  }
- @Then ("^User enter the Slp code$")
- public void User_enter_the_Slp_code()throws Throwable {
-	 Users.User_enter_the_Slp_code();
-	 }
  @And ("^User enter the First name$")
  public void User_enter_the_First_name() throws Throwable {
 	 Users.User_enter_the_First_name(); 
@@ -66,14 +62,19 @@ public class Users_Steps {
  public void User_Select_the_Reporting_Manager() throws Throwable {
 	 Users.User_Select_the_Reporting_Manager(); 
  }
- @And ("^User Select the Company$")
- public void User_Select_the_Company() throws Throwable {
-	 Users.User_Select_the_Company(); 
- }
+
  @And ("^User select the Warehouse$")
  public void User_Select_the_Warehouse() throws Throwable {
 	 Users.User_Select_the_Warehouse(); 
  }
+ @Then ("^User enter the SBPL. Slp code$")
+ public void User_enter_the_SBPL_Slp_code()throws Throwable {
+ Users.User_enter_the_SBPL_Slp_code();
+}
+ @And ("^User enter the EAPL. Slp code$")
+ public void User_enter_the_EAPL_Slp_code()throws Throwable {
+ Users.User_enter_the_EAPL_Slp_code();
+}
  @And ("^Click on the Save button$")
  public void Click_on_the_Save_button() throws Throwable {
 	 Users.Click_on_the_Save_button(); 
@@ -110,9 +111,9 @@ public class Users_Steps {
  public void Update_the_Username() throws Throwable {
 	 Users.Update_the_Username(); 
  }
- @Then ("^Update the Slp Code$")
- public void Update_the_Slp_Code() throws Throwable {
-	 Users.Update_the_Slp_Code(); 
+ @Then ("^Update the SBPL Slp Code and EAPL Slp Code$")
+ public void Update_the_SBPL_Slp_Code_and_EAPL_Slp_Code() throws Throwable {
+	 Users.Update_the_SBPL_Slp_Code_and_EAPL_Slp_Code(); 
  }
  
  @And ("^Click on the Submit button$")
@@ -134,5 +135,9 @@ public class Users_Steps {
  @Then ("^The Users screen should be displayed$")
  public void The_Users_screen_should_be_displayed() throws Throwable {
 	 Users.The_Users_screen_should_be_displayed(); 
+ }
+ @When ("^the user selects the company based on the SLP code the corresponding fields are displayed$")
+ public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed() throws Throwable {
+	 Users.the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed();
  }
 }

@@ -46,6 +46,7 @@ And Click on the Search button
 And Click on the Warehouse Icon
 Then User Select the Warehouse in the Change Warehouse page
 And User click on the Save Button
+Then User should receive a confirmation message that the Warehouse has been changed
 
 @SBPL_Confirm_Orders
 Scenario: Verify the Order Accepted functionality
@@ -90,8 +91,6 @@ And  User click on the signIn
 And  User click on the Confirm Orders under the Orders Module
 Then User Select the State 
 And User Select the Sales Person
-And The User Select the Warehouse
-When User enter the partyname
 Then The User Select the Status
 And User Select the From date and ToDate
 And Click on the Search button

@@ -37,159 +37,69 @@ public class Roles_Steps {
 	public void User_Select_the_Mobile_Access_type_toggle() throws Throwable {
 		Roles_Pages.User_Select_the_Mobile_Access_type_toggle();
 	}
-	@And ("^User Select the Users screen Select All check box$")
-	public void User_Select_the_Users_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Users_screen_Select_All_check_box();
+	@And ("^the User Select the Users screen Select All check box$")
+	public void the_User_Select_the_Users_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_Users_screen_Select_All_check_box();
 	}
-	@Then ("^User Select the View User Check box$")
-	public void User_Select_the_View_User_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_User_Check_box();
-	}
-	
-	@And ("^User Select the Add/Update User Check box$")
-	public void User_Select_the_Add_and_Update_User_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Add_and_Update_User_Check_box();
+	@When ("^The User Select the Users Section Role permissions$")
+	public void The_User_Select_the_Users_Section_Role_permissions() throws Throwable {
+		Roles_Pages.The_User_Select_the_Users_Section_Role_permissions();
 	}
 	
-	@And ("^User Select the Delete User Check box$")
-	public void User_Select_the_Delete_User_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Delete_User_Check_box();
+	@And ("^the User Select the Roles screen Select All check box$")
+	public void the_User_Select_the_Roles_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_Roles_screen_Select_All_check_box();
 	}
-	@And ("^User Select the Roles screen Select All check box$")
-	public void User_Select_the_Roles_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Roles_screen_Select_All_check_box();
+	@Then ("^the User Select the Roles screen permissions$")
+	public void the_User_Select_the_Roles_screen_permissions() throws Throwable {
+		Roles_Pages.the_User_Select_the_Roles_screen_permissions();
 	}
-	@Then ("^User Select the View Roles Check box$")
-	public void User_Select_the_View_Roles_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_Roles_Check_box();
+		
+	@And ("^the User Select the Item Master screen Select All check box$")
+	public void the_User_Select_the_Item_Master_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_Item_Master_screen_Select_All_check_box();
 	}
-	
-	@And ("^User Select the Add/Update Roles Check box$")
-	public void User_Select_the_Add_and_Update_Roles_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Add_and_Update_Roles_Check_box();
+	@Then ("^the User selects the Item Master section Role Permissions$")
+	public void the_User_selects_the_Item_Master_section_Role_Permissions() throws Throwable {
+		Roles_Pages.the_User_selects_the_Item_Master_section_Role_Permissions();
 	}
-	
-	@And ("^User Select the Delete Roles Check box$")
-	public void User_Select_the_Delete_Roles_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Delete_Roles_Check_box();
+
+	@And ("^the User Select the Banners screen Select All check box$")
+	public void the_User_Select_the_Banners_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_Banners_screen_Select_All_check_box();
 	}
-	@And ("^User Select the Item Master screen Select All check box$")
-	public void User_Select_the_Item_Master_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Item_Master_screen_Select_All_check_box();
+	@Then ("^the User Select the banners section Role Permissions$")
+	public void the_User_Select_the_banners_section_Role_Permissions() throws Throwable {
+		Roles_Pages.the_User_Select_the_banners_section_Role_Permissions();
 	}
-	@Then ("^User Select the View Item Master Check box$")
-	public void User_Select_the_View_Item_Master_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_Item_Master_Check_box();
+
+	@And ("^the User Select the Confirm Orders screen Select All check box$")
+	public void the_User_Select_the_Confirm_Orders_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_Confirm_Orders_screen_Select_All_check_box();
 	}
-	
-	@And ("^User Select the Add/Update Item Master Check box$")
-	public void User_Select_the_Add_and_Update_Item_Master_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Add_and_Update_Item_Master_Check_box();
-	}
-	
-	@And ("^User Select the Delete Item Master Check box$")
-	public void User_Select_the_Delete_Item_Master_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Delete_Item_Master_Check_box();
-	}
-	@And ("^User Select the Banners screen Select All check box$")
-	public void User_Select_the_Banners_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Banners_screen_Select_All_check_box();
-	}
-	@Then ("^User Select the View Banners Check box$")
-	public void User_Select_the_View_Banners_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_Banners_Check_box();
+	@Then ("^the User Select the Confirm Orders section role Permissions$")
+	public void the_User_Select_the_Confirm_Orders_section_role_Permissions() throws Throwable {
+		Roles_Pages.the_User_Select_the_Confirm_Orders_section_role_Permissions();
 	}
 	
-	@And ("^User Select the Add Banners Check box$")
-	public void User_Select_the_Add_Banners_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Add_Banners_Check_box();
+	@And ("^the User Select the View Collection screen Select All check box$")
+	public void the_User_Select_the_View_Collection_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_View_Collection_screen_Select_All_check_box();
+	}
+	@Then ("^the User Select the View Collection Section role Permissions$")
+	public void the_User_Select_the_View_Collection_Section_role_Permissions() throws Throwable {
+		Roles_Pages.the_User_Select_the_View_Collection_Section_role_Permissions();
 	}
 	
-	@And ("^User Select the Delete Banners Check box$")
-	public void User_Select_the_Delete_Banners_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Delete_Banners_Check_box();
+	@And ("^the User Select the View return order screen Select All check box$")
+	public void the_User_Select_the_View_return_order_screen_Select_All_check_box() throws Throwable {
+		Roles_Pages.the_User_Select_the_View_return_order_screen_Select_All_check_box();
 	}
-	@And ("^User Select the Confirm Orders screen Select All check box$")
-	public void User_Select_the_Confirm_Orders_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Confirm_Orders_screen_Select_All_check_box();
-	}
-	@Then ("^User Select the View Orders$")
-	public void User_Select_the_View_Orders() throws Throwable {
-		Roles_Pages.User_Select_the_View_Orders();
-	}
-	@And  ("^User Select the Create orders$")
-	public void User_Select_the_Create_orders() throws Throwable {
-		Roles_Pages.User_Select_the_Create_orders();
-	}
-	@And ("^User Select the Cancel Orders$")
-	public void User_Select_the_Cancel_Orders() throws Throwable {
-		Roles_Pages.User_Select_the_Cancel_Orders();
-	}
-	@Then ("^User Select the Sale Head Approval/Reject Order$")
-	public void User_Select_the_Sale_Head_Approval_and_Reject_Order() throws Throwable {
-		Roles_Pages.User_Select_the_Sale_Head_Approval_and_Reject_Order();
-	}
-	@And ("^User Select the HO Accept/Reject Order$")
-	public void User_Select_the_HO_Accept_and_Reject_Order() throws Throwable {
-		Roles_Pages.User_Select_the_HO_Accept_and_Reject_Order();
-	}
-	@And ("^User Select the Receive Order$")
-	public void User_Select_the_Receive_Order() throws Throwable {
-		Roles_Pages.User_Select_the_Receive_Order();
-	}
-	@And ("^User Select the Change Warehouse$")
-	public void User_Select_the_Change_Warehouse() throws Throwable {
-		Roles_Pages.User_Select_the_Change_Warehouse();
-	}
-	@And ("^User Select the View Collection screen Select All check box$")
-	public void User_Select_the_View_Collection_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_Collection_screen_Select_All_check_box();
-	}
-	@Then ("^User Select the View Collection Check box$")
-	public void User_Select_the_View_Collection_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_Collection_Check_box();
-	}
-	@And ("^User Select the Create Collection Check box$")
-	public void User_Select_the_Create_Collection_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Create_Collection_Check_box();
+	@Then ("^the User Select the View Return Order Section Role Permissions$")
+	public void the_User_Select_the_View_Return_Order_Section_Role_Permissions() throws Throwable {
+		Roles_Pages.the_User_Select_the_View_Return_Order_Section_Role_Permissions();
 	}
 	
-	@And ("^User Select the Accept/Reject Collection Check box$")
-	public void User_Select_the_Accept_and_Reject_Collection_Check_box() throws Throwable {
-		Roles_Pages.User_Select_the_Accept_and_Reject_Collection_Check_box();
-	}
-	@And ("^User Select the View return order screen Select All check box$")
-	public void User_Select_the_View_return_order_screen_Select_All_check_box() throws Throwable {
-		Roles_Pages.User_Select_the_View_return_order_screen_Select_All_check_box();
-	}
-	@Then ("^User Select the View Return Order$")
-	public void User_Select_the_View_Return_Order() throws Throwable {
-		Roles_Pages.User_Select_the_View_Return_Order();
-	}
-	@And ("^User Select the Create Return Order$")
-	public void User_Select_the_Create_Return_Order() throws Throwable {
-		Roles_Pages.User_Select_the_Create_Return_Order();
-	}
-	@Then ("^User Select the Accept/Reject Return Order$")
-	public void User_Select_the_Accept_and_Reject_Return_Order() throws Throwable {
-		Roles_Pages.User_Select_the_Accept_and_Reject_Return_Order();
-	}
-	@And ("^User Select the Create Credit Note$")
-	public void User_Select_the_Create_Credit_Note() throws Throwable {
-		Roles_Pages.User_Select_the_Create_Credit_Note();
-	}
-	@And ("^User Select the Delete Credit Note$")
-	public void User_Select_the_Delete_Credit_Note() throws Throwable {
-		Roles_Pages.User_Select_the_Delete_Credit_Note();
-	}
-	@Then ("^User Select the Upload Return Attachments$")
-	public void User_Select_the_Upload_Return_Attachments() throws Throwable {
-		Roles_Pages.User_Select_the_Upload_Return_Attachments();
-	}
-	@And("^The User Select the Change Warehouse$")
-	public void The_User_Select_the_Change_Warehouse() throws Throwable {
-		Roles_Pages.The_User_Select_the_Change_Warehouse();
-	}
 	@Then ("^User click on the Filter Icon$")
 	public void User_click_on_the_Filter_Icon() throws Throwable {
 		Roles_Pages.User_click_on_the_Filter_Icon();
@@ -229,6 +139,10 @@ public class Roles_Steps {
 	 @And ("^User Click on the Update button$")
 	 public void User_Click_on_the_Update_button() throws Throwable {
 		 Roles_Pages.User_Click_on_the_Update_button(); 
+	 }
+	 @Then ("^Validation message should be displayed without select the permissions$")
+	 public void Validation_message_should_be_displayed_without_select_the_permissions() throws Throwable {
+		 Roles_Pages.Validation_message_should_be_displayed_without_select_the_permissions(); 
 	 }
 	
 }

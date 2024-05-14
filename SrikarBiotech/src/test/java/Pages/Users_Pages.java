@@ -18,7 +18,8 @@ public class Users_Pages extends DriverFactory{
 	By Users_Screen           = By.xpath("(//span[text()='Users'])[1]");
     By Add_Button             = By.xpath("//button[@class='btn btn-secondary ng-star-inserted']");
     By Username_field         = By.xpath("//input[@placeholder='Enter User Name']");
-    By Slp_Code               = By.xpath("//input[@placeholder='Enter Slp. Code']");
+    By SBPL_Slp_Code          = By.xpath("//input[@placeholder='Enter SBPL Slp. Code']");
+    By EAPL_Slp_Code          = By.xpath("//input[@placeholder='Enter EAPL Slp. Code']");
     By First_Name             = By.xpath("//input[@formcontrolname='firstName']");
     By Last_Name              = By.xpath("//input[@placeholder='Enter Last Name']");
     By Email_Address          = By.xpath("//input[@placeholder='Enter Email']");
@@ -30,8 +31,9 @@ public class Users_Pages extends DriverFactory{
     By Select_Role            = By.xpath("//span[text()='Sales Person']");
     By Reporting_Manager      = By.xpath("//input[@placeholder='Search Name']");
     By Select_ReportingManager= By.xpath("//span[text()='Ravi A']");
-    By Company                = By.xpath("//div[text()='Select Company']");
+    By Company                = By.xpath("//label[text()='Company']/..//div[@class='p-element p-multiselect-label-container']");
     By Option1                = By.xpath("//div[text()='Srikar Biotech']");
+    By Option2                = By.xpath("//div[text()='Eldorado Agritech']");
     By Warehouse              = By.xpath("//div[text()='Select Warehouse']");
     By Warehouse_Option1      = By.xpath("//div[text()='Andhra Pradesh (AP01) (SBPL)']");
     By Save_button            = By.xpath("//button[@type='submit']");
@@ -73,11 +75,6 @@ public void User_enter_the_Username() throws Throwable {
 	 utilities.webDriverWait(driver,Username_field );		
 		driver.findElement(Username_field).sendKeys("Soumya");
 	
-}
-
-public void User_enter_the_Slp_code() throws Throwable {
-	 utilities.webDriverWait(driver,Slp_Code );		
-		driver.findElement(Slp_Code).sendKeys("1001");	
 }
 
 public void User_enter_the_First_name() throws Throwable {
@@ -157,19 +154,6 @@ public void User_Select_the_Reporting_Manager() throws Throwable {
 	
 }
 
-public void User_Select_the_Company() throws Throwable {
-	utilities.webDriverWait(driver,Company );		
-//	driver.findElement(Company).click();
-//	WebDriver driver = new ChromeDriver();
-	WebElement dropdownElement = driver.findElement(Company);
-	 dropdownElement.click();
-	 WebElement option1 = driver.findElement(Option1);
-	 option1.click();
-	 dropdownElement.click();
-//	 driver.close();
-	 
-}
-
 public void User_Select_the_Warehouse() throws Throwable {
 	utilities.webDriverWait(driver,Warehouse );		
 	WebElement dropdownElement = driver.findElement(Warehouse);
@@ -179,6 +163,15 @@ public void User_Select_the_Warehouse() throws Throwable {
 	 dropdownElement.click();
 		
 }
+public void User_enter_the_SBPL_Slp_code() throws Throwable {
+	 utilities.webDriverWait(driver,SBPL_Slp_Code );		
+		driver.findElement(SBPL_Slp_Code).sendKeys("1001");	
+}
+public void User_enter_the_EAPL_Slp_code() throws Throwable {
+	 utilities.webDriverWait(driver,EAPL_Slp_Code );		
+		driver.findElement(EAPL_Slp_Code).sendKeys("1002");	
+}
+
 
 public void Click_on_the_Save_button() throws Throwable {
 	utilities.webDriverWait(driver,Save_button );		
@@ -258,12 +251,16 @@ public void Update_the_Username() throws Throwable {
 	driver.findElement(Username_field).sendKeys("SoumyaSri");	
 }
 
-public void Update_the_Slp_Code() throws Throwable {
-	utilities.webDriverWait(driver,Slp_Code );		
-	driver.findElement(Slp_Code).click();	
-	driver.findElement(Slp_Code).clear();	
-	driver.findElement(Slp_Code).sendKeys("118");	
+public void Update_the_SBPL_Slp_Code_and_EAPL_Slp_Code() throws Throwable {
+	utilities.webDriverWait(driver,SBPL_Slp_Code );		
+//	driver.findElement(SBPL_Slp_Code).click();	
+	driver.findElement(SBPL_Slp_Code).clear();	
+	driver.findElement(SBPL_Slp_Code).sendKeys("118");
 	
+	utilities.webDriverWait(driver,EAPL_Slp_Code );		
+	driver.findElement(EAPL_Slp_Code).click();	
+	driver.findElement(EAPL_Slp_Code).clear();	
+	driver.findElement(EAPL_Slp_Code).sendKeys("119");	
 }
 
 public void Click_on_the_Submit_button() throws Throwable {
@@ -335,6 +332,36 @@ public void The_Users_screen_should_be_displayed() throws Throwable {
 	String dataText = data.getText();
 	System.out.println("Should display the Users Screen name: " + dataText);
 	
+}
+
+public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed() throws Throwable {
+
+	WebElement dropdownElement = driver.findElement(Company);
+	 dropdownElement.click();
+	 WebElement option = driver.findElement(Option1);
+	 option.click();
+	 dropdownElement.click();
+	 Thread.sleep(500);
+
+    // Check if the field is displayed
+    WebElement field = driver.findElement(SBPL_Slp_Code); // Change to the ID of the field you want to validate
+    if (field.isDisplayed()) {
+        System.out.println("SBPL Slp Code Field is displayed. Validation successful.");
+    } else {
+        System.out.println("SBPL Slp Code Field is not displayed. Validation failed.");
+    }
+
+    WebElement dropdown1 = driver.findElement(Company); // Change to your dropdown's ID
+    dropdown1.click();
+    WebElement option1 = driver.findElement(Option2); // Change to your desired option
+    option1.click();
+    WebElement field1 = driver.findElement(EAPL_Slp_Code); // Change to the ID of the field you want to validate
+    if (field1.isDisplayed()) {
+        System.out.println("EAPL Slp Code Field is displayed. Validation successful.");
+    } else {
+        System.out.println("EAPL slp Code Field is not displayed. Validation failed.");
+    }
+
 }
 
 

@@ -37,7 +37,6 @@ And  User click on the Security Module
 And  User Click on the Users screen
 And  User click on the Add button
 When User enter the Username
-Then User enter the Slp code
 And User enter the First name
 When User enter the Last name
 Then User enter the data in Email field
@@ -47,11 +46,13 @@ Then User enter the New Password
 And User enter the Confirm Password
 And User select the Role
 And User Select the Reporting Manager
-And User Select the Company
+When the user selects the company based on the SLP code the corresponding fields are displayed
 And User select the Warehouse
+Then User enter the SBPL. Slp code
+Then User enter the EAPL. Slp code
 #And Click on the Save button
 And Click on the Cancel button
-@Users1
+@Users
 Scenario: Verifying the Cancel button functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -85,7 +86,7 @@ When User enter the data in filter field
 And Click on the Apply button
 And Verify whether the page is navigating to the Update User or not on clicking the Edit button
 When Update the Username
-Then Update the Slp Code
+Then Update the SBPL Slp Code and EAPL Slp Code
 #And Click on the Submit button
 #And The Update Successfull message is displayed or not
 @Users

@@ -302,16 +302,9 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 		    
 		    // Click on the header to sort
 		    columnHeader.click();
-		    // Assuming utilities.MaximumWait(driver) and utilities.MinimumWait(driver) are defined elsewhere
-		    
-		    // Verify sorting by checking if the table has changed its order
-		    // You can implement a method to check the order of elements in the table here
-		    
-		    // Click again to revert sorting
+		   
 		    columnHeader.click();
-		    // Assuming utilities.MaximumWait(driver) and utilities.MinimumWait(driver) are defined elsewhere
 		    
-		    // Verify header text
 		    String columnName = columnHeader.getText(); 
 		    Assert.assertEquals(columnName, expectedHeaders[i]);
 		    System.out.println(columnName);

@@ -41,7 +41,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -49,6 +48,7 @@ And Click on the Search button
 And Click on the Warehouse Icon
 Then User Select the Warehouse in the Change Warehouse page
 And User click on the Save Button
+Then User should receive a confirmation message that the Warehouse has been changed
 
 @SBPL_View_Return_Order
 Scenario: Verification of the expansion grid data
@@ -59,7 +59,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
@@ -77,8 +76,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -91,9 +88,9 @@ Then The Validation message is displayed or not
 When The User enter the Partial Qty is More than the Original Qty the validation message is displayed
 Given User Enter the data in the Partial Received Qty field
 Given User enter the data in the Remarks field
-#And Click on the Save button in the Partial Received popup page
-#When The User enter the data in all field and Click on the Save button Partial received Successfull validation message is displayed
-And Click on the Close button
+And Click on the Save button in the Partial Received popup page
+When The User enter the data in all field and Click on the Save button Partial received Successfull validation message is displayed
+#And Click on the Close button
 #And Click on the Close Icon
 
 @SBPL_View_Return_Order
@@ -105,8 +102,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -131,8 +126,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
-#When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -155,7 +148,6 @@ And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
 And User Select the Sales Person
-#And Select the Warehouse
 When User enter the partyname
 And Select the Status as Partially Received
 And User Select the From date and To Date

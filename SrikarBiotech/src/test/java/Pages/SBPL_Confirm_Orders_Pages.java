@@ -32,6 +32,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By Warehouse_Icon         = By.xpath("(//button[@title='Change Warehouse'])[1]");
 	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
 	By Save_button            = By.xpath("//button[text()='Save']");
+	By Warehouse_Update       = By.xpath("//h2[text()='Warehouse Updated Successfully']");
 //Accept functionality
     By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 	By Accept_Button          = By.xpath("//button[@title='Accepted']");
@@ -321,6 +322,8 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 		Thread.sleep(1000);
 		utilities.MediumWait(driver);	
 		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_DOWN);
 		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_ENTER);
@@ -651,4 +654,18 @@ public void Click_on_the_Reject_details_save_button() throws Throwable {
 	
 }
 
+public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable {
+		
+		Boolean isPresent1 = driver.findElements(Warehouse_Update).size()>0;
+		if (isPresent1) {
+			WebElement Data = driver.findElement(Warehouse_Update);
+			String test1 = Data.getText(); 
+			String expectedData = "Warehouse Updated Successfully";
+			if (expectedData.equals(test1)) {
+				System.out.println("Display the confirmation msg correct." + test1);
+			} else {
+				System.out.println("Display the confirmation msg is incorrect."+ test1);
+			}
+}
+}
 }

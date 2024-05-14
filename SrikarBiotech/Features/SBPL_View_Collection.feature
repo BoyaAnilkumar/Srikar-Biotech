@@ -37,7 +37,6 @@ And  User click on the View Collection under the Orders Module
 And The View Collection Screen is displayed or not
 Then Select the State 
 And The User Select the Sales Person
-#When The User enter the partyname
 And The user Select the From date and ToDate
 And The user Click on the Search button
 #And Click on the Status Filter Icon
@@ -57,7 +56,6 @@ And  User click on the View Collection under the Orders Module
 And The View Collection Screen is displayed or not
 Then Select the State 
 And The User Select the Sales Person
-#When The User enter the partyname
 And The user Select the From date and ToDate
 And The user Click on the Search button
 And Click on the Reject Icon

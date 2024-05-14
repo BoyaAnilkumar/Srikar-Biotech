@@ -2,9 +2,13 @@ package Pages;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,6 +33,7 @@ public class Roles_Pages extends DriverFactory{
     By View_Users           = By.xpath("//input[@id='custom-CanViewUsers']");
     By ADD_Update_Users     = By.xpath("//input[@id='custom-CanManageUsers']");
     By Delete_Users         = By.xpath("//input[@id='custom-CanDeleteUsers']");
+    By All_Dealers          = By.xpath("//label[text()=' Can Access All Dealers ']");
     //Roles
     By Roles_SelectAll      = By.xpath("//input[@id='usersSelectAll-Roles']");
     By View_Roles           = By.xpath("//input[@id='custom-CanViewRoles']");
@@ -76,7 +81,9 @@ public class Roles_Pages extends DriverFactory{
     By Edit_button        = By.xpath("//button[@title='Edit']");
     By Update_Role        = By.xpath("//h4[text()='Update Role']");
     By Update_button      = By.xpath("//button[text()='Update']");
-    
+    By CheckBoxes         = By.xpath("(//div[@class='card-body'])[2]//input[@type='checkbox']");
+    By Req_Permission     = By.xpath("//h2[text()='Atleast one permission is required']");
+ 
 	public void User_Click_on_the_Roles_screen() throws Throwable {
 		 utilities.webDriverWait(driver,Roles );		
 			driver.findElement(Roles).click();
@@ -129,218 +136,178 @@ public class Roles_Pages extends DriverFactory{
 		utilities.MediumWait(driver);	
 	}
 	
-	public void User_Select_the_Users_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_Users_screen_Select_All_check_box() throws Throwable {
 		utilities.webDriverWait(driver,Users_SelectAll);		
 		driver.findElement(Users_SelectAll).click();
 		utilities.MediumWait(driver);		
 	}
 
-	public void User_Select_the_View_User_Check_box() throws Throwable {
+	public void The_User_Select_the_Users_Section_Role_permissions() throws Throwable {
+		driver.findElement(Users_SelectAll).click();
+		
 		utilities.webDriverWait(driver,View_Users);		
 		driver.findElement(View_Users).click();
-
-	}
-
-	public void User_Select_the_Add_and_Update_User_Check_box() throws Throwable {
+		
 		utilities.webDriverWait(driver,ADD_Update_Users);		
 		driver.findElement(ADD_Update_Users).click();
-	}
-
-	public void User_Select_the_Delete_User_Check_box() throws Throwable {
+		
 		utilities.webDriverWait(driver,Delete_Users);		
 		driver.findElement(Delete_Users).click();
+		
+		utilities.webDriverWait(driver,All_Dealers);		
+		driver.findElement(All_Dealers).click();
+		 	 
+		
 	}
 
-	public void User_Select_the_Roles_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_Roles_screen_Select_All_check_box() throws Throwable {
 		utilities.webDriverWait(driver,Roles_SelectAll);		
 		driver.findElement(Roles_SelectAll).click();
 	}
 
-	public void User_Select_the_View_Roles_Check_box() throws Throwable {
-		utilities.webDriverWait(driver,View_Roles);		
-		driver.findElement(View_Roles).click();
-	}
-	public void User_Select_the_Add_and_Update_Roles_Check_box() throws Throwable {
-		utilities.webDriverWait(driver,ADD_Update_Roles);		
-		driver.findElement(ADD_Update_Roles).click();
-	}
-
-	public void User_Select_the_Delete_Roles_Check_box() throws Throwable {
-		utilities.webDriverWait(driver,Delete_Roles);		
-		driver.findElement(Delete_Roles).click();
+	public void the_User_Select_the_Roles_screen_permissions() throws Throwable {
+		driver.findElement(Roles_SelectAll).click();
 		
+		utilities.webDriverWait(driver,View_Roles);			
+		driver.findElement(View_Roles).click();
+		
+		utilities.webDriverWait(driver,ADD_Update_Roles);
+		driver.findElement(ADD_Update_Roles).click();
+		
+		utilities.webDriverWait(driver,Delete_Roles);	
+		driver.findElement(Delete_Roles).click();
 	}
+	
 
-	public void User_Select_the_Item_Master_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_Item_Master_screen_Select_All_check_box() throws Throwable {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)", "");
 		utilities.webDriverWait(driver,Item_SelectAll);		
 		driver.findElement(Item_SelectAll).click();
 		
 	}
 
-	public void User_Select_the_View_Item_Master_Check_box() throws Throwable {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,600)", "");
+	public void the_User_selects_the_Item_Master_section_Role_Permissions() throws Throwable {
+		driver.findElement(Item_SelectAll).click();
+		
 		utilities.webDriverWait(driver,View_Item_Master);		
 		driver.findElement(View_Item_Master).click();
 		
-	}
-
-	public void User_Select_the_Add_and_Update_Item_Master_Check_box() throws Throwable {
 		utilities.webDriverWait(driver,Add_Update_Item);		
 		driver.findElement(Add_Update_Item).click();
-	}
-
-	public void User_Select_the_Delete_Item_Master_Check_box() throws Throwable {
+		
 		utilities.webDriverWait(driver,Delete_Item);		
 		driver.findElement(Delete_Item).click();
+		
 	}
 
-	public void User_Select_the_Banners_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_Banners_screen_Select_All_check_box() throws Throwable {
 		utilities.webDriverWait(driver,Banners_SelectAll);		
 		driver.findElement(Banners_SelectAll).click();
 	}
 
-	public void User_Select_the_View_Banners_Check_box() throws Throwable {
+	public void the_User_Select_the_banners_section_Role_Permissions() throws Throwable {
+		driver.findElement(Banners_SelectAll).click();
+		
 		utilities.webDriverWait(driver,View_Banners);		
 		driver.findElement(View_Banners).click();
-	}
-
-	public void User_Select_the_Add_Banners_Check_box() throws Throwable {
+		
 		utilities.webDriverWait(driver,Add_Banners);		
 		driver.findElement(Add_Banners).click();
-	}
-
-	public void User_Select_the_Delete_Banners_Check_box() throws Throwable {
+		
 		utilities.webDriverWait(driver,Delete_Banners);		
 		driver.findElement(Delete_Banners).click();
 	}
 
-	public void User_Select_the_Confirm_Orders_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_Confirm_Orders_screen_Select_All_check_box() throws Throwable {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
 		utilities.webDriverWait(driver,Confirm_SelectAll);		
 		driver.findElement(Confirm_SelectAll).click();
 	}
 
-	public void User_Select_the_View_Orders() throws Throwable {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)", "");
+	public void the_User_Select_the_Confirm_Orders_section_role_Permissions() throws Throwable {
+	
+		driver.findElement(Confirm_SelectAll).click();
 		utilities.webDriverWait(driver,View_Order);		
 		driver.findElement(View_Order).click();
 		
-	}
-
-	public void User_Select_the_Create_orders() throws Throwable {
 		utilities.webDriverWait(driver,Create_Order);		
 		driver.findElement(Create_Order).click();
 		
-	}
-
-	public void User_Select_the_Cancel_Orders() throws Throwable {
 		utilities.webDriverWait(driver,Cancel_Order);		
 		driver.findElement(Cancel_Order).click();
 		
-	}
-
-	public void User_Select_the_Sale_Head_Approval_and_Reject_Order() throws Throwable {
 		utilities.webDriverWait(driver,Sale_Approve_Reject);		
 		driver.findElement(Sale_Approve_Reject).click();
 		
-	}
-
-	public void User_Select_the_HO_Accept_and_Reject_Order() throws Throwable {
 		utilities.webDriverWait(driver,HO_Accept_Reject);		
 		driver.findElement(HO_Accept_Reject).click();
-		utilities.MediumWait(driver);		
+		utilities.MediumWait(driver);
 		
-	}
-
-	public void User_Select_the_Receive_Order() throws Throwable {
 		utilities.webDriverWait(driver,Receive_Order);		
 		driver.findElement(Receive_Order).click();
-		utilities.MediumWait(driver);		
+		utilities.MediumWait(driver);	
+		
+		utilities.webDriverWait(driver,Change_Warehouse);		
+		driver.findElement(Change_Warehouse).click();
+		utilities.MediumWait(driver);
 		
 	}
 
-	public void User_Select_the_Change_Warehouse() throws Throwable {
-		utilities.webDriverWait(driver,Change_Warehouse);		
-		driver.findElement(Change_Warehouse).click();
-		utilities.MediumWait(driver);		
-		
-	}
-	public void User_Select_the_View_Collection_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_View_Collection_screen_Select_All_check_box() throws Throwable {
 		utilities.webDriverWait(driver,Collection_SelectAll);		
 		driver.findElement(Collection_SelectAll).click();
 		utilities.MediumWait(driver);		
 		
 	}
 
-	public void User_Select_the_View_Collection_Check_box() throws Throwable {
+	public void the_User_Select_the_View_Collection_Section_role_Permissions() throws Throwable {
+		driver.findElement(Collection_SelectAll).click();
+		
 		utilities.webDriverWait(driver,View_Collection);		
 		driver.findElement(View_Collection).click();
-		utilities.MediumWait(driver);		
 		
-	}
-
-	public void User_Select_the_Create_Collection_Check_box() throws Throwable {
 		utilities.webDriverWait(driver,Create_Collection);		
 		driver.findElement(Create_Collection).click();
-		utilities.MediumWait(driver);		
 		
-	}
-
-	public void User_Select_the_Accept_and_Reject_Collection_Check_box() throws Throwable {
 		utilities.webDriverWait(driver,Accept_reject_Coll);		
 		driver.findElement(Accept_reject_Coll).click();
-		utilities.MediumWait(driver);		
-		
+				
 	}
 
-	public void User_Select_the_View_return_order_screen_Select_All_check_box() throws Throwable {
+	public void the_User_Select_the_View_return_order_screen_Select_All_check_box() throws Throwable {
 		utilities.webDriverWait(driver,Return_SelectAll);		
 		driver.findElement(Return_SelectAll).click();
 		
 	}
 
-	public void User_Select_the_View_Return_Order() throws Throwable {
+	public void the_User_Select_the_View_Return_Order_Section_Role_Permissions() throws Throwable {
+		driver.findElement(Return_SelectAll).click();
+
 		utilities.webDriverWait(driver,View_return);		
 		driver.findElement(View_return).click();
 		
-	}
-
-	public void User_Select_the_Create_Return_Order() throws Throwable {
 		utilities.webDriverWait(driver,Create_Return);		
 		driver.findElement(Create_Return).click();
 		
-	}
-
-	public void User_Select_the_Accept_and_Reject_Return_Order() throws Throwable {
 		utilities.webDriverWait(driver,Accept_reject_Return);		
 		driver.findElement(Accept_reject_Return).click();
 		
-	}
-
-	public void User_Select_the_Create_Credit_Note() throws Throwable {
 		utilities.webDriverWait(driver,Create_Credit);		
 		driver.findElement(Create_Credit).click();
 		
-	}
-
-	public void User_Select_the_Delete_Credit_Note() throws Throwable {
 		utilities.webDriverWait(driver,Delete_credit);		
 		driver.findElement(Delete_credit).click();
 		
-	}
-
-	public void User_Select_the_Upload_Return_Attachments() throws Throwable {
 		utilities.webDriverWait(driver,Upload_return);		
 		driver.findElement(Upload_return).click();
 		
-	}
-
-	public void The_User_Select_the_Change_Warehouse() throws Throwable {
 		utilities.webDriverWait(driver,Change_Warehouse_Return);		
 		driver.findElement(Change_Warehouse_Return).click();
 		
 	}
+
 
 	public void User_click_on_the_Filter_Icon() throws Throwable {
 		utilities.webDriverWait(driver,Name_Filter );		
@@ -362,9 +329,11 @@ public class Roles_Pages extends DriverFactory{
 
 	public void User_Click_on_the_Clear_button() throws Throwable {
 		driver.findElement(Name_Filter).click();
+		
 		utilities.webDriverWait(driver,Filter_Clear );		
 		driver.findElement(Filter_Clear).click();
 		utilities.MinimumWait(driver);	
+		
 		driver.findElement(Name_Filter).click();
 		
 	}
@@ -456,5 +425,24 @@ public class Roles_Pages extends DriverFactory{
 		driver.findElement(Update_button).click();
 		utilities.MediumWait(driver);
 		
+	}
+
+	public void Validation_message_should_be_displayed_without_select_the_permissions() throws Throwable {
+
+		driver.findElement(Req_Permission).click();
+		utilities.webDriverWait(driver, Req_Permission);
+		Boolean isPresent = driver.findElements(Req_Permission).size()>0;
+		if (isPresent) {
+			WebElement Data = driver.findElement(Req_Permission);
+			String test = Data.getText(); 
+			String expectedData = "Atleast one permission is required";
+			if (expectedData.equals(test)) {
+				System.out.println("Display validation msg is correct." + test);
+			} else {
+				System.out.println("Display validation msg is incorrect."+ test);
+			}
+			utilities.MediumWait(driver);
+	}
+
 	}
 }

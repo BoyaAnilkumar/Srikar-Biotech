@@ -137,4 +137,8 @@ public class SBPL_Confirm_Orders_Steps {
   public void Verify_the_Order_Items_are_displayed_in_the_expansion_grid_or_not() throws Throwable {
 	  Confirm_Orders_Pages.Verify_the_Order_Items_are_displayed_in_the_expansion_grid_or_not();
   }
+  @Then ("^User should receive a confirmation message that the Warehouse has been changed$")
+  public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable{
+	  Confirm_Orders_Pages.User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed();
+  }
 }
