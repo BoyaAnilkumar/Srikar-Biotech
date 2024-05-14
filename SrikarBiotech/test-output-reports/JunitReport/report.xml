@@ -1,114 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="430.527">
-    <testcase classname="feature to Test User Screen functionality" name="Validate login is successful with valid credentials" time="24.837">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-Then User navigated to the home page........................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Validate user click on the Users screen in menu" time="27.724">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="148.064">
+    <testcase classname="feature to Test Roles Screen functionality" name="Verify the Add Sales Head Role functionality" time="67.607">
         <system-out><![CDATA[Given User navigates to Login page..........................................passed
 When User enters the username and password..................................passed
 And User click on the signIn................................................passed
 And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Validate Add user without enter the data" time="39.924">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
+And User Click on the Roles screen..........................................passed
 And User click on the Add button............................................passed
-And Click on the Save button................................................passed
-Then Validation message should be displayed.................................passed
-When User enter the Username................................................passed
+When The User enter the data in the Name field..............................passed
+Then User Select the Reporting manager......................................passed
+When User enter the Description.............................................passed
+And User Select the Mobile Access type toggle...............................passed
+And User Select the Sale Head approved or Reject permission.................passed
+Then The Added Sales Head Role should be displayed in the roles list........passed
 ]]></system-out>
     </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verify the Add user functionality" time="93.242">
+    <testcase classname="feature to Test Roles Screen functionality" name="Verify the Add Sales Person Role functionality" time="80.139">
         <system-out><![CDATA[Given User navigates to Login page..........................................passed
 When User enters the username and password..................................passed
 And User click on the signIn................................................passed
 And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
+And User Click on the Roles screen..........................................passed
 And User click on the Add button............................................passed
-When User enter the Username................................................passed
-And User enter the First name...............................................passed
-When User enter the Last name...............................................passed
-Then User enter the data in Email field.....................................passed
-And User enter the data in Mobile number field..............................passed
-When User enter the data in Alternate mobile number field...................passed
-Then User enter the New Password............................................passed
-And User enter the Confirm Password.........................................passed
-And User select the Role....................................................passed
-And User Select the Reporting Manager.......................................passed
-When the user selects the company based on the SLP code the corresponding fields are displayed.passed
-And User select the Warehouse...............................................passed
-Then User enter the SBPL. Slp code..........................................passed
-Then User enter the EAPL. Slp code..........................................passed
-And Click on the Cancel button..............................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verifying the Cancel button functionality" time="40.348">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-And User click on the Add button............................................passed
-And Click on the Cancel button..............................................passed
-Then The Users screen should be displayed...................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verification of the Added user is displayed in the grid" time="45.543">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-Then User Click on the Filter Icon..........................................passed
-When User enter the data in filter field....................................passed
-And Click on the Apply button...............................................passed
-And Click on the Clear button...............................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verify the Update user functionality" time="75.725">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-Then User Click on the Filter Icon..........................................passed
-When User enter the data in filter field....................................passed
-And Click on the Apply button...............................................passed
-And Verify whether the page is navigating to the Update User or not on clicking the Edit button.passed
-When Update the Username....................................................passed
-Then Update the SBPL Slp Code and EAPL Slp Code.............................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verify the Delete user functionality" time="40.825">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-Then User Click on the Filter Icon..........................................passed
-When User enter the data in filter field....................................passed
-And Click on the Apply button...............................................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="feature to Test User Screen functionality" name="Verify the Pagination functionality" time="42.001">
-        <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User enters the username and password..................................passed
-And User click on the signIn................................................passed
-And User click on the Security Module.......................................passed
-And User Click on the Users screen..........................................passed
-Then By default ten records are displayed...................................passed
-And check whether it is navigating to the after page records when the user clicks on Next page icon.passed
-And check whether it is navigating to the before page records when the user clicks on before page icon.passed
-And check whether it is displaying the last page records when the user clicks on last page icon.passed
+When User enter the data in the Name field..................................passed
+Then User Select the Reporting manager......................................passed
+When User enter the Description.............................................passed
+And User Select the Mobile Access type toggle...............................passed
+And User Add the Activity rights for Create Orders and View Orders..........passed
+And User Add the Activity rights for Create Collections and View Collections.passed
+And User Add the Activity rights for Create Return Orders and View Return Orders.passed
+Then The Added Sales Person Role should be displayed in the roles list......passed
 ]]></system-out>
     </testcase>
 </testsuite>

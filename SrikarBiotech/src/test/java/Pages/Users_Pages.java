@@ -343,19 +343,19 @@ public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding
 	 dropdownElement.click();
 	 Thread.sleep(500);
 
-    // Check if the field is displayed
-    WebElement field = driver.findElement(SBPL_Slp_Code); // Change to the ID of the field you want to validate
+ 
+    WebElement field = driver.findElement(SBPL_Slp_Code); 
     if (field.isDisplayed()) {
         System.out.println("SBPL Slp Code Field is displayed. Validation successful.");
     } else {
         System.out.println("SBPL Slp Code Field is not displayed. Validation failed.");
     }
 
-    WebElement dropdown1 = driver.findElement(Company); // Change to your dropdown's ID
+    WebElement dropdown1 = driver.findElement(Company); 
     dropdown1.click();
-    WebElement option1 = driver.findElement(Option2); // Change to your desired option
+    WebElement option1 = driver.findElement(Option2); 
     option1.click();
-    WebElement field1 = driver.findElement(EAPL_Slp_Code); // Change to the ID of the field you want to validate
+    WebElement field1 = driver.findElement(EAPL_Slp_Code); 
     if (field1.isDisplayed()) {
         System.out.println("EAPL Slp Code Field is displayed. Validation successful.");
     } else {

@@ -21,6 +21,18 @@ public class Roles_Steps {
 	public void User_enter_the_data_in_Name_field() throws Throwable {
 		Roles_Pages.User_enter_the_data_in_Name_field();
 	}
+	@When ("^The User enter the data in Name field$")
+	public void The_User_enter_the_data_in_Name_field() throws Throwable {
+		Roles_Pages.The_User_enter_the_data_in_Name_field();
+	}
+	@When ("^The User enter the data in the Name field$")
+	public void The_User_enter_the_data_in_the_Name_field() throws Throwable {
+		Roles_Pages.The_User_enter_the_data_in_the_Name_field();
+	}
+	@When ("^User enter the data in the Name field$")
+	public void User_enter_the_data_in_the_Name_field() throws Throwable {
+		Roles_Pages.User_enter_the_data_in_the_Name_field();
+	}
 	@Then ("^User Select the Reporting manager$")
 	public void User_Select_the_Reporting_manager() throws Throwable {
 		Roles_Pages.User_Select_the_Reporting_manager();
@@ -144,5 +156,36 @@ public class Roles_Steps {
 	 public void Validation_message_should_be_displayed_without_select_the_permissions() throws Throwable {
 		 Roles_Pages.Validation_message_should_be_displayed_without_select_the_permissions(); 
 	 }
-	
+	 @Then ("^The Added Super Amin Role should be displayed in the roles list$")
+	 public void The_Added_Super_Amin_Role_should_be_displayed_in_the_roles_list() throws Throwable {
+		 Roles_Pages.The_Added_Super_Amin_Role_should_be_displayed_in_the_roles_list(); 
+	 } 
+	 @And ("^User Select the Sale Head approved or Reject permission$")
+	 public void User_Select_the_Sale_Head_approved_or_Reject_permission() throws Throwable {
+		 Roles_Pages.User_Select_the_Sale_Head_approved_or_Reject_permission(); 
+	 }
+	 @And ("^User Add the Activity rights for Create Orders and View Orders$")
+	 public void User_Add_the_Activity_rights_for_Create_Orders_and_View_Orders() throws Throwable {
+		 Roles_Pages.User_Add_the_Activity_rights_for_Create_Orders_and_View_Orders(); 
+	 }
+	 @And ("^User Add the Activity rights for Create Collections and View Collections$")
+	 public void User_Add_the_Activity_rights_for_Create_Collections_and_View_Collections() throws Throwable {
+		 Roles_Pages.User_Add_the_Activity_rights_for_Create_Collections_and_View_Collections(); 
+	 }
+	 @And ("^User Add the Activity rights for Create Return Orders and View Return Orders$")
+	 public void User_Add_the_Activity_rights_for_Create_Return_Orders_and_View_Return_Orders() throws Throwable {
+		 Roles_Pages.User_Add_the_Activity_rights_for_Create_Return_Orders_and_View_Return_Orders(); 
+	 }
+	 @Then ("^The Added Sales Manager Role should be displayed in the roles list$")
+	 public void The_Added_Sales_Manager_Role_should_be_displayed_in_the_roles_list() throws Throwable {
+		 Roles_Pages.The_Added_Sales_Manager_Role_should_be_displayed_in_the_roles_list(); 
+	 }
+	 @Then ("^The Added Sales Head Role should be displayed in the roles list$")
+	 public void The_Added_Sales_Head_Role_should_be_displayed_in_the_roles_list() throws Throwable {
+		 Roles_Pages.The_Added_Sales_Head_Role_should_be_displayed_in_the_roles_list(); 
+	 }
+	 @Then ("^The Added Sales Person Role should be displayed in the roles list$")
+	 public void The_Added_Sales_Person_Role_should_be_displayed_in_the_roles_list() throws Throwable {
+		 Roles_Pages.The_Added_Sales_Person_Role_should_be_displayed_in_the_roles_list(); 
+	 }
 }
