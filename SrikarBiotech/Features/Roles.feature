@@ -42,7 +42,7 @@ When User enter the data in Name field
 And  User Click on the Save button 
 Then Validation message should be displayed without select the permissions
 
-@Roles123
+@Roles
 Scenario: Verify the Add Super Admin Role functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -72,7 +72,7 @@ Then the User Select the banners section Role Permissions
 #And  User Click on the Save button 
 Then The Added Super Amin Role should be displayed in the roles list
 
-@Roles123
+@Roles
 Scenario: Verify the Add  Sales Manager Role functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -102,7 +102,7 @@ Then the User Select the banners section Role Permissions
 #And  User Click on the Save button 
 Then The Added Sales Manager Role should be displayed in the roles list
 
-@Roles1234
+@Roles
 Scenario: Verify the Add Sales Head Role functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -118,7 +118,7 @@ And User Select the Sale Head approved or Reject permission
 #And  User Click on the Save button 
 Then The Added Sales Head Role should be displayed in the roles list
 
-@Roles1234
+@Roles
 Scenario: Verify the Add Sales Person Role functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -174,5 +174,18 @@ And User Click on the Apply button
 And Verify whether the page is navigating to the Update Role or not on clicking the Edit button
 When Update the Reporting manager
 #And User Click on the Update button
+
+@Roles_Pagenation
+Scenario: Verify the Pagination functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Security Module
+And User Click on the Roles screen
+Then By default ten records are displayed
+And check whether it is navigating to the after page records when the user clicks on Next page icon
+And check whether it is navigating to the before page records when the user clicks on before page icon
+And check whether it is displaying the last page records when the user clicks on last page icon
+
 
 

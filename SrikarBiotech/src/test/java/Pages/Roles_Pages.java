@@ -431,8 +431,7 @@ public class Roles_Pages extends DriverFactory{
 		
 		utilities.webDriverWait(driver,Update_button);		
 		driver.findElement(Update_button).click();
-		utilities.MediumWait(driver);
-		
+		utilities.MediumWait(driver);		
 	}
 
 	public void Validation_message_should_be_displayed_without_select_the_permissions() throws Throwable {
@@ -486,8 +485,7 @@ public void User_Add_the_Activity_rights_for_Create_Orders_and_View_Orders() thr
 	
 	utilities.webDriverWait(driver,Create_Order);		
 	driver.findElement(Create_Order).click();
-	
-	
+		
 }
 
 public void User_Add_the_Activity_rights_for_Create_Collections_and_View_Collections() throws Throwable {
