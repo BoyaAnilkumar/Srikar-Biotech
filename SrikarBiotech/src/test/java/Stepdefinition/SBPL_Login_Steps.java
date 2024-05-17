@@ -92,6 +92,9 @@ public class SBPL_Login_Steps {
 	 public void User_click_on_the_back_to_Signin() throws Throwable {
 		 loginpages.User_click_on_the_back_to_Signin();
 	 }
-	 
+	 @Then ("^the Validation message should be displayed$")
+	 public void the_Validation_message_should_be_displayed() throws Throwable {
+		 loginpages.the_Validation_message_should_be_displayed();
+	 }
 	 
 }

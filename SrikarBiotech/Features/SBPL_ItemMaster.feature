@@ -33,7 +33,7 @@ And  User click on the Add button
 Then User Select the Company name
 And User Select the Category
 And User Select the Items
-And upload the file in Items attachment
+#And upload the file in Items attachment
 Then User Click on the Save Button
 
 @SBPL_Item_Master

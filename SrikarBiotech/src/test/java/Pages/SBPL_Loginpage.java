@@ -159,10 +159,15 @@ public class SBPL_Loginpage extends DriverFactory{
 	public void User_click_on_the_back_to_Signin() throws Throwable {
 			utilities.webDriverWait(driver, BackTo_SignIn);
 			driver.findElement(BackTo_SignIn).click();
+			
 	}
 
-		
+	public void the_Validation_message_should_be_displayed() {
+		WebElement Toaster = driver.findElement(Validation_Text);
+		String Toaster1 = Toaster.getText();
+		System.out.println("The toaster msg is displayed: " + Toaster1);
+	}
 
-		
+	
 
 }
