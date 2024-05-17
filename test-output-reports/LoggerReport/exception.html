@@ -108,12 +108,12 @@
 				<div class="p-2 px-3 text-muted text-sm">Tags</div>
 					<div class="list-item attr">
 						<div class="list-body">
-							<a href="#" class="item-title _500">org.openqa.selenium.ElementNotInteractableException</a>
+							<a href="#" class="item-title _500">org.openqa.selenium.ElementClickInterceptedException</a>
 							<div class="item-except text-sm text-muted h-1x">
 								1 tests
 							</div>
 							<div class="tc d-none">
-								<h5 class="mb-4">org.openqa.selenium.ElementNotInteractableException</h5>
+								<h5 class="mb-4">org.openqa.selenium.ElementClickInterceptedException</h5>
 								<table class="table">
 									<thead><tr>
 										<th id="status-col"></th>
@@ -125,10 +125,10 @@
 									</tr></thead>
 									<tbody>
 	
-<tr class="s-fail" test-id="32" parent-id="1">
+<tr class="s-fail" test-id="16" parent-id="1">
 	<td><span class="w-32 avatar circle fail"><span class="badge">fail</span></span></td>
-	<td class="_600">And User click on the Save Button <br/><span class="text-muted text-sm">Verify the change Warehouse functionality</span></td>
-	<td>0h 1m 55s+350msc</td>
+	<td class="_600">Then The User Select the Reject Status <br/><span class="text-muted text-sm">Verify the Order History when the status is Rejected</span></td>
+	<td>0h 0m 1s+163msc</td>
 	<td></td>
 	<td>
 	</td>
@@ -137,13 +137,13 @@
 <tr class="details">
 	<td colspan="5">
 		
-		<textarea disabled class="code-block">org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=124.0.6367.119)
+		<textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <select _ngcontent-ng-c325268999="" data-toggle="select" formcontrolname="statusId" class="form-control ng-untouched ng-pristine ng-valid">...</select> is not clickable at point (499, 406). Other element would receive the click: <div class="p-multiselect-header ng-star-inserted">...</div>
+  (Session info: chrome=125.0.6422.61)
 Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+System info: host: 'DESKTOP-H2GTC4A', ip: '192.168.1.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.119, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61559}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6382c21c609e28c128fa2ce4d42f146b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.61, chrome: {chromedriverVersion: 125.0.6422.60 (3ac3319bff9f..., userDataDir: C:\Users\CALIBR~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53777}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4bd998c9ba5e27bfb218415b240c76e3
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -157,9 +157,9 @@ Session ID: 6382c21c609e28c128fa2ce4d42f146b
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at Pages.EAPL_Confirm_Orders_Pages.User_click_on_the_Save_Button(EAPL_Confirm_Orders_Pages.java:270)
-	at Stepdefinition.EAPL_ConfirmOrders.User_click_on_the_Save_Button(EAPL_ConfirmOrders.java:55)
-	at ✽.User click on the Save Button(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_ViewReturnOrder.feature:55)
+	at Pages.EAPL_Confirm_Orders_Pages.The_User_Select_the_Reject_Status(EAPL_Confirm_Orders_Pages.java:694)
+	at Stepdefinition.EAPL_ConfirmOrders.The_User_Select_the_Reject_Status(EAPL_ConfirmOrders.java:151)
+	at ✽.The User Select the Reject Status(file:///C:/Users/Calibrage24/git/repository/EldoradoAgritech/Features/EAPL_ConfirmOrders.feature:122)
 </textarea>
 	</td>
 </tr>
@@ -187,7 +187,7 @@ Session ID: 6382c21c609e28c128fa2ce4d42f146b
 						            </div>
 									<ul class="nav nav-xs flex-row no-border pull-right">
 <li><a href="#" class="b-l"><span class="badge badge-pull">ExtentReports</span></a></li>
-<li><a href="#" class="b-l"><span class="badge badge-pull">May 6, 2024 02:36:26 pm</span></a></li>
+<li><a href="#" class="b-l"><span class="badge badge-pull">May 17, 2024 11:40:54 am</span></a></li>
 <li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
 								    </ul>
 								</div>

@@ -34,7 +34,7 @@ And Click on the Search button
 And The Search related data is displayed in the main grid
 
 
-@EAPL_Confirm_Orders1
+@EAPL_Confirm_Orders123
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -49,7 +49,7 @@ And Select the From date and ToDate
 And Click on the Search button
 And Click on the Warehouse Icon
 Then User Select the Warehouse in the Change Warehouse page
-#And User click on the Save Button
+And User click on the Save Button
 Then User should receive a confirmation message that the Warehouse has been changed
 
 @EAPL_Confirm_Orders
@@ -71,7 +71,7 @@ And Click on the Accept button
 When User enter the data in Remarks field
 And Click on the save button
 
-@EAPL_Confirm_Orders1
+@EAPL_Confirm_Orders
 Scenario: Verify the Order Rejected functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -108,6 +108,26 @@ And Verify the Party details and Order details are displayed or not
 And Verify the displayed Order ID is correct or not
 And Verify the order details are displayed in the Order history page or not
 And Verify the Party details are displayed in the Order history page or not
+And User Click on the Back button 
+
+@SBPL_Confirm_Orders
+Scenario: Verify the Order History when the status is Rejected
+Given User navigates to Login page
+When User Select the Eldorado Agritech Company
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Confirm Orders under the Orders Module
+#Then User Select the State 
+#And User Select the Sales Person
+Then The User Select the Reject Status 
+And User Select the From date and ToDate
+And Click on the Search button
+And Click on the Order history Icon
+And Verify the Party details and Order details are displayed or not
+And Verify the displayed Order ID is correct or not
+And Verify the order details are displayed in the Order history page or not
+And Verify the Party details are displayed in the Order history page or not
+And The Status is displayed as Pending to Rejected or not
 And User Click on the Back button 
 @EAPL_Confirm_Orders
 Scenario: Verification of the expansion grid functionality

@@ -34,7 +34,7 @@ import util.Utilities;
 		By Warehouse_Update       = By.xpath("//h2[text()='Warehouse Updated Successfully']");
 		By Warehouse_Upd_failed   = By.xpath("//h2[text()='Updation Failed']");
 		By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
-		By Save_button            = By.xpath("(//button[text()='Save'])[6]");
+		By Save_button1            = By.xpath("//button[text()='Save']");
 	    By Check_Box              = By.xpath("(//td/span/p-tablecheckbox/div/div[@role='checkbox'])[1]");
 		By Accept_Button          = By.xpath("//button[@title='Accepted']");
 		By Accept_Remarks_field   = By.xpath("(//textarea[@placeholder='Enter Remarks'])[2]");
@@ -88,6 +88,8 @@ import util.Utilities;
 	    By Total_Price_Value      = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[7]"); 
 	    By Select_Warehouse       = By.xpath("//small[text()='Warehouse']/../p[@class='mb-0 text-secondary font-weight-bold']");
 	    By Up_Warehouse           = By.xpath("//select[@class='form-control ng-dirty ng-touched ng-valid']");
+		By Order_Status_Pending   = By.xpath("//h3[text()='Pending']");
+		By Order_Status_Reject    = By.xpath("//h3[@class='c-stepper__title text-secondary']");
 		
 		public void User_click_on_the_Confirm_Orders_under_the_Orders_Module() throws Throwable {
 		utilities.webDriverWait(driver, Confirm_Orders);	
@@ -97,7 +99,7 @@ import util.Utilities;
 
 		public void User_Select_the_State() throws Throwable {
 			driver.findElement(State).click();
-			driver.findElement(State_text_field).sendKeys("Gujarat");
+			driver.findElement(State_text_field).sendKeys("Bihar");
 			driver.findElement(Select_States).click();
 			utilities.MinimumWait(driver);
 //			Robot r = new Robot();
@@ -115,7 +117,7 @@ import util.Utilities;
 		public void User_Select_the_Sales_Person() throws Throwable {
 			driver.findElement(Sales_Person).click();
 			Thread.sleep(2000);
-			driver.findElement(Sales_Person_field).sendKeys("Super");
+			driver.findElement(Sales_Person_field).sendKeys("Anjaneyulu -AP");
 			driver.findElement(Select_Slp).click();
 			utilities.MinimumWait(driver);
 //			Robot r = new Robot();
@@ -192,8 +194,8 @@ import util.Utilities;
 			utilities.webDriverWait(driver, Warehouse_Icon);	
 			driver.findElement(Warehouse_Icon).click();
 			utilities.MinimumWait(driver);
-			utilities.webDriverWait(driver, Save_button);	
-			driver.findElement(Save_button).click();
+			utilities.webDriverWait(driver, Save_button1);	
+			driver.findElement(Save_button1).click();
 	
 			Boolean isPresent = driver.findElements(Warehouse_Val_Text).size()>0;
 			if (isPresent) {
@@ -221,62 +223,35 @@ import util.Utilities;
 			
 		}
 
-//		public void User_click_on_the_Save_Button() throws Throwable {
-//			utilities.webDriverWait(driver, Save_button);	
-//			driver.findElement(Save_button).click();
-//			utilities.MinimumWait(driver);
-//			Boolean isPresent1 = driver.findElements(Warehouse_Upd_failed).size()>0;
-//			if (isPresent1) {
-//				WebElement Data = driver.findElement(Warehouse_Upd_failed);
-//				String test1 = Data.getText(); 
-//				String expectedData = "Updation Failed";
-//				if (expectedData.equals(test1)) {
-//					System.out.println("Display the name is correct." + test1);
-//			
-//					driver.findElement(Warehouse_field).click();
-//					Thread.sleep(1000);
-//					utilities.MediumWait(driver);	
-//					Robot r = new Robot();
-//					r.keyPress(KeyEvent.VK_DOWN);
-//					Thread.sleep(2000);
-//					r.keyPress(KeyEvent.VK_DOWN);
-//					Thread.sleep(2000);
-//					r.keyPress(KeyEvent.VK_ENTER);
-//					Thread.sleep(2000);
-//					utilities.MinimumWait(driver);
-//					utilities.webDriverWait(driver, Save_button);	
-//					driver.findElement(Save_button).click();
-//					utilities.MinimumWait(driver);
-//				}
-//			}
-			
-//		}
 		public void User_click_on_the_Save_Button() throws Throwable {
-		    utilities.webDriverWait(driver, Save_button);
-		    driver.findElement(Save_button).click();
-		    utilities.MinimumWait(driver);
-		    WebElement data = driver.findElement(Warehouse_Upd_failed);
-		    if (data.isDisplayed() && data.getText().equals("Updation Failed")) {
-		        System.out.println("Display the validation msg is correct." + data.getText());
-		        driver.findElement(Warehouse_field).click();
-		        utilities.MediumWait(driver);
-		        for (int i = 0; i < 2; i++) {
-		            new Robot().keyPress(KeyEvent.VK_DOWN);
-		            Thread.sleep(2000);
-		        }
-		        new Robot().keyPress(KeyEvent.VK_ENTER);
-		        utilities.MinimumWait(driver);
-		        utilities.webDriverWait(driver, Save_button);
-		        driver.findElement(Save_button).click();
-		        utilities.MinimumWait(driver);
-		        WebElement Data1 = driver.findElement(Warehouse_Update);
-				String test = Data1.getText(); 
-				String expectedData1 = "Warehouse Updated Successfully";
-				if (expectedData1.equals(test)) {
-					System.out.println("Display the confirmation msg." + test);  
-		    }
+			utilities.webDriverWait(driver, Save_button1);	
+			driver.findElement(Save_button1).click();
+			utilities.MinimumWait(driver);
+			Boolean isPresent1 = driver.findElements(Warehouse_Upd_failed).size()>0;
+			if (isPresent1) {
+				WebElement Data = driver.findElement(Warehouse_Upd_failed);
+				String test1 = Data.getText(); 
+				String expectedData = "Updation Failed";
+				if (expectedData.equals(test1)) {
+					System.out.println("Display the name is correct." + test1);
+					driver.findElement(Warehouse_field).click();
+					Thread.sleep(1000);
+					utilities.MediumWait(driver);	
+					Robot r = new Robot();
+					r.keyPress(KeyEvent.VK_DOWN);
+					Thread.sleep(2000);
+					r.keyPress(KeyEvent.VK_DOWN);
+					Thread.sleep(2000);
+					r.keyPress(KeyEvent.VK_ENTER);
+					Thread.sleep(2000);
+					utilities.MinimumWait(driver);	
+					driver.findElement(Save_button1).click();
+					utilities.MinimumWait(driver);
+				}
+			}
+			
 		}
-		}
+	
 		public void User_Select_the_Status() throws Throwable {
 			driver.findElement(Status).click();
 			Thread.sleep(1000);
@@ -471,8 +446,7 @@ import util.Utilities;
 	} else {
 	 System.out.println("The No.of Items are not displayed.");
 	}
-	 
-	 
+	 	 
 	String Total_amount1 = "Total Amount"; 
 	WebElement Total_amount2 = driver.findElement(Total_amount);
 	WebElement Totalamount = driver.findElement(Totalamount_value);
@@ -691,28 +665,6 @@ import util.Utilities;
 
 	public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable {
 		
-		if ((Up_Warehouse.equals(Select_Warehouse))) {
-			System.out.println("Warehouse updation failed.");
-		
-		
-			driver.findElement(Warehouse_field).click();
-
-			utilities.MinimumWait(driver);
-			Robot r = new Robot();
-			r.keyPress(KeyEvent.VK_DOWN);
-			Thread.sleep(2000);
-			r.keyPress(KeyEvent.VK_DOWN);
-			Thread.sleep(2000);
-			r.keyPress(KeyEvent.VK_ENTER);
-			Thread.sleep(2000);
-			utilities.MinimumWait(driver);
-			
-			utilities.webDriverWait(driver, Save_button);	
-			driver.findElement(Save_button).click();
-		}	
-		
-else {	
-	
 		Boolean isPresent1 = driver.findElements(Warehouse_Update).size()>0;
 		if (isPresent1) {
 			WebElement Data = driver.findElement(Warehouse_Update);
@@ -725,5 +677,41 @@ else {
 			}
 }
 }
+
+	public void The_Status_is_displayed_as_Pending_to_Rejected_or_not() {
+		WebElement data = driver.findElement(Order_Status_Pending);
+		String dataText = data.getText();
+		System.out.println("The Order Status is displayed as Pending: " + dataText);
+
+		WebElement Status = driver.findElement(Order_Status_Reject);
+		String Statustext = Status.getText();
+		System.out.println("The Order Status is displayed as Rejceted: " + Statustext);
+
+		
+	}
+
+	public void The_User_Select_the_Reject_Status() throws Throwable {
+		driver.findElement(Status).click();
+		Thread.sleep(1000);
+		utilities.MediumWait(driver);	
+		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		utilities.MinimumWait(driver);	
+		
+		
 	}
 	}
+	

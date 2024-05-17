@@ -19,6 +19,14 @@ import io.cucumber.java.en.When;
 		public void The_View_Return_Order_Screen_is_displayed_or_not() throws Throwable{
 			View_Return_Order_Pages.The_View_Return_Order_Screen_is_displayed_or_not();
 		}
+		 @And ("^The User Click on the Warehouse Icon$")
+		  public void The_User_Click_on_the_Warehouse_Icon() throws Throwable{
+			 View_Return_Order_Pages.The_User_Click_on_the_Warehouse_Icon();
+		  }
+		 @And ("^The User click on the Save Button$")
+		  public void The_User_click_on_the_Save_Button() throws Throwable{
+			 View_Return_Order_Pages.The_User_click_on_the_Save_Button();
+		  }
 		@And ("^User Select the From date and To Date$")
 		public void User_Select_the_From_date_and_To_Date() throws Throwable{
 			View_Return_Order_Pages.User_Select_the_From_date_and_To_Date();

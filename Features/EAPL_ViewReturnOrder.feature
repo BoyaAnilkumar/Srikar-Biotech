@@ -35,7 +35,7 @@ And User Select the From date and To Date
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@EAPL_View_Return_Order1
+@EAPL_View_Return_Order
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -50,9 +50,10 @@ When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
-And Click on the Warehouse Icon
+And The User Click on the Warehouse Icon
 Then User Select the Warehouse in the Change Warehouse page
-And User click on the Save Button
+And The User click on the Save Button
+Then User should receive a confirmation message that the Warehouse has been changed
 
 @EAPL_View_Return_Order
 Scenario: Verification of the expansion grid data

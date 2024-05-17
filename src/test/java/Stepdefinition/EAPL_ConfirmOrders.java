@@ -142,6 +142,13 @@ import io.cucumber.java.en.When;
 	  public void Verify_the_Order_Items_are_displayed_in_the_expansion_grid_or_not() throws Throwable {
 		  Confirm_Orders_Pages.Verify_the_Order_Items_are_displayed_in_the_expansion_grid_or_not();
 	  }
-	
+	  @And ("^The Status is displayed as Pending to Rejected or not$")
+	  public void The_Status_is_displayed_as_Pending_to_Rejected_or_not() throws Throwable{
+		  Confirm_Orders_Pages.The_Status_is_displayed_as_Pending_to_Rejected_or_not();
+	  }
+	  @Then ("^The User Select the Reject Status$") 
+	  public void The_User_Select_the_Reject_Status() throws Throwable{
+		  Confirm_Orders_Pages.The_User_Select_the_Reject_Status();
+	  }
 
 }
