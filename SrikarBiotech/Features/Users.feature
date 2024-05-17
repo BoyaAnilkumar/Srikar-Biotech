@@ -17,8 +17,8 @@ And  User click on the Security Module
 And  User Click on the Users screen
 
 @Users
- Scenario: Validate Add user without enter the data
- Given User navigates to Login page
+Scenario: Validate Add user without enter the data
+Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 
 And  User click on the Security Module
@@ -51,7 +51,8 @@ And User select the Warehouse
 Then User enter the SBPL. Slp code
 Then User enter the EAPL. Slp code
 #And Click on the Save button
-And Click on the Cancel button
+
+
 @Users
 Scenario: Verifying the Cancel button functionality
 Given User navigates to Login page
@@ -62,6 +63,7 @@ And  User Click on the Users screen
 And  User click on the Add button
 And Click on the Cancel button
 Then The Users screen should be displayed
+
 @Users
 Scenario: Verification of the Added user is displayed in the grid 
 Given User navigates to Login page
@@ -89,6 +91,7 @@ When Update the Username
 Then Update the SBPL Slp Code and EAPL Slp Code
 #And Click on the Submit button
 #And The Update Successfull message is displayed or not
+
 @Users
 Scenario: Verify the Delete user functionality
 Given User navigates to Login page
@@ -101,6 +104,7 @@ When User enter the data in filter field
 And Click on the Apply button
 #And Click on the Delete icon
 #And Validation message is displayed or not
+
 @Users
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
@@ -112,3 +116,15 @@ Then By default ten records are displayed
 And check whether it is navigating to the after page records when the user clicks on Next page icon
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
+
+@Users
+Scenario: Verify the Search field functionality
+Given User navigates to Login page
+When User enters the username and password
+And User click on the signIn 
+And User click on the Security Module
+And  User Click on the Users screen
+Given The User enter the data in the Search field
+And The Search related Role data is displayed in the grid
+
+

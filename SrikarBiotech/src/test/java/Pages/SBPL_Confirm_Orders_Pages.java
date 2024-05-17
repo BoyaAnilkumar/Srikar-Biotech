@@ -72,6 +72,8 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	By Proprietor_Name_text   = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[9]");
 	By GST_value              = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[10]");
 	By Address_Text           = By.xpath("(//p[@class='mb-0 text-secondary font-weight-bold'])[11]");
+	By Order_Status_Pending   = By.xpath("//h3[text()='Pending']");
+	By Order_Status_Reject    = By.xpath("//h3[@class='c-stepper__title text-secondary']");
 //Expansion Icon
 	By Expansion_Icon         = By.xpath("(//button[@class='p-element p-button-text p-button-rounded p-button-plain p-button p-component p-button-icon-only'])[1]");
 	By Product_Name           = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[1]");
@@ -88,6 +90,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
     By GST_Value              = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[5]"); 
     By Invoice_Details_Data   = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[6]"); 
     By Total_Price_Value      = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[7]"); 
+    By Export_button          = By.xpath("//button[@class='btn btn-sm btn-info ng-star-inserted']");
 	
 	public void User_click_on_the_Confirm_Orders_under_the_Orders_Module() throws Throwable {
 	utilities.webDriverWait(driver, Confirm_Orders);	
@@ -668,4 +671,46 @@ public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_be
 			}
 }
 }
+
+public void The_User_Select_the_Reject_Status() throws Throwable {
+	driver.findElement(Status).click();
+	Thread.sleep(1000);
+	utilities.MediumWait(driver);	
+	Robot r = new Robot();
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_DOWN);
+	Thread.sleep(2000);
+	r.keyPress(KeyEvent.VK_ENTER);
+	Thread.sleep(2000);
+	utilities.MinimumWait(driver);	
+	
+}
+
+public void The_Status_is_displayed_as_Pending_to_Rejected_or_not() {
+	WebElement data = driver.findElement(Order_Status_Pending);
+	String dataText = data.getText();
+	System.out.println("The Order Status is displayed as Pending: " + dataText);
+
+	WebElement Status = driver.findElement(Order_Status_Reject);
+	String Statustext = Status.getText();
+	System.out.println("The Order Status is displayed as Rejceted: " + Statustext);
+
+	
+}
+
+public void User_Click_on_the_Export_button() throws Throwable {
+	utilities.webDriverWait(driver, Export_button);
+	driver.findElement(Export_button).click();
+	
+}
+
 }

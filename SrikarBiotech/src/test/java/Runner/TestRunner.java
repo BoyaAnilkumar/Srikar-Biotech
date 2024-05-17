@@ -1,5 +1,7 @@
 package Runner;
 
+
+
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
@@ -12,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 				  glue="Stepdefinition",
 				  features = "Features",
 				  monochrome = true, 
-                  tags = "@Roles_Pagenation")
+                  tags = "@SBPL_View_Collection")
 
 
 
@@ -21,6 +23,7 @@ public class TestRunner {
 
 
 }
+
 
 
 

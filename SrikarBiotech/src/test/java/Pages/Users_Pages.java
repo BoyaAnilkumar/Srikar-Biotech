@@ -52,6 +52,7 @@ public class Users_Pages extends DriverFactory{
     By OrderID1               = By.xpath("(//p[contains(@class,'mb-0 text-secondary')]//b)[1]");
     By OrderID2               = By.xpath("((//tr[@class='ng-star-inserted']//td)[3]//span)[1]");
     By Users                  = By.xpath("//h4[text()='Users List']");
+    By Search_field       = By.xpath("//input[@placeholder='Search Keyword']");
 
   public void User_click_on_the_Security_Module() throws Throwable{
 	  utilities.webDriverWait(driver,Security_List );		
@@ -362,6 +363,13 @@ public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding
         System.out.println("EAPL slp Code Field is not displayed. Validation failed.");
     }
 
+}
+
+public void The_User_enter_the_data_in_the_Search_field() throws Throwable {
+	utilities.webDriverWait(driver,Search_field );	
+	driver.findElement(Search_field).sendKeys("Ramya");
+	utilities.MediumWait(driver);
+	
 }
 
 

@@ -81,6 +81,14 @@ public class SBPL_Confirm_Orders_Steps {
   public void The_User_Select_the_Status() throws Throwable{
 	  Confirm_Orders_Pages.The_User_Select_the_Status();
   }
+  @And ("^The Status is displayed as Pending to Rejected or not$")
+  public void The_Status_is_displayed_as_Pending_to_Rejected_or_not() throws Throwable{
+	  Confirm_Orders_Pages.The_Status_is_displayed_as_Pending_to_Rejected_or_not();
+  }
+  @Then ("^The User Select the Reject Status$") 
+  public void The_User_Select_the_Reject_Status() throws Throwable{
+	  Confirm_Orders_Pages.The_User_Select_the_Reject_Status();
+  }
   @And ("^Click on the Order history Icon$")
   public void Click_on_the_Order_history_Icon() throws Throwable{
 	  Confirm_Orders_Pages.Click_on_the_Order_history_Icon();
@@ -140,5 +148,9 @@ public class SBPL_Confirm_Orders_Steps {
   @Then ("^User should receive a confirmation message that the Warehouse has been changed$")
   public void User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed() throws Throwable{
 	  Confirm_Orders_Pages.User_should_receive_a_confirmation_message_that_the_Warehouse_has_been_changed();
+  }
+  @And ("^User Click on the Export button$")
+  public void User_Click_on_the_Export_button() throws Throwable {
+	  Confirm_Orders_Pages.User_Click_on_the_Export_button();
   }
 }

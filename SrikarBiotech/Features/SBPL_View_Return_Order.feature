@@ -33,24 +33,6 @@ And Click on the Search button
 And The Search related data is displayed in the main grid
 
 @SBPL_View_Return_Order
-Scenario: Verify the change Warehouse functionality
-Given User navigates to Login page
-When User enters the username and password
-And  User click on the signIn 
-And  User click on the View Return Order under the Orders Module
-And The View Return Order Screen is displayed or not
-Then User Select the State 
-And User Select the Sales Person
-When User enter the partyname
-And Select the Status
-And User Select the From date and To Date
-And Click on the Search button
-And Click on the Warehouse Icon
-Then User Select the Warehouse in the Change Warehouse page
-And User click on the Save Button
-Then User should receive a confirmation message that the Warehouse has been changed
-
-@SBPL_View_Return_Order
 Scenario: Verification of the expansion grid data
 Given User navigates to Login page
 When User enters the username and password
@@ -68,7 +50,25 @@ And Verify the Return Order expansion grid header section names are displayed or
 And Verify the Return Order Items are displayed in the expansion grid or not
 
 @SBPL_View_Return_Order
-Scenario: Verify the Item Partial received functionality
+Scenario: Verify the change Warehouse functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And The View Return Order Screen is displayed or not
+Then User Select the State 
+And User Select the Sales Person
+When User enter the partyname
+And Select the Status
+And User Select the From date and To Date
+And Click on the Search button
+And Click on the Warehouse Icon
+Then User Select the Warehouse in the Change Warehouse page
+And The User click on the Save Button
+Then User should receive a confirmation message that the Warehouse has been changed
+
+@SBPL_View_Return_Order
+Scenario: Verify the Status Shipped to Item Partial received functionality
 Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 
@@ -94,7 +94,7 @@ When The User enter the data in all field and Click on the Save button Partial r
 #And Click on the Close Icon
 
 @SBPL_View_Return_Order
-Scenario: Verify the Item Reject functionality
+Scenario: Verify the Status Shipped to Item Reject functionality
 Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 
@@ -118,7 +118,7 @@ Then The Reject Successfull validation message is displayed
 #And Click on the Close Icon in the Reject details page
 
 @SBPL_View_Return_Order
-Scenario: Verify the Item Received functionality
+Scenario: Verify the Status Shipped to Item Received functionality
 Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 
@@ -169,6 +169,14 @@ And The User Click on the Save button
 And User enter the data in all fields and Click on the save button the credit note saved successfull validation text is displayed 
 #And User Click on the Close button
 #And User Click on the Close Icon
+
+@SBPL_View_Return_Order
+Scenario: Verify the Export button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Click on the Export button
 
 @SBPL_View_Return_Order
 Scenario: Verify the Pagination functionality

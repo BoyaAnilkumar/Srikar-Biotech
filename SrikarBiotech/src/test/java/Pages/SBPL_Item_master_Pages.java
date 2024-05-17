@@ -4,7 +4,11 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.DriverFactory;
 import util.Utilities;
@@ -21,7 +25,7 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 	By Items_click	           = By.xpath("//div[@class='p-element p-multiselect-label-container']");
 	By Text_field              = By.xpath("//input[@role='textbox']");
 	By Select_Items	           = By.xpath("//ul/p-multiselectitem/li");
-	By Browse_File	           = By.xpath("//label[@for='fileDropRef']");
+	By Browse_File	           = By.xpath("//label[text()='Browse for file']");
 	By Filter_Text_field       = By.xpath("//input[@class='p-inputtext p-component p-element ng-star-inserted']");
 	By filter_icon             = By.xpath("(//p-table/div/div/table/thead/tr/th/p-columnfilter)[2]");
 	By Filter_Clear            = By.xpath("//span[text()='Clear']");
@@ -79,11 +83,45 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		utilities.MediumWait(driver);
 	}
 	public void upload_the_file_in_Items_attachment() throws Throwable {
-		utilities.webDriverWait(driver, Browse_File);
+//		utilities.webDriverWait(driver, Browse_File);
+//		//driver.findElement(Browse_File).click();
+//		utilities.MinimumWait(driver);
+//		WebElement uploadField = driver.findElement(Browse_File);
+//
+//        // Provide the path of the file to upload
+//        String filePath = "D:\\\\Srikar Images";
+//        uploadField.sendKeys(filePath);
+		try {
+		By browseFile = By.id("Browse_File"); // Replace with the correct locator for your input element
+
 		driver.findElement(Browse_File).click();
-		utilities.MinimumWait(driver);
+      
+		FluentWait<WebDriver> wait = null;
+		@SuppressWarnings("null")
+		WebElement uploadField = wait.until(ExpectedConditions.elementToBeClickable(browseFile));
+
+        
+        String filePath = "D:\\Srikar Images\\1 - Acetop.jpg"; // Ensure the path and file name are correct
+        uploadField.sendKeys(filePath);
+
+        
+        Thread.sleep(2000); // Consider removing or adjusting as needed
+
+       
+        By uploadButton = By.id("upload-button"); // Replace with the correct locator for the upload button
+        wait.until(ExpectedConditions.elementToBeClickable(uploadButton)).click();
+
+       
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    } finally {
+        // Close the browser
+        driver.quit();
+    }
 		
-	}
+}
+
+    
 	public void User_enter_the_Data_in_the_filter_field() throws Throwable {
 		utilities.webDriverWait(driver, Filter_Text_field);
 		driver.findElement(Filter_Text_field).sendKeys("Pesticide");

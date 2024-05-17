@@ -2,6 +2,7 @@ package Stepdefinition;
 
 import Pages.Users_Pages;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -140,4 +141,9 @@ public class Users_Steps {
  public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed() throws Throwable {
 	 Users.the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed();
  }
+ @Given ("^The User enter the data in the Search field$")
+ public void The_User_enter_the_data_in_the_Search_field() throws Throwable {
+	 Users.The_User_enter_the_data_in_the_Search_field(); 
+ }
+ 
 }

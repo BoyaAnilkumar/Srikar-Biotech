@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="338.476">
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Validate login is successful with valid credentials" time="23.988">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+Then User navigated to the home page........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Validate user click on the View Collection screen in menu" time="24.27">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the filter Functionality" time="54.462">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+When The User enter the partyname...........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And The Search related data is displayed in the grid........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the Order Accepted functionality" time="64.673">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+Then User Click on the Order Check box......................................passed
+And Click on the Received button............................................passed
+When The user enter the data in Reason field................................passed
+And User Click on the save button...........................................passed
+And Verify the Collection Accepted Validation msg is displayed or not.......passed
+And Verify the Status is updated or not.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="verifying both the column filters functionality and sorting functionality of a table." time="34.387">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And Verify Column names are displayed or not................................passed
+And Verify the Collection details grid headers and Sorting..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the User able to view the Collection attachment" time="57.738">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+Then Select the State.......................................................passed
+And The User Select the Sales Person........................................passed
+When The User enter the partyname...........................................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+And Click on the collection View Icon in the Action Column..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the Export button functionality" time="26.984">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And User Click on the Export button.........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="feature to Test the View Collection Screen functionality" name="Verify the Pagination functionality" time="51.604">
+        <system-out><![CDATA[Given User navigates to Login page..........................................passed
+When User enters the username and password..................................passed
+And User click on the signIn................................................passed
+And User click on the View Collection under the Orders Module...............passed
+And The View Collection Screen is displayed or not..........................passed
+And The user Select the From date and ToDate................................passed
+And The user Click on the Search button.....................................passed
+Then By default ten records are displayed...................................passed
+And check whether it is navigating to the after page records when the user clicks on Next page icon.passed
+And check whether it is navigating to the before page records when the user clicks on before page icon.passed
+And check whether it is displaying the last page records when the user clicks on last page icon.passed
+And check whether it is displaying the first page records when the user clicks on first page icon.passed
+]]></system-out>
+    </testcase>
+</testsuite>

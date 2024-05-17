@@ -91,6 +91,14 @@ And The user Click on the Search button
 And Click on the collection View Icon in the Action Column
 
 @SBPL_View_Collection
+Scenario: Verify the Export button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Click on the Export button
+
+@SBPL_View_Collection
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
 When User enters the username and password

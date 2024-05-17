@@ -31,6 +31,7 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 	By Remarks1                 = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[6]");
 	By Status1                  = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[7]");
 	By Price1                   = By.xpath("((//tr[@class='ng-star-inserted'])[4]//th)[8]");
+	
 //Expansion grid	
 	By Item_Name                = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[2]");      
 	By Category_Names           = By.xpath("((//tr[@class='ng-star-inserted'])[5]//td)[3]");      
@@ -621,6 +622,39 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		
 	}
 
+	}
+	By Warehouse_field        = By.xpath("(//select[@formcontrolname='whsCode'])[2]");
+	By Warehouse_Upd_failed   = By.xpath("//h2[text()='Updation Failed']");
+	By Warehouse_SaveButton   = By.xpath("(//button[text()='Save'])[6]");
+	public void The_User_click_on_the_Save_Button() throws Throwable {
+		utilities.webDriverWait(driver, Warehouse_SaveButton);	
+		driver.findElement(Warehouse_SaveButton).click();
+		utilities.MinimumWait(driver);
+		Boolean isPresent1 = driver.findElements(Warehouse_Upd_failed).size()>0;
+		if (isPresent1) {
+			WebElement Data = driver.findElement(Warehouse_Upd_failed);
+			String test1 = Data.getText(); 
+			String expectedData = "Updation Failed";
+			if (expectedData.equals(test1)) {
+				System.out.println("Display the name is correct." + test1);
+			
+				driver.findElement(Warehouse_field).click();
+				Thread.sleep(1000);
+				utilities.MediumWait(driver);	
+				Robot r = new Robot();
+				r.keyPress(KeyEvent.VK_DOWN);
+				Thread.sleep(2000);
+				r.keyPress(KeyEvent.VK_DOWN);
+				Thread.sleep(2000);
+				r.keyPress(KeyEvent.VK_ENTER);
+				Thread.sleep(2000);
+				utilities.MinimumWait(driver);
+				utilities.webDriverWait(driver, Warehouse_SaveButton);	
+				driver.findElement(Warehouse_SaveButton).click();
+				utilities.MinimumWait(driver);
+			}
+		}
+		
 	}
 
 

@@ -30,7 +30,7 @@ And Select the From date and ToDate
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@SBPL_Confirm_Orders123
+@SBPL_Confirm_Orders
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -100,6 +100,25 @@ And Verify the displayed Order ID is correct or not
 And Verify the order details are displayed in the Order history page or not
 And Verify the Party details are displayed in the Order history page or not
 And User Click on the Back button 
+
+@SBPL_Confirm_Orders
+Scenario: Verify the Order History when the status is Rejected
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Confirm Orders under the Orders Module
+Then User Select the State 
+And User Select the Sales Person
+Then The User Select the Reject Status 
+And User Select the From date and ToDate
+And Click on the Search button
+And Click on the Order history Icon
+And Verify the Party details and Order details are displayed or not
+And Verify the displayed Order ID is correct or not
+And Verify the order details are displayed in the Order history page or not
+And Verify the Party details are displayed in the Order history page or not
+And The Status is displayed as Pending to Rejected or not
+And User Click on the Back button 
 @SBPL_Confirm_Orders
 Scenario: Verification of the expansion grid functionality
 Given User navigates to Login page
@@ -116,6 +135,14 @@ And Click on the Search button
 And Click on the Order Expansion Icon
 And Verify the expansion grid header section names are displayed or not
 And Verify the Order Items are displayed in the expansion grid or not
+@SBPL_Confirm_Orders
+Scenario: Verify the Export button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Confirm Orders under the Orders Module
+And User Click on the Export button
+
 @SBPL_Confirm_Orders
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page

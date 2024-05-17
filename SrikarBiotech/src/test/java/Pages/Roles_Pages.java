@@ -1,14 +1,13 @@
 package Pages;
 
+import static org.junit.Assert.assertTrue;
+
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.util.List;
-import java.util.NoSuchElementException;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,7 +16,6 @@ import util.DriverFactory;
 import util.Utilities;
 
 public class Roles_Pages extends DriverFactory{
-	private static final Object SuperAdmin = null;
 
 	Utilities utilities = new Utilities();
 
@@ -86,11 +84,15 @@ public class Roles_Pages extends DriverFactory{
     By CheckBoxes         = By.xpath("(//div[@class='card-body'])[2]//input[@type='checkbox']");
     By Req_Permission     = By.xpath("//h2[text()='Atleast one permission is required']");
     
-    By table_grid   = By.xpath("//tbody[@class='p-element p-datatable-tbody']");   
+    By table_grid         = By.xpath("//tbody[@class='p-element p-datatable-tbody']");   
     By Super_Admin        = By.xpath("(//span[text()=' SuperAdmin'])[1]");
     By Sales_manager      = By.xpath("(//span[text()=' Sales Manager'])[2]");
     By Sales_head         = By.xpath("(//span[text()=' Sales Head'])[1]");
     By Sales_Person       = By.xpath("(//span[text()=' Sales Person'])[1]");
+    
+    By Search_field       = By.xpath("//input[@placeholder='Search Keyword']");
+
+ 
  
 	public void User_Click_on_the_Roles_screen() throws Throwable {
 		 utilities.webDriverWait(driver,Roles );		
@@ -114,6 +116,7 @@ public class Roles_Pages extends DriverFactory{
 		driver.findElement(Name_field).sendKeys("Super Admin");
 		utilities.MediumWait(driver);
 	}
+	
 	public void User_Select_the_Reporting_manager() throws Throwable {
 		driver.findElement(Reporting_manager).click();
 		Robot r = new Robot();
@@ -469,42 +472,6 @@ public void The_Added_Super_Amin_Role_should_be_displayed_in_the_roles_list() th
 	}
 }
 
-public void User_Select_the_Sale_Head_approved_or_Reject_permission() throws Throwable {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("window.scrollBy(0,500)", "");
-	utilities.webDriverWait(driver,Sale_Approve_Reject);		
-	driver.findElement(Sale_Approve_Reject).click();
-	
-}
-
-public void User_Add_the_Activity_rights_for_Create_Orders_and_View_Orders() throws Throwable {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("window.scrollBy(0,500)", "");
-	utilities.webDriverWait(driver,View_Order);		
-	driver.findElement(View_Order).click();
-	
-	utilities.webDriverWait(driver,Create_Order);		
-	driver.findElement(Create_Order).click();
-		
-}
-
-public void User_Add_the_Activity_rights_for_Create_Collections_and_View_Collections() throws Throwable {
-	utilities.webDriverWait(driver,View_Collection);		
-	driver.findElement(View_Collection).click();
-	
-	utilities.webDriverWait(driver,Create_Collection);		
-	driver.findElement(Create_Collection).click();
-	
-}
-
-public void User_Add_the_Activity_rights_for_Create_Return_Orders_and_View_Return_Orders() throws Throwable {
-	utilities.webDriverWait(driver,View_return);		
-	driver.findElement(View_return).click();
-	
-	utilities.webDriverWait(driver,Create_Return);		
-	driver.findElement(Create_Return).click();
-	
-}
 
 public void The_User_enter_the_data_in_Name_field() throws Throwable {
 	utilities.webDriverWait(driver,Name_field );	
@@ -519,59 +486,46 @@ public void The_User_enter_the_data_in_the_Name_field() throws Throwable {
 	utilities.MediumWait(driver);
 }
 
-public void User_enter_the_data_in_the_Name_field() throws Throwable {
+public void User_enter_the_data_in_the_Name_field(String Name)throws Throwable {
 	utilities.webDriverWait(driver,Name_field );	
 	driver.findElement(Name_field).sendKeys("Sales Person");
 	utilities.MediumWait(driver);
 	
 }
 
-public void The_Added_Sales_Manager_Role_should_be_displayed_in_the_roles_list() throws Throwable {
-	utilities.webDriverWait(driver, table_grid);
-	Boolean isPresent = driver.findElements(table_grid).size()>0;
-	if (isPresent) {
-		WebElement Data = driver.findElement(Sales_manager);
-		String test = Data.getText(); 
-		String expectedData = "Sales Manager";
-		if (expectedData.equals(test)) {
-			System.out.println("Sales Manager is displayed in the roles list." + test);
-		} else {
-			System.out.println("Sales Manager is not displayed in the roles list."+ test);
-		}
-	}
+public void User_enter_the_data_in_the_Search_field() throws Throwable {
+	WebElement searchField = driver.findElement(Search_field);
+    // Assert that the search field is displayed
+    assertTrue(searchField.isDisplayed());
+	utilities.webDriverWait(driver,Search_field );	
+	driver.findElement(Search_field).sendKeys("SuperAdmin");
+	utilities.MediumWait(driver);
+	
 	
 }
-
-public void The_Added_Sales_Head_Role_should_be_displayed_in_the_roles_list() throws Throwable {
-	utilities.webDriverWait(driver, table_grid);
-	Boolean isPresent = driver.findElements(table_grid).size()>0;
-	if (isPresent) {
-		WebElement Data = driver.findElement(Sales_head);
-		String test = Data.getText(); 
-		String expectedData = "Sales Head";
-		if (expectedData.equals(test)) {
-			System.out.println("Sales Head is displayed in the roles list." + test);
-		} else {
-			System.out.println("Sales Head is not displayed in the roles list."+ test);
-		}
-	}
-	
+By Table  = By.xpath("//tbody[@class='p-element p-datatable-tbody']");
+public void The_Search_related_Role_data_is_displayed_in_the_grid() throws Throwable {
+	if(driver.findElements(Table).size() > 0) {
+	    utilities.MediumWait(driver);
+	    WebElement OrderData = driver.findElement(Table);
+	    String OrderDataText1 = OrderData.getText();
+//	    System.out.println("Display Data in the grid: " + OrderDataText1);
+	    utilities.MediumWait(driver);
+	    String[] rows = OrderDataText1.split("\n");
+	    for (String row : rows) {
+	        System.out.println(row);
+	     
+	    }		    
+	    utilities.MediumWait(driver);
+}
 }
 
-public void The_Added_Sales_Person_Role_should_be_displayed_in_the_roles_list() throws Throwable {
-	utilities.webDriverWait(driver, table_grid);
-	Boolean isPresent = driver.findElements(table_grid).size()>0;
-	if (isPresent) {
-		WebElement Data = driver.findElement(Sales_Person);
-		String test = Data.getText(); 
-		String expectedData = "Sales Person";
-		if (expectedData.equals(test)) {
-			System.out.println("Sales Person is displayed in the roles list." + test);
-		} else {
-			System.out.println("Sales Person is not displayed in the roles list."+ test);
-		}
-	}
+public void User_enter_the_data_in_the_Name(String name) throws Throwable {
+	utilities.webDriverWait(driver, Name_field);
+	driver.findElement(Name_field).click();
+	Thread.sleep(1000);
+	driver.findElement(Name_field).sendKeys(name);
+	utilities.MinimumWait(driver);
 	
 }
-
 }
