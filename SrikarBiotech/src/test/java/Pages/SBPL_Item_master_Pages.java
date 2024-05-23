@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.DriverFactory;
@@ -200,6 +201,52 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		driver.findElement(Save_Button).click();
 		
 	}
+	public void User_Select_the_Company_name(String company) throws Throwable {
+		driver.findElement(Company_name).click();
+		WebElement Company = driver.findElement(Company_name);
+		Select test = new Select(Company);
+		
+		  boolean companyExists = false;
+		    for (WebElement option : test.getOptions()) {
+		        if (option.getText().equals(company)) {
+		        	companyExists = true;
+		            break;
+		        }
+		    }
+
+		    if (companyExists) {
+		    	test.selectByVisibleText(company);
+		    } else {
+		        System.out.println("Print bydefault one week data when Company is not available");
+		    }
+
+		    utilities.MediumWait(driver);
+		
+	}
+	public void User_Select_the_Category(String category) throws Throwable {
+		driver.findElement(Category).click();
+		WebElement Category1 = driver.findElement(Category);
+		Select test = new Select(Category1);
+		
+		  boolean categoryExists = false;
+		    for (WebElement option : test.getOptions()) {
+		        if (option.getText().equals(category)) {
+		        	categoryExists = true;
+		            break;
+		        }
+		    }
+
+		    if (categoryExists) {
+		    	test.selectByVisibleText(category);
+		    } else {
+		        System.out.println("Print bydefault one week data when Category is not available");
+		    }
+
+		    utilities.MediumWait(driver);
+		
+		
+	}
+	
 	
 
 }

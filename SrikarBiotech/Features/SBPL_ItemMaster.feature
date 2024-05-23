@@ -23,18 +23,23 @@ And  User click on the Item Master under the Masters Module
 And  User click on the Add button
 Then User Click on the Save Button
 Then Validation message should be displayed 
-@SBPL_Item_Master123
-Scenario: Verify the Add Items functionality
+@SBPL_Item_Master1236
+Scenario Outline: Verify the Add Items functionality
 Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 
 And  User click on the Item Master under the Masters Module
 And  User click on the Add button
-Then User Select the Company name
-And User Select the Category
+Then User Select the Company name"<Company>"
+And User Select the Category"<Category>"
 And User Select the Items
 #And upload the file in Items attachment
 Then User Click on the Save Button
+
+Examples:
+|Company             |       Category               |
+|Srikar Biotech      |  Pesticides Products         |
+|Eldorado Agritech   |                              |
 
 @SBPL_Item_Master
 Scenario: Verification of the Added Items are displayed in the grid 

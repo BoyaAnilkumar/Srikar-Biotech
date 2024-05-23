@@ -88,6 +88,8 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 	
 	By Table                    = By.xpath("//tbody[@class='p-element p-datatable-tbody']");
 
+	
+
 	public void User_click_on_the_View_Return_Order_under_the_Orders_Module() throws Throwable {
 		utilities.webDriverWait(driver,View_return_Order );	
 		driver.findElement(View_return_Order).click();
@@ -111,19 +113,32 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		driver.findElement(From_Date).sendKeys("01012024");
 	}
 	
+	
 	public void The_Search_related_data_is_displayed_in_the_main_grid() throws Throwable {
-		if(driver.findElements(Table).size() > 0) {
-		    utilities.MediumWait(driver);
 		    WebElement OrderData = driver.findElement(Table);
-		    String OrderDataText1 = OrderData.getText();
-//		    System.out.println("Display Data in the grid: " + OrderDataText1);
-		    utilities.MediumWait(driver);
-		    String[] rows = OrderDataText1.split("\n");
-		    for (String row : rows) {
-		        System.out.println(row);
+		  
+		    WebElement Data = driver.findElement(Table);
+		    
+		    List<WebElement> rows1 = Data.findElements(By.tagName("tr"));
+		        int Irowcount = rows1.size();
+	            int Idatarowcount = Irowcount;
+	            System.out.println("No. of data Rows in the grid : " + Idatarowcount);
+	            
+	        if(driver.findElements(Table).size() > 0) {
+	        utilities.MediumWait(driver);            
+	        String OrderDataText1 = OrderData.getText();
+			utilities.MediumWait(driver);	    
+			            
+	        String[] rows = OrderDataText1.split("\n");
+			for (String row : rows) {
+		     System.out.println(row);
 		        System.out.println();
-		    }		    
-		    utilities.MediumWait(driver);
+        
+		    }
+		
+		}	    
+		
+	}
 //		    WebElement OrderData1 = driver.findElement(Order_details_Col);
 //		    String OrderDataText = OrderData1.getText();
 //		    System.out.println("The Order details are displayed: " + OrderDataText);
@@ -140,8 +155,8 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 //		    WebElement StatusData = driver.findElement(Status_Column);
 //		    String StatusDataText = StatusData.getText();
 //		    System.out.println("The Status name is displayed: " + StatusDataText);
-		}
-	}
+		
+		
 
 	public void Verify_the_Return_Order_expansion_grid_header_section_names_are_displayed_or_not() {
 		WebElement Item2 = driver.findElement(Item_Name1);
@@ -656,6 +671,18 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		}
 		
 	}
+	By To_Date                = By.xpath("//input[@formcontrolname='toDate']");
+	By Search                 = By.xpath("//button[@class='btn btn-secondary me-2']");
+	public void User_without_Select_the_From_date_and_To_Date() throws Throwable {
+		driver.findElement(From_Date).clear();
+		driver.findElement(Search).click();
+		driver.findElement(To_Date).clear();
+		driver.findElement(Search).click();
+		utilities.MediumWait(driver);
+		Thread.sleep(1500);
+	}
+		
+	
 
 
 }

@@ -27,8 +27,16 @@ And  User Click on the Roles screen
 And  User click on the Add button
 And  User Click on the Save button 
 Then Validation message should be displayed 
-#And  User Click on the Cancel button 
-#Then Verify whether the page is navigated to the Roles List or not
+@Roles
+Scenario: Verify the Cancel button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Security Module
+And  User Click on the Roles screen
+And  User click on the Add button
+And  User Click on the Cancel button 
+Then Verify whether the page is navigated to the Roles List or not
 
 @Roles
 Scenario: Validate Add user without Select the Permission 
@@ -42,7 +50,7 @@ When User enter the data in Name field
 And  User Click on the Save button 
 Then Validation message should be displayed without select the permissions
 
-@Roles_123
+@Roles
 Scenario Outline: Verify the Add Role functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -53,22 +61,22 @@ And User click on the Add button
 When User enter the data in the Name field "<Name>"
 Then User Select the Reporting manager
 When User enter the Description
-#And User Select the Web Access type toggle
-#And User Select the Mobile Access type toggle
-#And the User Select the Users screen Select All check box
-#When The User Select the Users Section Role permissions
-#And the User Select the Roles screen Select All check box
-#Then the User Select the Roles screen permissions
-#And the User Select the Confirm Orders screen Select All check box
-#Then the User Select the Confirm Orders section role Permissions
-#And the User Select the View Collection screen Select All check box
-#Then the User Select the View Collection Section role Permissions
-#And the User Select the View return order screen Select All check box
-#Then the User Select the View Return Order Section Role Permissions
-#And the User Select the Item Master screen Select All check box
-#Then the User selects the Item Master section Role Permissions
-#And the User Select the Banners screen Select All check box
-#Then the User Select the banners section Role Permissions
+And User Select the Web Access type toggle
+And User Select the Mobile Access type toggle
+And the User Select the Users screen Select All check box
+When The User Select the Users Section Role permissions
+And the User Select the Roles screen Select All check box
+Then the User Select the Roles screen permissions
+And the User Select the Confirm Orders screen Select All check box
+Then the User Select the Confirm Orders section role Permissions
+And the User Select the View Collection screen Select All check box
+Then the User Select the View Collection Section role Permissions
+And the User Select the View return order screen Select All check box
+Then the User Select the View Return Order Section Role Permissions
+And the User Select the Item Master screen Select All check box
+Then the User selects the Item Master section Role Permissions
+And the User Select the Banners screen Select All check box
+Then the User Select the banners section Role Permissions
 #And  User Click on the Save button 
 #Then The Added Super Amin Role should be displayed in the roles list
 Examples:

@@ -335,7 +335,7 @@ public void The_Users_screen_should_be_displayed() throws Throwable {
 	
 }
 
-public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed() throws Throwable {
+public void the_user_selects_the_company() throws Throwable {
 
 	WebElement dropdownElement = driver.findElement(Company);
 	 dropdownElement.click();

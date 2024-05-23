@@ -46,7 +46,7 @@ Then User enter the New Password
 And User enter the Confirm Password
 And User select the Role
 And User Select the Reporting Manager
-When the user selects the company based on the SLP code the corresponding fields are displayed
+When the user selects the company
 And User select the Warehouse
 Then User enter the SBPL. Slp code
 Then User enter the EAPL. Slp code

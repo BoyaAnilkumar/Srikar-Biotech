@@ -1,6 +1,8 @@
 package Stepdefinition;
 
 
+import static org.junit.Assert.assertEquals;
+
 import Pages.SBPL_Loginpage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -96,5 +98,18 @@ public class SBPL_Login_Steps {
 	 public void the_Validation_message_should_be_displayed() throws Throwable {
 		 loginpages.the_Validation_message_should_be_displayed();
 	 }
-	 
+	@Given ("the user has entered{string}")
+	public void the_user_has_entered(String username)throws Throwable{
+		loginpages.the_user_has_entered(username);
+	}
+	@And ("the user has entered1{string}") 
+	public void the_user_has_entered1(String password)throws Throwable{
+		loginpages.the_user_has_entered1(password);
+	}
+	@Then ("an error message should be displayed saying{string}")
+	public void an_error_message_should_be_displayed_saying(String error_message)throws Throwable{
+		loginpages.an_error_message_should_be_displayed_saying(error_message);
+
+	}
+	
 }

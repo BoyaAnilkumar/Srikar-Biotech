@@ -26,6 +26,7 @@ public class Roles_Pages extends DriverFactory{
     By Description          = By.xpath("//textarea[@formcontrolname='description']");
     By Web_Accesstype       = By.xpath("//input[@id='webAccess']");
     By Mobile_Accesstype    = By.xpath("//input[@id='mobileAccess']");
+    By Add_Role_Page        = By.xpath("//h4[text()='Add Role']");
     By Cancel_button        = By.xpath("//button[text()=' Cancel']");
     By Roles_list           = By.xpath("//h4[text()='Roles List']");
     //Users
@@ -350,6 +351,9 @@ public class Roles_Pages extends DriverFactory{
 	}
 
 	public void User_Click_on_the_Cancel_button() throws Throwable {
+		WebElement Role_Page = driver.findElement(Add_Role_Page);
+		String RolesText = Role_Page.getText();
+		System.out.println("The Roles Screen Add form is displayed: " + RolesText);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1766)", "");
 		utilities.webDriverWait(driver,Cancel_button );		

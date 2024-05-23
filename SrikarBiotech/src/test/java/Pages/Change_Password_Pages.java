@@ -33,7 +33,7 @@ public class Change_Password_Pages extends DriverFactory{
 		utilities.webDriverWait(driver, username);	
 		driver.findElement(username).sendKeys("Ramya");
 		utilities.webDriverWait(driver, Password);	
-		driver.findElement(Password).sendKeys("Abcd@1234");
+		driver.findElement(Password).sendKeys("Abcd@123");
 		
 	}
 

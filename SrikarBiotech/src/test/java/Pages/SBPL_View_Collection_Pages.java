@@ -450,5 +450,51 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 		driver.findElement(First_Page).click();
 	}
 
-	
+	public void User_Select_the_States(String States) throws Throwable {
+		driver.findElement(State).click();
+		Thread.sleep(1000); 
+		driver.findElement(State_text_field).sendKeys(States);
+		Thread.sleep(1000); 
+		List<WebElement> stateOptions = driver.findElements(Select_States); 
+		boolean statesExists = false;
+		for (WebElement option : stateOptions) {
+		    if (option.getText().equals(States)) {
+		        statesExists = true;
+		        option.click(); 
+		        break; 
+		    }
+		}
+
+		
+		if (statesExists) {
+		    System.out.println("State found and selected: " + States);
+		} else {
+		    System.out.println("State not found, Print bydefault one week data when State is not available");
+		   
+		}
+		utilities.MinimumWait(driver);
+	}
+	public void User_Select_the_SalesPerson(String salesPerson) throws Throwable {
+		driver.findElement(Sales_Person).click();
+		Thread.sleep(2000);
+		driver.findElement(Sales_Person_field).sendKeys(salesPerson);
+		List<WebElement> salesPersonOptions = driver.findElements(Select_Slp); 
+		boolean salesPersonExists = false;
+
+		for (WebElement option : salesPersonOptions) {
+		    if (option.getText().equals(salesPerson)) {
+		        salesPersonExists = true;
+		        option.click(); 
+		        break;
+		    }
+		}
+		if (salesPersonExists) {
+		    System.out.println("Sales person found and selected: " + salesPerson);
+		} else {
+		    System.out.println("Sales person not found, Print bydefault one week data when Sales person is not available");
+		   
+		}
+		utilities.MinimumWait(driver);
+
+	}
 }

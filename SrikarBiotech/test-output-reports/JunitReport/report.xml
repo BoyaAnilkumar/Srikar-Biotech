@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="15.243">
-    <testcase classname="feature to test Srikar Biotech login functionality" name="Validate login functionality without user credentials" time="14.922">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="33.575">
+    <testcase classname="feature to Test the View Return Order Screen functionality" name="Verify without select the From Date and Todate Functionality" time="33.237">
         <system-out><![CDATA[Given User navigates to Login page..........................................passed
-When User without enters username and password..............................passed
+When User enters the username and password..................................passed
 And User click on the signIn................................................passed
-Then validation message should be displayed.................................passed
+And User click on the View Return Order under the Orders Module.............passed
+And User without Select the From date and To Date...........................passed
+And Click on the Search button..............................................passed
 ]]></system-out>
     </testcase>
 </testsuite>

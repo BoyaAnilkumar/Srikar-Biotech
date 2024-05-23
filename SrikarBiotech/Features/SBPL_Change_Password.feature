@@ -8,7 +8,7 @@ When User enter the username and password
 And  User click on the signIn 
 Then User navigated to the home page
 
-@Change_Password
+@Change_Password123
 Scenario: Successful password change
 Given User navigates to Login page
 When User enter the username and password

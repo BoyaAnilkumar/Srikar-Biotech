@@ -15,7 +15,7 @@ When User enters the username and password
 And  User click on the signIn 
 And  User click on the View Collection under the Orders Module
 
-@SBPL_View_Collection
+@SBPL_View_Collection234
 Scenario: Verify the filter Functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -27,7 +27,7 @@ And The User Select the Sales Person
 When The User enter the partyname
 And The user Select the From date and ToDate
 And The user Click on the Search button
-And The Search related data is displayed in the grid
+And The Search related data is displayed in the main grid
 @SBPL_View_Collection
 Scenario: Verify the Order Accepted functionality
 Given User navigates to Login page
@@ -112,3 +112,37 @@ And check whether it is navigating to the after page records when the user click
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
 And check whether it is displaying the first page records when the user clicks on first page icon
+
+@SBPL_View_Collection_filter
+Scenario Outline: Verify the State related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Select the States"<States>"
+And The user Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|States          |
+|Andhra Pradesh  |
+|Bihar           |
+|Chattisgarh     |      
+
+
+@SBPL_View_Collection_filter
+Scenario Outline: Verify the Sales person related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Select the SalesPerson"<SalesPerson>"
+And The user Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|SalesPerson     |
+|Super Admin     |
+|Ravi A          |  

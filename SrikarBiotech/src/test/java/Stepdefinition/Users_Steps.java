@@ -137,9 +137,9 @@ public class Users_Steps {
  public void The_Users_screen_should_be_displayed() throws Throwable {
 	 Users.The_Users_screen_should_be_displayed(); 
  }
- @When ("^the user selects the company based on the SLP code the corresponding fields are displayed$")
- public void the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed() throws Throwable {
-	 Users.the_user_selects_the_company_based_on_the_SLP_code_the_corresponding_fields_are_displayed();
+ @When ("^the user selects the company$")
+ public void the_user_selects_the_company() throws Throwable {
+	 Users.the_user_selects_the_company();
  }
  @Given ("^The User enter the data in the Search field$")
  public void The_User_enter_the_data_in_the_Search_field() throws Throwable {

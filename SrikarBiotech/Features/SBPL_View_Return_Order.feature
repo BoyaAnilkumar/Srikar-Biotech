@@ -32,6 +32,74 @@ And User Select the From date and To Date
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the State related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the State"<States>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|States          |
+|Andhra Pradesh  |
+|Bihar           |
+|Chattisgarh     |      
+
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Sales person related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Sales Person"<SalesPerson>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|SalesPerson     |
+|Super Admin     |
+|Ravi A          |  
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Warehouse related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Warehouse"<Warehouse>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|Warehouse               |
+|Andhra Pradesh (AP01)   |
+|Bihar (BH01)            |  
+|Gujarat (GJ01)          |
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Status related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Status"<Status>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|Status                 |
+| Pending               |
+| Shipped               |  
+| Partially Shipped     |
+
 @SBPL_View_Return_Order
 Scenario: Verification of the expansion grid data
 Given User navigates to Login page
@@ -191,4 +259,14 @@ Then By default ten records are displayed
 And check whether it is navigating to the after page records when the user clicks on Next page icon
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
+
+@SBPL_View_Return_Order55
+Scenario: Verify without select the From Date and Todate Functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User without Select the From date and To Date
+And Click on the Search button
+
 

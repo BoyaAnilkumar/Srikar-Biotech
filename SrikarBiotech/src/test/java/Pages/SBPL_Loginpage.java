@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -167,7 +169,39 @@ public class SBPL_Loginpage extends DriverFactory{
 		String Toaster1 = Toaster.getText();
 		System.out.println("The toaster msg is displayed: " + Toaster1);
 	}
+	By username1              = By.xpath("//input[@placeholder='Enter Email address / Username']");
+	By Password1              = By.xpath("//input[@placeholder='Enter Password']");
+	public void the_user_has_entered(String username) throws Throwable {
+	 utilities.webDriverWait(driver, username1);
+     driver.findElement(username1).sendKeys(username);
+     utilities.MediumWait(driver);
+    
+	}
 
+	public void the_user_has_entered1(String password) throws Throwable {
+	 utilities.webDriverWait(driver, Password1);
+	 driver.findElement(Password1).sendKeys(password);
+	 utilities.MediumWait(driver);
+	}
+
+	public String an_error_message_should_be_displayed_saying(String error_message) {
+		 try {
+		        String actualErrorMessage = driver.findElement(Validation_Text).getText();
+		        System.out.println("Actual Error Message: " + actualErrorMessage);
+		        if (error_message.equals(actualErrorMessage)) {
+		            System.out.println("Expected and Actual Error Messages are equal.");
+		        }
+		        else {
+		            System.out.println("Expected and Actual Error Messages are not equal.");
+		        }
+		        return actualErrorMessage;
+		    } catch (NoSuchElementException e) {
+		        System.out.println("Error message element not found: " + e.getMessage());
+		        return null;
+		    }
+		}
 	
+
+
 
 }

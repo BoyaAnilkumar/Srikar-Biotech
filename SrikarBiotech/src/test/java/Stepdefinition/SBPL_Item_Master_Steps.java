@@ -66,6 +66,13 @@ public class SBPL_Item_Master_Steps {
 	public void Click_on_the_Update_button() throws Throwable {
 		Item_master_Pages.Click_on_the_Update_button();
 	}
+	@Then ("User Select the Company name{string}")
+	public void User_Select_the_Company_name(String Company) throws Throwable {
+		Item_master_Pages.User_Select_the_Company_name(Company);
+	}
+	@And ("User Select the Category{string}")
+	public void User_Select_the_Category(String Category) throws Throwable {
+		Item_master_Pages.User_Select_the_Category(Category);
+	}		
 
-	
 }
