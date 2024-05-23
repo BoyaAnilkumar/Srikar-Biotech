@@ -10,13 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber-html-report.html", "json:test-output-reports/JsonReport/report.json","junit:test-output-reports/JunitReport/report.xml"
 				               ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
 				  glue="Stepdefinition",
-				  features = "Features",
+				  features = "Features",				  				  				  
 				  monochrome = true, 
-                  tags = "@EAPL_Confirm_Orders123")
-
-
-
-
+                  tags = "@SBPL_Confirm_Orders_filter")
 
 
 

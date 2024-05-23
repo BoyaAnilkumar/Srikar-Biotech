@@ -46,6 +46,7 @@ import io.cucumber.java.en.When;
 	  public void Click_on_the_Warehouse_Icon() throws Throwable{
 		  Confirm_Orders_Pages.Click_on_the_Warehouse_Icon();
 	  }
+	  
 	  @Then ("^User Select the Warehouse in the Change Warehouse page$")
 	  public void User_Select_the_Warehouse_in_the_Change_Warehouse_page() throws Throwable{
 		  Confirm_Orders_Pages.User_Select_the_Warehouse_in_the_Change_Warehouse_page();
@@ -150,5 +151,40 @@ import io.cucumber.java.en.When;
 	  public void The_User_Select_the_Reject_Status() throws Throwable{
 		  Confirm_Orders_Pages.The_User_Select_the_Reject_Status();
 	  }
-
+	  @And ("^User Click on the Export button$")
+	  public void And_User_Click_on_the_Export_button() throws Throwable{
+	  Confirm_Orders_Pages.And_User_Click_on_the_Export_button();
+	}
+	  @Then ("^The User Select the Partially Shipped Status$")
+	  public void The_User_Select_the_Partially_Shipped_Status() throws Throwable {
+		  Confirm_Orders_Pages.The_User_Select_the_Partially_Shipped_Status();
+	  }
+	  @And ("^User Click on the LR and Invoice Icon in the Actions column$")
+	  public void User_Click_on_the_LR_and_Invoice_Icon_in_the_Actions_column() throws Throwable {
+		  Confirm_Orders_Pages.User_Click_on_the_LR_and_Invoice_Icon_in_the_Actions_column();
+	  }
+	  @And ("^Verify the order details are displayed in the Invoice List page or not$")
+	  public void Verify_the_order_details_are_displayed_in_the_Invoice_List_page_or_not() throws Throwable {
+		  Confirm_Orders_Pages.Verify_the_order_details_are_displayed_in_the_Invoice_List_page_or_not();
+	  }
+	  @And ("^Verify the Party details are displayed in the Invoice List page or not$")
+	  public void Verify_the_Party_details_are_displayed_in_the_Invoice_List_page_or_not() throws Throwable {
+		  Confirm_Orders_Pages.Verify_the_Party_details_are_displayed_in_the_Invoice_List_page_or_not();
+	  }
+	  @And ("User Select the State{string}")
+	  public void User_Select_the_State(String State)throws Throwable{
+		  Confirm_Orders_Pages.User_Select_the_State(State);
+		}
+	  @And ("User Select the Sales Person{string}")
+	  public void User_Select_the_Sales_Person(String SalesPerson)throws Throwable{
+		  Confirm_Orders_Pages.User_Select_the_Sales_Person(SalesPerson);
+		}
+	  @And ("User Select the Warehouse{string}")
+	  public void User_Select_the_Warehouse(String Warehouse)throws Throwable{
+		  Confirm_Orders_Pages.User_Select_the_Warehouse(Warehouse);
+		}
+	  @And ("User Select the Status{string}")
+	  public void User_Select_the_Status(String Status)throws Throwable{
+		  Confirm_Orders_Pages.User_Select_the_Status(Status);
+		}
 }

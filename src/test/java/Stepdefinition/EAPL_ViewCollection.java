@@ -115,6 +115,14 @@ import io.cucumber.java.en.And;
 		public void check_whether_it_is_displaying_the_first_page_records_when_the_user_clicks_on_first_page_icon() throws Throwable{
 		View_Collection_Pages.check_whether_it_is_displaying_the_first_page_records_when_the_user_clicks_on_first_page_icon();
 		}
-		
+		@And ("User Select the States{string}")
+		  public void User_Select_the_States(String State)throws Throwable{
+			 View_Collection_Pages.User_Select_the_States(State);
+			}
+		 @And ("User Select the SalesPerson{string}")
+		  public void User_Select_the_SalesPerson(String SalesPerson)throws Throwable{
+			 View_Collection_Pages.User_Select_the_SalesPerson(SalesPerson);
+			}
+		 
 
 }

@@ -31,6 +31,41 @@ When The User enter the partyname
 And The user Select the From date and ToDate
 And The user Click on the Search button
 And The Search related data is displayed in the grid
+
+@SBPL_View_Collection_filter
+Scenario Outline: Verify the State related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Select the States"<States>"
+And The user Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|States          |
+|Andhra Pradesh  |
+|Bihar           |
+|Chattisgarh     |      
+
+
+@SBPL_View_Collection_filter
+Scenario Outline: Verify the Sales person related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Select the SalesPerson"<SalesPerson>"
+And The user Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|SalesPerson     |
+|Super Admin     |
+|Ravi A          |  
+
 @EAPL_View_Collection1
 Scenario: Verify the Order Accepted functionality
 Given User navigates to Login page
@@ -100,6 +135,14 @@ And The user Click on the Search button
 And Click on the collection View Icon in the Action Column
 
 @EAPL_View_Collection
+Scenario: Verify the Export button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Collection under the Orders Module
+And User Click on the Export button
+
+@EAPL_View_Collection
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -114,3 +157,4 @@ And check whether it is navigating to the after page records when the user click
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
 And check whether it is displaying the first page records when the user clicks on first page icon
+

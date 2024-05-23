@@ -27,13 +27,81 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
 And Select the Warehouse
 When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
 And The Search related data is displayed in the main grid
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the State related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the State"<States>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|States          |
+|Andhra Pradesh  |
+|Bihar           |
+|Chattisgarh     |      
+
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Sales person related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Sales Person"<SalesPerson>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|SalesPerson     |
+|Super Admin     |
+|Ravi A          |  
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Warehouse related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Warehouse"<Warehouse>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|Warehouse               |
+|Andhra Pradesh (AP01)   |
+|Bihar (BH01)            |  
+|Gujarat (GJ01)          |
+
+@SBPL_View_Return_Orders_filter
+Scenario Outline: Verify the Status related filter functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Select the Status"<Status>"
+And Click on the Search button
+And The Search related data is displayed in the main grid
+
+Examples:
+
+|Status                 |
+| Pending               |
+| Shipped               |  
+| Partially Shipped     |
+
 
 @EAPL_View_Return_Order
 Scenario: Verify the change Warehouse functionality
@@ -44,9 +112,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
-#And Select the Warehouse
-When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -64,9 +129,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
-And Select the Warehouse
-When User enter the partyname
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -83,7 +145,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -110,7 +171,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -135,7 +195,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
 And Select the Status
 And User Select the From date and To Date
 And Click on the Search button
@@ -158,7 +217,6 @@ And  User click on the signIn
 And  User click on the View Return Order under the Orders Module
 And The View Return Order Screen is displayed or not
 Then User Select the State 
-And User Select the Sales Person
 And Select the Warehouse
 When User enter the partyname
 And Select the Status as Partially Received
@@ -183,6 +241,14 @@ And User enter the data in all fields and Click on the save button the credit no
 #And User Click on the Close Icon
 
 @EAPL_View_Return_Order
+Scenario: Verify the Export button functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the View Return Order under the Orders Module
+And User Click on the Export button
+
+@EAPL_View_Return_Order
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
 When User Select the Eldorado Agritech Company
@@ -196,6 +262,8 @@ Then By default ten records are displayed
 And check whether it is navigating to the after page records when the user clicks on Next page icon
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
+
+
 
 
 

@@ -2,11 +2,12 @@ package Pages;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import util.DriverFactory;
 import util.Utilities;
@@ -90,6 +91,7 @@ import util.Utilities;
 	    By Up_Warehouse           = By.xpath("//select[@class='form-control ng-dirty ng-touched ng-valid']");
 		By Order_Status_Pending   = By.xpath("//h3[text()='Pending']");
 		By Order_Status_Reject    = By.xpath("//h3[@class='c-stepper__title text-secondary']");
+		By Export_button          = By.xpath("//button[@class='btn btn-sm btn-info ng-star-inserted']");
 		
 		public void User_click_on_the_Confirm_Orders_under_the_Orders_Module() throws Throwable {
 		utilities.webDriverWait(driver, Confirm_Orders);	
@@ -99,7 +101,7 @@ import util.Utilities;
 
 		public void User_Select_the_State() throws Throwable {
 			driver.findElement(State).click();
-			driver.findElement(State_text_field).sendKeys("Bihar");
+			driver.findElement(State_text_field).sendKeys("Gujarat");
 			driver.findElement(Select_States).click();
 			utilities.MinimumWait(driver);
 //			Robot r = new Robot();
@@ -117,7 +119,7 @@ import util.Utilities;
 		public void User_Select_the_Sales_Person() throws Throwable {
 			driver.findElement(Sales_Person).click();
 			Thread.sleep(2000);
-			driver.findElement(Sales_Person_field).sendKeys("Anjaneyulu -AP");
+			driver.findElement(Sales_Person_field).sendKeys("Super Admin");
 			driver.findElement(Select_Slp).click();
 			utilities.MinimumWait(driver);
 //			Robot r = new Robot();
@@ -181,7 +183,7 @@ import util.Utilities;
 
 		public void Select_the_From_date_and_ToDate() throws Throwable {
 			utilities.webDriverWait(driver, From_Date);
-			driver.findElement(From_Date).sendKeys("20022024");
+			driver.findElement(From_Date).sendKeys("01012024");
 		}
 
 		public void Click_on_the_Search_button() throws Throwable {
@@ -713,5 +715,257 @@ import util.Utilities;
 		
 		
 	}
+
+	public void And_User_Click_on_the_Export_button() throws Throwable {
+		utilities.webDriverWait(driver, Export_button);
+		driver.findElement(Export_button).click();
+		Thread.sleep(1500);
+		System.out.print("Excel downloaded");
+		
+	}
+	
+	By LR_Invoice     = By.xpath("(//button[@title='LR & Invoices'])[1]");
+	public void User_Click_on_the_LR_and_Invoice_Icon_in_the_Actions_column() throws Throwable {
+		utilities.webDriverWait(driver, LR_Invoice);
+		driver.findElement(LR_Invoice).click();
+		
+	}
+	public void The_User_Select_the_Partially_Shipped_Status() throws Throwable {
+		driver.findElement(Status).click();
+		Thread.sleep(1000);
+		utilities.MediumWait(driver);	
+		Robot r = new Robot();
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		r.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		utilities.MinimumWait(driver);	
+		
+	}
+	public void Verify_the_order_details_are_displayed_in_the_Invoice_List_page_or_not() {
+		String Order_ID1 = "Order Id"; 
+		WebElement Order_ID2 = driver.findElement(Order_ID);
+		WebElement Order = driver.findElement(OrderID);
+		String Order_ID2Text = Order_ID2.getText();
+		if (Order_ID1.equals(Order_ID2Text)) {
+		System.out.println("The Order ID is displayed: " + Order.getText());
+		} else {
+		System.out.println("The Order ID is not displayed.");
+		}
+			 
+		String Date1 = "Date"; 
+		WebElement Date2 = driver.findElement(Date);
+		WebElement Date = driver.findElement(Date_Value);
+		String Date2Text = Date2.getText();
+		if (Date1.equals(Date2Text)) {
+		System.out.println("The Date is displayed: " + Date.getText());
+		} else {
+		  System.out.println("The Date is not displayed.");
+		}
+		  
+		  
+		String  Items1 = "No. Of Items"; 
+		WebElement Items2 = driver.findElement(No_of_Items);
+		WebElement Items = driver.findElement(Items_Value);
+		String Items2Text = Items2.getText();
+		if (Items1.equals(Items2Text)) {
+		System.out.println("The No.of Items are displayed: " + Items.getText());
+		} else {
+		 System.out.println("The No.of Items are not displayed.");
+		}
+		 
+		 
+		String Total_amount1 = "Total Amount"; 
+		WebElement Total_amount2 = driver.findElement(Total_amount);
+		WebElement Totalamount = driver.findElement(Totalamount_value);
+		String Total_amount2Text =Total_amount2.getText();
+		if (Total_amount1.equals(Total_amount2Text)) {
+		System.out.println("The Date is displayed:" + Totalamount.getText());
+		} else {
+		System.out.println("The Date is not displayed.");
+		}
+
+
+		String Warehouse1 = "Warehouse"; 
+		WebElement Warehouse2 = driver.findElement(Warehouse_name);
+		String Warehouse2Text = Warehouse2.getText();
+		WebElement Warehouse = driver.findElement(Warehouse_Text);
+		if (Warehouse1.equals(Warehouse2Text)) {
+		System.out.println("The Warehouse is displayed:" + Warehouse.getText());
+		} else {
+		System.out.println("The Warehouse is not displayed.");
+		}
+
+
+		String Sales_Person1 = "Sales Person"; 
+		WebElement Sales_Person2 = driver.findElement(Sales_Person3);
+		String Sales_Person2Text = Sales_Person2.getText();
+		WebElement SalesPerson = driver.findElement(SalesPerson_Text);
+		if (Sales_Person1.equals(Sales_Person2Text)) {
+		System.out.println("The Sales Person is displayed:" + SalesPerson.getText());
+		} else {
+		System.out.println("The Sales Person is not displayed.");
+		}
+		
+		
+	}
+
+	public void Verify_the_Party_details_are_displayed_in_the_Invoice_List_page_or_not() {
+		String Party_Code1 = "Party Code"; 
+		WebElement Party_Code2 = driver.findElement(Party_Code);
+		WebElement PartyCode = driver.findElement(PartyCode_Value);
+		String Party_Code2Text = Party_Code2.getText();
+		if (Party_Code1.equals(Party_Code2Text)) {
+		System.out.println("The Party Code is displayed:" + PartyCode.getText());
+		} else {
+		System.out.println("The Party Code is not displayed.");
+		}	 	 
+		{
+		String partyNameExpected = "Party Name"; // Define the expected party name
+		WebElement partyName = driver.findElement(Party_name); // Find the element containing the party name
+		WebElement partyNameTextElement = driver.findElement(Partyname_Text); // Find the element containing the party name text
+		String partyNameText = partyName.getText(); // Get the text of the party name element
+		// Print whether the party name is displayed or not
+		System.out.println("The Party name is " + (partyNameText.equals(partyNameExpected) ? "displayed: " + partyNameTextElement.getText() : "not displayed."));
+	}
+		String Proprietor_Name1 = "Proprietor Name"; 
+		WebElement Proprietor_Name2 = driver.findElement(Proprietor_name);
+		WebElement Proprietorname = driver.findElement(Proprietor_Name_text);
+		String Proprietor_Name2Text = Proprietor_Name2.getText();
+		if (Proprietor_Name1.equals(Proprietor_Name2Text)) {
+		System.out.println("The Proprietor Name is displayed:" + Proprietorname.getText());
+		} else {
+		 System.out.println("The Proprietor Name is not displayed.");
+		}
+		 
+		 
+		String GST_no1 = "GST No"; 
+		WebElement GST_no2 = driver.findElement(GST_no);
+		WebElement GST_Value = driver.findElement(GST_value);
+		String GST_no2Text = GST_no2.getText();
+		if (GST_no1.equals(GST_no2Text)) {
+		    System.out.println("The GST_no is displayed: " + GST_Value.getText());
+		} else {
+		    System.out.println("The GST_no is not displayed.");
+		}
+
+		String Address1 = "Address"; 
+		WebElement Address2 = driver.findElement(Address);
+		WebElement Address = driver.findElement(Address_Text);
+		String Address2Text = Address2.getText();
+		if (Address1.equals(Address2Text)) {
+		System.out.println("The Address is displayed:" + Address.getText());
+		} else {
+		System.out.println("The Address is not displayed.");
+		}
+
+		
+	}
+	public void User_Select_the_State(String States) throws Throwable {
+		driver.findElement(State).click();
+		Thread.sleep(1000); 
+		driver.findElement(State_text_field).sendKeys(States);
+		Thread.sleep(1000); 
+		List<WebElement> stateOptions = driver.findElements(Select_States); 
+		boolean statesExists = false;
+		for (WebElement option : stateOptions) {
+		    if (option.getText().equals(States)) {
+		        statesExists = true;
+		        option.click(); 
+		        break; 
+		    }
+		}
+
+		
+		if (statesExists) {
+		    System.out.println("State found and selected: " + States);
+		} else {
+		    System.out.println("State not found, Print bydefault one week data when State is not available");
+		   
+		}
+		utilities.MinimumWait(driver);
+	}
+	public void User_Select_the_Sales_Person(String salesPerson) throws Throwable {
+		driver.findElement(Sales_Person).click();
+		Thread.sleep(2000);
+		driver.findElement(Sales_Person_field).sendKeys(salesPerson);
+		List<WebElement> salesPersonOptions = driver.findElements(Select_Slp); 
+		boolean salesPersonExists = false;
+
+		for (WebElement option : salesPersonOptions) {
+		    if (option.getText().equals(salesPerson)) {
+		        salesPersonExists = true;
+		        option.click(); 
+		        break;
+		    }
+		}
+		if (salesPersonExists) {
+		    System.out.println("Sales person found and selected: " + salesPerson);
+		} else {
+		    System.out.println("Sales person not found, Print bydefault one week data when Sales person is not available");
+		   
+		}
+		utilities.MinimumWait(driver);
+
+	}
+	By Warehouse1              = By.xpath("(//select[@formcontrolname='whsCode'])[1]");
+	public void User_Select_the_Warehouse(String warehouse) throws Throwable {
+		driver.findElement(Warehouse1).click();
+	    Thread.sleep(1000);    
+	    WebElement WareHouse = driver.findElement(Warehouse1);
+	    Select Whouse = new Select(WareHouse);
+
+	    boolean warehouseExists = false;
+	    for (WebElement option : Whouse.getOptions()) {
+	        if (option.getText().equals(warehouse)) {
+	            warehouseExists = true;
+	            break;
+	        }
+	    }
+
+	    if (warehouseExists) {
+	        Whouse.selectByVisibleText(warehouse);
+	    } else {
+	        System.out.println("Print bydefault one week data when warehouse is not available");
+	    }
+
+	    utilities.MediumWait(driver);
+
+	}
+
+	public void User_Select_the_Status(String status) throws Throwable {
+		driver.findElement(Status).click();
+		Thread.sleep(1000);
+		WebElement status2 = driver.findElement(Status);
+		Select test = new Select(status2);
+		
+		  boolean statusExists = false;
+		    for (WebElement option : test.getOptions()) {
+		        if (option.getText().equals(status)) {
+		        	statusExists = true;
+		            break;
+		        }
+		    }
+
+		    if (statusExists) {
+		    	test.selectByVisibleText(status);
+		    } else {
+		        System.out.println("Print bydefault one week data when status is not available");
+		    }
+
+		    utilities.MediumWait(driver);
+
+		}
+
+
+
+	
+		
 	}
 	
