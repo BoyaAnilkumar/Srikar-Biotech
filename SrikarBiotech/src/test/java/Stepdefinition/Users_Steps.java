@@ -112,9 +112,17 @@ public class Users_Steps {
  public void Update_the_Username() throws Throwable {
 	 Users.Update_the_Username(); 
  }
- @Then ("^Update the SBPL Slp Code and EAPL Slp Code$")
- public void Update_the_SBPL_Slp_Code_and_EAPL_Slp_Code() throws Throwable {
-	 Users.Update_the_SBPL_Slp_Code_and_EAPL_Slp_Code(); 
+ @When ("Update the{string}")
+ public void Update_the(String Update_Username) throws Throwable{
+ Users.Update_the(Update_Username);
+}
+ @Then ("^Update the SBPL Slp Code$")
+ public void Update_the_SBPL_Slp_Code() throws Throwable {
+	 Users.Update_the_SBPL_Slp_Code(); 
+ }
+ @And ("^Update the EAPL Slp Code$")
+ public void Update_the_EAPL_Slp_Code() throws Throwable {
+	 Users.Update_the_EAPL_Slp_Code();
  }
  
  @And ("^Click on the Submit button$")
@@ -144,6 +152,48 @@ public class Users_Steps {
  @Given ("^The User enter the data in the Search field$")
  public void The_User_enter_the_data_in_the_Search_field() throws Throwable {
 	 Users.The_User_enter_the_data_in_the_Search_field(); 
+ }
+ @When("the user enters {string} as username, {string} as first name, {string} as last name, and {string} as email")
+ public void User_enter_the(String Username, String Firstname, String Lastname, String Email) throws Throwable {
+ Users.enterUsername(Username);
+ Users.enterLastName(Lastname);
+ Users.enterEmail(Email);
+}
+ @And ("the User enters {string}, and {string}, and {string}, and {string}")
+ public void the_User_enters (String Mobilenumber, String NewPassword, String ConfirmPassword, String Role) throws Throwable {
+ Users.enterMobilenumber(Mobilenumber);
+ Users.enterNewPassword(NewPassword);
+ Users.enterConfirmPassword(ConfirmPassword);
+ Users.SelectRole(Role); 
+ }
+ @Then ("User enters the {string}")
+ public void User_enters_the(String SBPL_Slp_code) throws Throwable { 
+ Users.enterSBPLSlpcode(SBPL_Slp_code);
+ }
+ @Then ("The User enters the {string}")
+ public void The_User_enters_the(String EAPL_Slp_code) throws Throwable { 
+ Users.enterEAPLSlpcode(EAPL_Slp_code);
+}
+ @Then ("User Select the Company{string}")
+ public void User_Select_the_Company(String searchTerm) throws Throwable {
+	 Users.User_Select_the_Company(searchTerm);
+}
+ @And ("User select the{string}")
+ public void User_select_the(String searchWarehouse) throws Throwable { 
+	 Users.User_select_the(searchWarehouse);
+ }
+ @And ("^User Click on the Expansion Icon$")
+ public void User_Click_on_the_Expansion_Icon() throws Throwable {
+	 Users.User_Click_on_the_Expansion_Icon();
+ }
+ 
+ @Then ("^the Expansion grid header section names are displayed or not$")
+ public void the_Expansion_grid_header_section_names_are_displayed_or_not() throws Throwable{
+	 Users.the_Expansion_grid_header_section_names_are_displayed_or_not();
+ }
+ @And ("^the Expansion grid data is displayed or not$")
+ public void the_Expansion_grid_data_is_displayed_or_not() throws Throwable {
+	 Users.the_Expansion_grid_data_is_displayed_or_not();
  }
  
 }

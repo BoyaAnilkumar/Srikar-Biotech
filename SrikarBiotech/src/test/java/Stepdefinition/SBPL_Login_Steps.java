@@ -1,8 +1,6 @@
 package Stepdefinition;
 
 
-import static org.junit.Assert.assertEquals;
-
 import Pages.SBPL_Loginpage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

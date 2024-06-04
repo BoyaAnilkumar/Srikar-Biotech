@@ -8,7 +8,7 @@ When User enters the username and password
 And  User click on the signIn 
 Then User navigated to the home page
 
-@SBPL_Item_Master1
+@SBPL_Item_Master
 Scenario: Validate user click on the Roles screen in menu
 Given User navigates to Login page
 When User enters the username and password
@@ -23,7 +23,7 @@ And  User click on the Item Master under the Masters Module
 And  User click on the Add button
 Then User Click on the Save Button
 Then Validation message should be displayed 
-@SBPL_Item_Master1236
+@SBPL_Item_Master123
 Scenario Outline: Verify the Add Items functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -39,7 +39,16 @@ Then User Click on the Save Button
 Examples:
 |Company             |       Category               |
 |Srikar Biotech      |  Pesticides Products         |
-|Eldorado Agritech   |                              |
+|Eldorado Agritech   |      Paddy                   |
+
+@SBPL_Item_Master2445
+Scenario: Verify without select the Company the category dropdown values are displayed or not
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Item Master under the Masters Module
+And  User click on the Add button
+And User without select the Company the Category dropdown values are displayed or not
 
 @SBPL_Item_Master
 Scenario: Verification of the Added Items are displayed in the grid 
@@ -77,6 +86,35 @@ When Update the category
 And Update the Items
 #And Click on the Update button
 
+@SBPL_Item_Master123
+Scenario Outline: Verify the Search Category wise functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Item Master under the Masters Module
+When User enters the data in the Search field"<Search>"
+And The Search related data is displayed in the main grid
+
+Examples:
+|  Search                   |
+|  Pesticides Products      |
+|  Biostimulant             |
+|  Cotton                   |
+
+@SBPL_Item_Master
+Scenario Outline: Verify the Search Company wise functionality
+Given User navigates to Login page
+When User enters the username and password
+And  User click on the signIn 
+And  User click on the Item Master under the Masters Module
+When User enter the data in the Search field"<Search_Company>"
+And The Search related data is displayed in the main grid
+
+Examples:
+|Search_Company      |     
+|Srikar Biotech      |  
+|Eldorado Agritech   | 
+|Invalid company name|
 @SBPL_Item_Master
 Scenario: Verify the Pagination functionality
 Given User navigates to Login page
@@ -87,3 +125,4 @@ Then By default ten records are displayed
 And check whether it is navigating to the after page records when the user clicks on Next page icon
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
+

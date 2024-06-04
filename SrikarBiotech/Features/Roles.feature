@@ -123,7 +123,7 @@ When User enter the data in the filter field
 And User Click on the Apply button
 And Verify whether the page is navigating to the Update Role or not on clicking the Edit button
 When Update the Reporting manager
-#And User Click on the Update button
+And User Click on the Update button
 
 @Roles
 Scenario: Verify the Search field functionality

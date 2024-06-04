@@ -32,7 +32,7 @@ And User Select the From date and To Date
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@SBPL_View_Return_Orders_filter
+@SBPL_View_Return_Orders
 Scenario Outline: Verify the State related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -50,7 +50,7 @@ Examples:
 |Chattisgarh     |      
 
 
-@SBPL_View_Return_Orders_filter
+@SBPL_View_Return_Orders
 Scenario Outline: Verify the Sales person related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -66,7 +66,7 @@ Examples:
 |Super Admin     |
 |Ravi A          |  
 
-@SBPL_View_Return_Orders_filter
+@SBPL_View_Return_Orders
 Scenario Outline: Verify the Warehouse related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -83,7 +83,7 @@ Examples:
 |Bihar (BH01)            |  
 |Gujarat (GJ01)          |
 
-@SBPL_View_Return_Orders_filter
+@SBPL_View_Return_Orders
 Scenario Outline: Verify the Status related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -260,7 +260,7 @@ And check whether it is navigating to the after page records when the user click
 And check whether it is navigating to the before page records when the user clicks on before page icon
 And check whether it is displaying the last page records when the user clicks on last page icon
 
-@SBPL_View_Return_Order55
+@SBPL_View_Return_Order
 Scenario: Verify without select the From Date and Todate Functionality
 Given User navigates to Login page
 When User enters the username and password

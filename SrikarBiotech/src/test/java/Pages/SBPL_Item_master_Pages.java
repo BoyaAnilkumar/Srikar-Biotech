@@ -2,14 +2,16 @@ package Pages;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.DriverFactory;
 import util.Utilities;
@@ -83,45 +85,23 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		Thread.sleep(1000);
 		utilities.MediumWait(driver);
 	}
+	By field   = By.xpath("//div[@class='file-upload']");
 	public void upload_the_file_in_Items_attachment() throws Throwable {
-//		utilities.webDriverWait(driver, Browse_File);
-//		//driver.findElement(Browse_File).click();
-//		utilities.MinimumWait(driver);
-//		WebElement uploadField = driver.findElement(Browse_File);
-//
-//        // Provide the path of the file to upload
-//        String filePath = "D:\\\\Srikar Images";
-//        uploadField.sendKeys(filePath);
-		try {
-		By browseFile = By.id("Browse_File"); // Replace with the correct locator for your input element
+//     utilities.webDriverWait(driver, field);
+//     driver.findElement(field).click();
+//     driver.findElement(field).sendKeys("D:/Srikar Images/2. Ripkil box.png");
+//     utilities.MediumWait(driver);
+     WebElement fileInput = driver.findElement(field);
 
-		driver.findElement(Browse_File).click();
-      
-		FluentWait<WebDriver> wait = null;
-		@SuppressWarnings("null")
-		WebElement uploadField = wait.until(ExpectedConditions.elementToBeClickable(browseFile));
+     // Click the file input to ensure it is in focus (sometimes not necessary)
+     fileInput.click();
 
-        
-        String filePath = "D:\\Srikar Images\\1 - Acetop.jpg"; // Ensure the path and file name are correct
-        uploadField.sendKeys(filePath);
+     // Set the file path to the input field
+     fileInput.sendKeys("D:/Srikar Images/2. Ripkil box.png");
 
-        
-        Thread.sleep(2000); // Consider removing or adjusting as needed
-
-       
-        By uploadButton = By.id("upload-button"); // Replace with the correct locator for the upload button
-        wait.until(ExpectedConditions.elementToBeClickable(uploadButton)).click();
-
-       
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    } finally {
-        // Close the browser
-        driver.quit();
-    }
-		
+     // Optional: Wait for some time if needed
+     utilities.MediumWait(driver);
 }
-
     
 	public void User_enter_the_Data_in_the_filter_field() throws Throwable {
 		utilities.webDriverWait(driver, Filter_Text_field);
@@ -142,8 +122,7 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		driver.findElement(filter_icon).click();
 	
 	}
-	public void Click_on_the_Delete_Icon() throws Throwable {
-		
+	public void Click_on_the_Delete_Icon() throws Throwable {		
 		WebElement buttonElement = driver.findElement(delete_icon);
 		if (buttonElement.isEnabled()) {
 			System.out.println("Button is enabled.");
@@ -246,7 +225,33 @@ public class SBPL_Item_master_Pages extends DriverFactory{
 		
 		
 	}
-	
-	
+	By Search_field     = By.xpath("//input[@placeholder='Search Keyword']");
+	public void User_enters_the_data_in_the_Search_field(String Search) {
+		driver.findElement(Search_field).click();
+		driver.findElement(Search_field).sendKeys(Search);
+				
+	}
+	public void User_enter_the_data_in_the_Search_field(String Search_Company) {
+		driver.findElement(Search_field).click();
+		driver.findElement(Search_field).sendKeys(Search_Company);
+				
+	}
+	By Value    = By.xpath("//option[text()=' Pesticides Products']");
+	public void User_without_select_the_Company_the_Category_dropdown_values_are_displayed_or_not() throws Throwable {
+		 List<WebElement> elements = driver.findElements(By.id("Value")); // Replace "Value" with your actual locator		 
+         if (elements.size() > 0) {
+             // Element is found
+             WebElement buttonElement = elements.get(0);
 
+             if (buttonElement.isEnabled()) {
+                 System.out.println("Button is enabled.");
+             } else {
+                 System.out.println("Button is not enabled.");
+             }
+         } else {
+             // Element is not found
+             System.out.println("Data is not displayed in the field.");
+         }
+	}
 }
+

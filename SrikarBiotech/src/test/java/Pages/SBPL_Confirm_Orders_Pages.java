@@ -828,7 +828,7 @@ public void Verify_the_Party_details_are_displayed_in_the_Invoice_List_page_or_n
 	String partyNameText = partyName.getText(); // Get the text of the party name element
 	// Print whether the party name is displayed or not
 	System.out.println("The Party name is " + (partyNameText.equals(partyNameExpected) ? "displayed: " + partyNameTextElement.getText() : "not displayed."));
-}
+    }
 	String Proprietor_Name1 = "Proprietor Name"; 
 	WebElement Proprietor_Name2 = driver.findElement(Proprietor_name);
 	WebElement Proprietorname = driver.findElement(Proprietor_Name_text);

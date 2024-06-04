@@ -15,7 +15,7 @@ When User enters the username and password
 And  User click on the signIn 
 And  User click on the View Collection under the Orders Module
 
-@SBPL_View_Collection234
+@SBPL_View_Collection
 Scenario: Verify the filter Functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -113,7 +113,7 @@ And check whether it is navigating to the before page records when the user clic
 And check whether it is displaying the last page records when the user clicks on last page icon
 And check whether it is displaying the first page records when the user clicks on first page icon
 
-@SBPL_View_Collection_filter
+@SBPL_View_Collection
 Scenario Outline: Verify the State related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -131,7 +131,7 @@ Examples:
 |Chattisgarh     |      
 
 
-@SBPL_View_Collection_filter
+@SBPL_View_Collection
 Scenario Outline: Verify the Sales person related filter functionality
 Given User navigates to Login page
 When User enters the username and password

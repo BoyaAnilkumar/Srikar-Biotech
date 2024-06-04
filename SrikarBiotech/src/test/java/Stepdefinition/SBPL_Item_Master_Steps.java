@@ -1,5 +1,7 @@
 package Stepdefinition;
 
+
+
 import Pages.SBPL_Item_master_Pages;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -73,6 +75,18 @@ public class SBPL_Item_Master_Steps {
 	@And ("User Select the Category{string}")
 	public void User_Select_the_Category(String Category) throws Throwable {
 		Item_master_Pages.User_Select_the_Category(Category);
-	}		
-
+	}	
+	@When ("User enters the data in the Search field{string}")
+	public void User_enters_the_data_in_the_Search_field(String Search) throws Throwable {
+	Item_master_Pages.User_enters_the_data_in_the_Search_field(Search);
+   }
+	@When ("User enter the data in the Search field{string}")
+	public void User_enter_the_data_in_the_Search_field(String Search_Company) throws Throwable {
+	Item_master_Pages.User_enter_the_data_in_the_Search_field(Search_Company);
+   }
+	@And ("^User without select the Company the Category dropdown values are displayed or not$")
+	public void User_without_select_the_Company_the_Category_dropdown_values_are_displayed_or_not() throws Throwable {
+		Item_master_Pages.User_without_select_the_Company_the_Category_dropdown_values_are_displayed_or_not();
+	}
+	
 }

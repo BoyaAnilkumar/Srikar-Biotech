@@ -15,7 +15,7 @@ When User enters the username and password
 And  User click on the signIn 
 And  User click on the Confirm Orders under the Orders Module
 
-@SBPL_Confirm_Orders123
+@SBPL_Confirm_Orders
 Scenario: Verify the filter Functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -30,7 +30,7 @@ And Select the From date and ToDate
 And Click on the Search button
 And The Search related data is displayed in the main grid
 
-@SBPL_Confirm_Orders_filter
+@SBPL_Confirm_Orders
 Scenario Outline: Verify the State related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -48,7 +48,7 @@ Examples:
 |Chattisgarh     |      
 
 
-@SBPL_Confirm_Orders_filter
+@SBPL_Confirm_Orders
 Scenario Outline: Verify the Sales person related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -64,7 +64,7 @@ Examples:
 |Super Admin     |
 |Ravi A          |  
 
-@SBPL_Confirm_Orders_filter
+@SBPL_Confirm_Orders
 Scenario Outline: Verify the Warehouse related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -81,7 +81,7 @@ Examples:
 |Bihar (BH01)            |  
 |Gujarat (GJ01)          |
 
-@SBPL_Confirm_Orders_filter
+@SBPL_Confirm_Orders
 Scenario Outline: Verify the Status related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -99,7 +99,7 @@ Examples:
 | Partially Shipped     |
 
 
-@SBPL_Confirm_Orders123
+@SBPL_Confirm_Orders
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -227,7 +227,7 @@ And User Click on the LR and Invoice Icon in the Actions column
 And Verify the order details are displayed in the Invoice List page or not
 And Verify the Party details are displayed in the Invoice List page or not
 
-@SBPL_Confirm_Orders256
+@SBPL_Confirm_Orders
 Scenario: Verify without select the From Date and Todate Functionality
 Given User navigates to Login page
 When User enters the username and password

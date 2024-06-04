@@ -59,7 +59,7 @@ public class Change_Password_Pages extends DriverFactory{
 	}
 	public void User_enters_the_current_password() throws Throwable {
 		utilities.webDriverWait(driver, Current_Password);	
-		driver.findElement(Current_Password).sendKeys("Abcd@1234");
+		driver.findElement(Current_Password).sendKeys("Abcd@123");
 		
 	}
 	public void User_enters_a_new_password() throws Throwable {

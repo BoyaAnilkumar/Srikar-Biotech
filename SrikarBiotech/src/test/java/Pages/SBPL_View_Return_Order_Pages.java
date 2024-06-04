@@ -118,12 +118,12 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		    WebElement OrderData = driver.findElement(Table);
 		  
 		    WebElement Data = driver.findElement(Table);
-		    
+		    Thread.sleep(1000);
 		    List<WebElement> rows1 = Data.findElements(By.tagName("tr"));
 		        int Irowcount = rows1.size();
 	            int Idatarowcount = Irowcount;
 	            System.out.println("No. of data Rows in the grid : " + Idatarowcount);
-	            
+	         
 	        if(driver.findElements(Table).size() > 0) {
 	        utilities.MediumWait(driver);            
 	        String OrderDataText1 = OrderData.getText();
@@ -133,39 +133,18 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 			for (String row : rows) {
 		     System.out.println(row);
 		        System.out.println();
-        
+		        
 		    }
 		
 		}	    
 		
 	}
-//		    WebElement OrderData1 = driver.findElement(Order_details_Col);
-//		    String OrderDataText = OrderData1.getText();
-//		    System.out.println("The Order details are displayed: " + OrderDataText);
-//		    utilities.MediumWait(driver);
-//
-//		    WebElement PartyData = driver.findElement(Party_details);
-//		    String PartyDataText = PartyData.getText();
-//		    System.out.println("The Party details are displayed: " + PartyDataText);
-//
-//		    WebElement LRData = driver.findElement(LR_details);
-//		    String LRDataText = LRData.getText();
-//		    System.out.println("The LR details are displayed: " + LRDataText);
-//
-//		    WebElement StatusData = driver.findElement(Status_Column);
-//		    String StatusDataText = StatusData.getText();
-//		    System.out.println("The Status name is displayed: " + StatusDataText);
-		
-		
 
 	public void Verify_the_Return_Order_expansion_grid_header_section_names_are_displayed_or_not() {
 		WebElement Item2 = driver.findElement(Item_Name1);
 		String expectedProductName = "Item Name";
-
-		// Get the text content of the WebElement and trim leading/trailing whitespaces
 		String actualItemName = Item2.getText().trim();
 
-		// Compare the actual text with the expected text
 		if (actualItemName.equals(expectedProductName)) {
 		    System.out.println("The Item name is displayed: " + actualItemName);
 		} else {

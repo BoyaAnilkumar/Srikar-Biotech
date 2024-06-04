@@ -40,7 +40,7 @@ Then User navigated to the home page
  When user enter the Invalid Email Address
  When User click on the back to Signin
  #When user enter the valid Username
-@LoginPage
+@LoginPage12345
 Scenario Outline: Validate login is successful with valid credentials
 Given User navigates to Login page
 Given the user has entered"<username>"
