@@ -102,8 +102,6 @@ Examples:
 | Partially Shipped     |
 
 
-
-
 @EAPL_Confirm_Orders123
 Scenario: Verify the change Warehouse functionality
 Given User navigates to Login page
