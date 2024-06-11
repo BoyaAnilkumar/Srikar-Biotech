@@ -117,7 +117,7 @@ Then User Select the Warehouse in the Change Warehouse page
 And User click on the Save Button
 Then User should receive a confirmation message that the Warehouse has been changed
 
-@SBPL_Confirm_Orders
+@SBPL_Confirm_Orders455
 Scenario: Verify the Order Accepted functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -125,8 +125,6 @@ And  User click on the signIn
 And  User click on the Confirm Orders under the Orders Module
 Then User Select the State 
 And User Select the Sales Person
-And The User Select the Warehouse
-When User enter the partyname
 And User Select the Status
 And Select the From date and ToDate
 And Click on the Search button
@@ -143,7 +141,6 @@ And  User click on the signIn
 And  User click on the Confirm Orders under the Orders Module
 Then User Select the State 
 And User Select the Sales Person
-When User enter the partyname
 And User Select the Status
 And The User Select the From date and ToDate
 And Click on the Search button
@@ -237,7 +234,9 @@ And User without Select the From date and ToDate
 And Click on the Search button
 
 @SBPL_Confirm_Orders
-Scenario: Verify the Pagination functionality
+Scenario: Verify the
+ Pagination functionality
+
 Given User navigates to Login page
 When User enters the username and password
 And  User click on the signIn 

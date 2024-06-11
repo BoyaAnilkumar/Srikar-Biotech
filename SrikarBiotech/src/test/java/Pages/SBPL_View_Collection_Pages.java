@@ -101,7 +101,7 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 //		Thread.sleep(2000);
 //		r.keyPress(KeyEvent.VK_ENTER);
 //		Thread.sleep(2000);
-		driver.findElement(ViewCollection).click();
+		driver.findElement(State).click();
 		utilities.MinimumWait(driver);
 		Thread.sleep(1000);
 		utilities.MediumWait(driver);	
@@ -119,9 +119,9 @@ public class SBPL_View_Collection_Pages extends DriverFactory{
 //		Thread.sleep(2000);
 //		r.keyPress(KeyEvent.VK_ENTER);
 //		Thread.sleep(2000);
-		driver.findElement(ViewCollection).click();
+		driver.findElement(Sales_Person).click();
 		utilities.MinimumWait(driver);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		utilities.MediumWait(driver);	
 	}
 

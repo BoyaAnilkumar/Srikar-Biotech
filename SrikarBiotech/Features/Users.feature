@@ -121,7 +121,7 @@ Examples:
 |Update_Username|
 |Neha           |
 
-@Users
+@Users_Delete
 Scenario: Verify the Delete user functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -131,8 +131,8 @@ And  User Click on the Users screen
 Then User Click on the Filter Icon
 When User enter the data in filter field
 And Click on the Apply button
-#And Click on the Delete icon
-#And Validation message is displayed or not
+And Click on the Delete icon
+And Validation message is displayed or not
 
 @Users
 Scenario: Verify the Pagination functionality
@@ -164,6 +164,7 @@ And User click on the signIn
 And User click on the Security Module
 And  User Click on the Users screen
 Given The User enter the data in the Search field
+Then the Search related data is displayed in the main grid
 And User Click on the Expansion Icon
 Then the Expansion grid header section names are displayed or not
 And the Expansion grid data is displayed or not

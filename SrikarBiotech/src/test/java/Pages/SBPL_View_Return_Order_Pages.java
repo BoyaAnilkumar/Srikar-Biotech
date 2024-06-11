@@ -87,7 +87,8 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 	By Save_Validation          = By.xpath("//h2[text()='Credit Note Created Successfully']");
 	
 	By Table                    = By.xpath("//tbody[@class='p-element p-datatable-tbody']");
-
+	By To_Date                  = By.xpath("//input[@formcontrolname='toDate']");
+	By Search                   = By.xpath("//button[@class='btn btn-secondary me-2']");
 	
 
 	public void User_click_on_the_View_Return_Order_under_the_Orders_Module() throws Throwable {
@@ -650,8 +651,7 @@ public class SBPL_View_Return_Order_Pages extends DriverFactory{
 		}
 		
 	}
-	By To_Date                = By.xpath("//input[@formcontrolname='toDate']");
-	By Search                 = By.xpath("//button[@class='btn btn-secondary me-2']");
+
 	public void User_without_Select_the_From_date_and_To_Date() throws Throwable {
 		driver.findElement(From_Date).clear();
 		driver.findElement(Search).click();

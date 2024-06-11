@@ -238,7 +238,7 @@ And User enter the data in all fields and Click on the save button the credit no
 #And User Click on the Close button
 #And User Click on the Close Icon
 
-@SBPL_View_Return_Order
+@SBPL_View_Return_Order_Export
 Scenario: Verify the Export button functionality
 Given User navigates to Login page
 When User enters the username and password

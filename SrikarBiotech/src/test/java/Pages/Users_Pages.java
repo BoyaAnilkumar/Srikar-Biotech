@@ -68,7 +68,7 @@ public class Users_Pages extends DriverFactory{
     By Expansion_Icon         = By.xpath("//button[@class='p-element p-button-text p-button-rounded p-button-plain p-button p-component p-button-icon-only']");
     By Expansion_Grid_header  = By.xpath("(//thead[@class='p-datatable-thead'])[2]");
     By Expansion_Table        = By.xpath("(//tbody[@class='p-element p-datatable-tbody'])[2]");
-    
+    By Table                  = By.xpath("//tbody[@class='p-element p-datatable-tbody']");
     
     
   public void User_click_on_the_Security_Module() throws Throwable{
@@ -290,8 +290,6 @@ public void Update_the_Username() throws Throwable {
 	 driver.findElement(Username_field).click();
 		driver.findElement(Username_field).clear();	
 		driver.findElement(Username_field).sendKeys("SoumyaSri");	
-	
-
 	}
 	else {
 		System.out.println("Username field is not displayed:");
@@ -310,7 +308,6 @@ public void Update_the(String Update_Username) throws Throwable {
 	}
 	
 }
-
 
 public void Update_the_SBPL_Slp_Code() throws Throwable {
 	Boolean isPresent = driver.findElements(SBPL_Slp_Code).size()>0;
@@ -423,20 +420,16 @@ public void The_Users_screen_should_be_displayed() throws Throwable {
 	utilities.webDriverWait(driver, Users);
 	WebElement data = driver.findElement(Users);
 	String dataText = data.getText();
-	System.out.println("Should display the Users Screen name: " + dataText);
-	
+	System.out.println("Should display the Users Screen name: " + dataText);	
 }
 
 public void the_user_selects_the_company() throws Throwable {
-
 	WebElement dropdownElement = driver.findElement(Company_field);
 	 dropdownElement.click();
 	 WebElement option = driver.findElement(Option1);
 	 option.click();
 	 dropdownElement.click();
-	 Thread.sleep(500);
-
- 
+	 Thread.sleep(500); 
     WebElement field = driver.findElement(SBPL_Slp_Code); 
     if (field.isDisplayed()) {
         System.out.println("SBPL Slp Code Field is displayed. Validation successful.");
@@ -511,7 +504,6 @@ public void SelectRole(String Role) throws Throwable {
 	utilities.MediumWait(driver);
 }
 
-
 public void enterSBPLSlpcode(String SBPL_Slp_code) throws Throwable {
 	
 	try {
@@ -536,7 +528,6 @@ public void enterEAPLSlpcode(String EAPL_Slp_code) throws Throwable {
 	utilities.webDriverWait(driver, SBPL_Slp_Code);
     utilities.webDriverWait(driver, EAPL_Slp_Code);
     
-
     try {
    // 	 WebDriverWait wait = new WebDriverWait(driver, 5); // 10 seconds timeout
          WebElement eaplElement = driver.findElement(EAPL_Slp_Code);
@@ -590,67 +581,58 @@ public void User_Click_on_the_Expansion_Icon() throws Throwable {
 }
 
 public void the_Expansion_grid_header_section_names_are_displayed_or_not() {
-//	WebElement grid = driver.findElement(Expansion_Grid_header);
-//	WebElement tableHeaderRow = grid.findElement(By.tagName("thead"));
-//	List<WebElement> tableHeaders = grid.findElements(By.tagName("th"));
 
-	// Define expected header values
-//	String[] expectedHeaders = {"", "Company Name	", "Warehouse Code	", "Warehouse Name	", "Warehouse State	", "Email Address","Address"};
-
-	String[] expectedHeaders = {"CompanyName	 WarehouseCode	 WarehouseName	WarehouseState	EmailAddress Address" + ""};
-	
-	for (int i = 0; i < expectedHeaders.length; i++) {
-		System.out.println(expectedHeaders[i].replace("   ", " | ").trim());
-      // Locate the header elements within the expansion grid
-      List<WebElement> headers = driver.findElements(Expansion_Grid_header);
-
-      for (WebElement header : headers) {
-    	    // Get the text of the header element
-    	    String headerText = header.getText();
-    	    
-    	    // Print the entire header row
-    	    System.out.println("Header: " + headerText);
-    	    
-    	}
-	}
-}
-	
-
+	List<WebElement> headers = driver.findElements(Expansion_Grid_header);   
+    String expectedData = "Company Name Warehouse Code Warehouse Name Warehouse State Email Address Address |";   
+    System.out.println("Expected Header: " + expectedData);
+    StringBuilder actualHeaderText = new StringBuilder();    
+    for (WebElement header : headers) {
+        actualHeaderText.append(header.getText().trim()).append(" | ");
+    }
+    String actualHeaderString = actualHeaderText.toString().trim();    
+    if (expectedData.equals(actualHeaderString)) {
+        System.out.println("Display Header names are correct."+ actualHeaderString);
+    } else {
+        System.out.println("Display Header names are incorrect."+ actualHeaderString);
+    }
+  }
 
 public void the_Expansion_grid_data_is_displayed_or_not() throws Throwable {
 	if(driver.findElements(Expansion_Table).size() > 0) {
 	    utilities.MediumWait(driver);
 	    WebElement OrderData = driver.findElement(Expansion_Table);
-	    List<WebElement> rows1 = OrderData.findElements(By.tagName("tr"));
-	    int Irowcount = rows1.size();
+	    List<WebElement> Column1 = OrderData.findElements(By.tagName("tr"));
+	    int Irowcount = Column1.size();
         int Idatarowcount = Irowcount;
-        System.out.println("No. of data Rows in the grid : " + Idatarowcount);
-        String OrderDataText1 = OrderData.getText();
-        // utilities.MediumWait(driver);
+        System.out.println("No. of data columns in the grid : " + Idatarowcount);
+//    String OrderDataText1 = OrderData.getText();
+//	    System.out.println("Display Data in the grid: " + OrderDataText1);
+	    utilities.MediumWait(driver);
+	    for (WebElement Column : Column1) {
+    	    String ColumnText = Column.getText();
+    	    System.out.println("Column: " + ColumnText);  	     
+	    }		    
+	    utilities.MediumWait(driver);
+     }
+	
+  }
 
-        // Split the text into individual rows
-        String[] rows = OrderDataText1.split("\n");
-        for (String row : rows) {
-            // Print each row
-            System.out.println("Row: " + row);
-
-            // Split each row into individual columns
-            String[] columns = row.split("\\s+"); // Assumes columns are separated by whitespace
-            for (String column : columns) {
-                // Print each column
-                System.out.println("Column: " + column);
-            }
-            System.out.println("---------------------");
-        }
-
-        // Additional wait if necessary
-        utilities.MediumWait(driver);
-    }
+public void the_Search_related_data_is_displayed_in_the_main_grid() throws Throwable {
+	if(driver.findElements(Table).size() > 0) {
+	    utilities.MediumWait(driver);
+	    WebElement OrderData = driver.findElement(Table);
+	    String OrderDataText1 = OrderData.getText();
+//	    System.out.println("Display Data in the grid: " + OrderDataText1);
+	    utilities.MediumWait(driver);
+	    String[] rows = OrderDataText1.split("\n");
+	    for (String row : rows) {
+	        System.out.println(row);
+	     
+	    }		    
+	    utilities.MediumWait(driver);
+}
 	
 }
-
-
-
 
 	
 }

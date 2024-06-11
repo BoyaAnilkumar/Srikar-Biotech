@@ -195,5 +195,8 @@ public class Users_Steps {
  public void the_Expansion_grid_data_is_displayed_or_not() throws Throwable {
 	 Users.the_Expansion_grid_data_is_displayed_or_not();
  }
- 
+ @Then ("^the Search related data is displayed in the main grid$")
+ public void the_Search_related_data_is_displayed_in_the_main_grid() throws Throwable{
+	 Users.the_Search_related_data_is_displayed_in_the_main_grid();
+ }
 }

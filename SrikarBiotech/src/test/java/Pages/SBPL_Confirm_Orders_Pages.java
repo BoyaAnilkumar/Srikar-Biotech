@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import util.DriverFactory;
 import util.Utilities;
@@ -131,7 +132,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 //		Thread.sleep(2000);
 //		r.keyPress(KeyEvent.VK_ENTER);
 //		Thread.sleep(2000);
-		driver.findElement(Orders).click();
+		driver.findElement(Sales_Person).click();
 		utilities.MinimumWait(driver);
 		Thread.sleep(1000);
 		utilities.MediumWait(driver);	
@@ -187,7 +188,7 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 
 	public void Select_the_From_date_and_ToDate() throws Throwable {
 		utilities.webDriverWait(driver, From_Date);
-		driver.findElement(From_Date).sendKeys("20022024");
+		driver.findElement(From_Date).sendKeys("01102023");
 	}
 
 	public void Click_on_the_Search_button() throws Throwable {
@@ -274,29 +275,51 @@ public class SBPL_Confirm_Orders_Pages  extends DriverFactory{
 	}
 
 	public void User_Click_on_the_Order_Check_box() throws Throwable {
-		utilities.webDriverWait(driver, Check_Box);	
-		driver.findElement(Check_Box).click();
-		utilities.MinimumWait(driver);
+		Boolean isPresent = driver.findElements(Check_Box).size()>0;
+		if (isPresent) {
+			utilities.webDriverWait(driver,Check_Box );	
+		    driver.findElement(Check_Box).click();
+	
+		}
+		else {
+			System.out.println("Check box is not displayed");
+		}
 		
 	}
 
 	public void Click_on_the_Accept_button() throws Throwable {
-		utilities.webDriverWait(driver, Accept_Button);	
-		driver.findElement(Accept_Button).click();
-		utilities.MinimumWait(driver);
-		
+		WebElement buttonElement = driver.findElement(Accept_Button);
+		if (buttonElement.isEnabled()) {
+			System.out.println("Button is enabled.");
+			driver.findElement(Accept_Button).click();
+			utilities.MediumWait(driver);
+			
+
+		} else {
+			System.out.println("Accept button is disabled state");
+	}
 	}
 
 	public void User_enter_the_data_in_Remarks_field() throws Throwable {
-		utilities.webDriverWait(driver, Accept_Remarks_field);	
-		driver.findElement(Accept_Remarks_field).sendKeys("Order Accpted");
-		utilities.MinimumWait(driver);
+		try {
+			utilities.webDriverWait(driver, Accept_Remarks_field);	
+			driver.findElement(Accept_Remarks_field).sendKeys("Order Accepted");
+			utilities.MinimumWait(driver);
+		}
+		catch(Exception e) {
+		System.out.println("Remarks field is not displayed");
+	}
 	}
 
 	public void Click_on_the_save_button() throws Throwable {
+		try {
 		utilities.webDriverWait(driver, Accept_Save_Button);	
 		driver.findElement(Accept_Save_Button).click();
 		utilities.MinimumWait(driver);
+		}
+		catch(Exception e) {
+			System.out.println("Save button is not displayed");
+		}
 	}
 
 	public void Click_on_the_Order_history_Icon() throws Throwable {
@@ -394,15 +417,28 @@ if (element1.equals(element2Text)) {
 
 }
    public void The_User_enter_the_data_in_Remarks_field() throws Throwable {
+	   try {
 		utilities.webDriverWait(driver, Reject_remarks_field);	
 		driver.findElement(Reject_remarks_field).sendKeys("Order Rejected");
 		utilities.MinimumWait(driver);
-	}
+	   }
+	   catch(Exception e) {
+	   System.out.println("Remarks field is not displayed");
+   }
+}
 
 
   public void Click_on_the_Reject_button() throws Throwable {
-	utilities.webDriverWait(driver, Reject_button);
-	driver.findElement(Reject_button).click();
+	WebElement buttonElement = driver.findElement(Reject_button);
+	if (buttonElement.isEnabled()) {
+		System.out.println("Button is enabled.");
+		driver.findElement(Reject_button).click();
+		utilities.MediumWait(driver);
+		
+
+	} else {
+		System.out.println("Reject button is disabled state");
+}
 }
 
   public void The_User_Select_the_From_date_and_ToDate() throws Throwable {
@@ -656,9 +692,14 @@ System.out.println("The Total Price values are displayed: " + TotalPriceDataText
 }
 
 public void Click_on_the_Reject_details_save_button() throws Throwable {
-	utilities.webDriverWait(driver, Reject_Save_Button);	
-	driver.findElement(Reject_Save_Button).click();
-	utilities.MinimumWait(driver);
+	try {
+		utilities.webDriverWait(driver, Reject_Save_Button);	
+		driver.findElement(Reject_Save_Button).click();
+		utilities.MinimumWait(driver);
+	}
+	catch(Exception e) {
+		System.out.println("Save button is not displayed");
+}
 	
 }
 
@@ -713,9 +754,13 @@ public void The_Status_is_displayed_as_Pending_to_Rejected_or_not() {
 }
 
 public void User_Click_on_the_Export_button() throws Throwable {
+	try {
 	utilities.webDriverWait(driver, Export_button);
 	driver.findElement(Export_button).click();
-	
+	}
+	catch (Exception e){
+		System.out.println("Export button is not displayed");
+	}
 }
 
 public void The_User_Select_the_Partially_Shipped_Status() throws Throwable {

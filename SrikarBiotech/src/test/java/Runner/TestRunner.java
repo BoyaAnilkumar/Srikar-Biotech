@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 				  glue="Stepdefinition",
 				  features = "Features",
 				  monochrome = true, 
-                  tags = "@SBPL_Item_Master123")
+                  tags = "@SBPL_Confirm_Orders")
 
 
 
