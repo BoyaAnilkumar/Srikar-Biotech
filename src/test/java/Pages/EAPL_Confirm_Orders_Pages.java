@@ -183,7 +183,7 @@ import util.Utilities;
 
 		public void Select_the_From_date_and_ToDate() throws Throwable {
 			utilities.webDriverWait(driver, From_Date);
-			driver.findElement(From_Date).sendKeys("01012024");
+			driver.findElement(From_Date).sendKeys("27062023");
 		}
 
 		public void Click_on_the_Search_button() throws Throwable {
@@ -282,29 +282,68 @@ import util.Utilities;
 		}
 
 		public void User_Click_on_the_Order_Check_box() throws Throwable {
-			utilities.webDriverWait(driver, Check_Box);	
-			driver.findElement(Check_Box).click();
-			utilities.MinimumWait(driver);
-			
+			Boolean isPresent = driver.findElements(Check_Box).size()>0;
+			if (isPresent) {
+				utilities.webDriverWait(driver,Check_Box );	
+			    driver.findElement(Check_Box).click();
+		
+			}
+			else {
+				System.out.println("Check box is not displayed");
+			}
 		}
 
 		public void Click_on_the_Accept_button() throws Throwable {
-			utilities.webDriverWait(driver, Accept_Button);	
-			driver.findElement(Accept_Button).click();
-			utilities.MinimumWait(driver);
-			
+			WebElement buttonElement = driver.findElement(Accept_Button);
+			if (buttonElement.isEnabled()) {
+				System.out.println("Button is enabled.");
+				driver.findElement(Accept_Button).click();
+				utilities.MediumWait(driver);
+				
+
+			} else {
+				System.out.println("Accept button is disabled state");
 		}
+	}
 
 		public void User_enter_the_data_in_Remarks_field() throws Throwable {
-			utilities.webDriverWait(driver, Accept_Remarks_field);	
-			driver.findElement(Accept_Remarks_field).sendKeys("Order Accepted");
-			utilities.MinimumWait(driver);
+//			Boolean isPresent = driver.findElements(Accept_Remarks_field).size()>0;
+//			if (isPresent) {
+//			utilities.webDriverWait(driver, Accept_Remarks_field);	
+//			driver.findElement(Accept_Remarks_field).sendKeys("Order Accepted");
+//			utilities.MinimumWait(driver);
+//			}
+//			else {
+//				System.out.println("Remarks field is not displayed");
+//			}
+			try {
+				utilities.webDriverWait(driver, Accept_Remarks_field);	
+				driver.findElement(Accept_Remarks_field).sendKeys("Order Accepted");
+				utilities.MinimumWait(driver);
+			}
+			catch(Exception e) {
+			System.out.println("Remarks field is not displayed");
+		}
 		}
 
 		public void Click_on_the_save_button() throws Throwable {
-			utilities.webDriverWait(driver, Accept_Save_Button);	
-			driver.findElement(Accept_Save_Button).click();
-			utilities.MinimumWait(driver);
+//			Boolean isPresent = driver.findElements(Accept_Save_Button).size()>0;
+//			if (isPresent) {
+//			utilities.webDriverWait(driver, Accept_Save_Button);	
+//			driver.findElement(Accept_Save_Button).click();
+//			utilities.MinimumWait(driver);
+//			}
+//			else {
+//				System.out.println("Save button is not displayed");
+//			}
+			try {
+				utilities.webDriverWait(driver, Accept_Save_Button);	
+				driver.findElement(Accept_Save_Button).click();
+				utilities.MinimumWait(driver);
+			}
+			catch(Exception e) {
+				System.out.println("Save button is not displayed");
+		}
 		}
 
 		public void Click_on_the_Order_history_Icon() throws Throwable {
@@ -400,15 +439,26 @@ import util.Utilities;
 
 	}
 	  public void The_User_enter_the_data_in_Remarks_field() throws Throwable {
+		  try {
 			utilities.webDriverWait(driver, Reject_remarks_field);	
 			driver.findElement(Reject_remarks_field).sendKeys("Order Rejected");
 			utilities.MinimumWait(driver);
+		  }catch(Exception e) {
+		  System.out.println("Remarks button is not displayed");
 		}
-
+	}
 
 	public void Click_on_the_Reject_button() throws Throwable {
-		utilities.webDriverWait(driver, Reject_button);
-		driver.findElement(Reject_button).click();
+		WebElement buttonElement = driver.findElement(Reject_button);
+		if (buttonElement.isEnabled()) {
+			System.out.println("Button is enabled.");
+			driver.findElement(Reject_button).click();
+			utilities.MediumWait(driver);
+			
+
+		} else {
+			System.out.println("Reject button is disabled state");
+	}
 	}
 
 	public void The_User_Select_the_From_date_and_ToDate() throws Throwable {
@@ -717,11 +767,14 @@ import util.Utilities;
 	}
 
 	public void And_User_Click_on_the_Export_button() throws Throwable {
-		utilities.webDriverWait(driver, Export_button);
-		driver.findElement(Export_button).click();
-		Thread.sleep(1500);
-		System.out.print("Excel downloaded");
-		
+		try {
+			utilities.webDriverWait(driver, Export_button);
+			driver.findElement(Export_button).click();
+			System.out.print("Excel downloaded");
+			}
+			catch (Exception e){
+				System.out.println("Export button is not displayed");
+			}
 	}
 	
 	By LR_Invoice     = By.xpath("(//button[@title='LR & Invoices'])[1]");

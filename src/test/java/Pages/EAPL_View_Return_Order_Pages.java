@@ -128,22 +128,7 @@ import util.Utilities;
 			        System.out.println();
 			    }		    
 			    utilities.MediumWait(driver);
-//			    WebElement OrderData1 = driver.findElement(Order_details_Col);
-//			    String OrderDataText = OrderData1.getText();
-//			    System.out.println("The Order details are displayed: " + OrderDataText);
-//			    utilities.MediumWait(driver);
-	//
-//			    WebElement PartyData = driver.findElement(Party_details);
-//			    String PartyDataText = PartyData.getText();
-//			    System.out.println("The Party details are displayed: " + PartyDataText);
-	//
-//			    WebElement LRData = driver.findElement(LR_details);
-//			    String LRDataText = LRData.getText();
-//			    System.out.println("The LR details are displayed: " + LRDataText);
-	//
-//			    WebElement StatusData = driver.findElement(Status_Column);
-//			    String StatusDataText = StatusData.getText();
-//			    System.out.println("The Status name is displayed: " + StatusDataText);
+
 			}
 		}
 
@@ -151,10 +136,7 @@ import util.Utilities;
 			WebElement Item2 = driver.findElement(Item_Name1);
 			String expectedProductName = "Item Name";
 
-			// Get the text content of the WebElement and trim leading/trailing whitespaces
 			String actualItemName = Item2.getText().trim();
-
-			// Compare the actual text with the expected text
 			if (actualItemName.equals(expectedProductName)) {
 			    System.out.println("The Item name is displayed: " + actualItemName);
 			} else {

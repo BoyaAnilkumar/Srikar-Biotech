@@ -12,7 +12,8 @@ import io.cucumber.junit.CucumberOptions;
 				  glue="Stepdefinition",
 				  features = "Features",				  				  				  
 				  monochrome = true, 
-                  tags = "@SBPL_Confirm_Orders_filter")
+                  tags = "@EAPL_Confirm_Orders")
+
 
 
 

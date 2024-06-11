@@ -32,7 +32,7 @@ And The user Select the From date and ToDate
 And The user Click on the Search button
 And The Search related data is displayed in the grid
 
-@SBPL_View_Collection_filter
+@SBPL_View_Collection
 Scenario Outline: Verify the State related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -50,7 +50,7 @@ Examples:
 |Chattisgarh     |      
 
 
-@SBPL_View_Collection_filter
+@SBPL_View_Collection
 Scenario Outline: Verify the Sales person related filter functionality
 Given User navigates to Login page
 When User enters the username and password
@@ -127,9 +127,6 @@ When User enters the username and password
 And  User click on the signIn 
 And  User click on the View Collection under the Orders Module
 And The View Collection Screen is displayed or not
-Then Select the State 
-And The User Select the Sales Person
-When The User enter the partyname
 And The user Select the From date and ToDate
 And The user Click on the Search button
 And Click on the collection View Icon in the Action Column

@@ -438,19 +438,41 @@ import util.Utilities;
 				utilities.webDriverWait(driver, Last_page);
 				driver.findElement(Last_page).click();
 			}
-			public void The_Search_related_data_is_displayed_in_the_grid() {
-			
-				WebElement CollectionData = driver.findElement(Collection_details_Col);
-				String CollectionDataText = CollectionData.getText();
-				System.out.println("The Collection details are displayed: " + CollectionDataText);
+			public void The_Search_related_data_is_displayed_in_the_grid() throws Throwable {
+				  WebElement OrderData = driver.findElement(Table);
+				  
+				    WebElement Data = driver.findElement(Table);
+				    Thread.sleep(1000);
+				    List<WebElement> rows1 = Data.findElements(By.tagName("tr"));
+				        int Irowcount = rows1.size();
+			            int Idatarowcount = Irowcount;
+			            System.out.println("No. of data Rows in the grid : " + Idatarowcount);
+			         
+			        if(driver.findElements(Table).size() > 0) {
+			        utilities.MediumWait(driver);            
+			        String OrderDataText1 = OrderData.getText();
+					utilities.MediumWait(driver);	    
+					            
+			        String[] rows = OrderDataText1.split("\n");
+					for (String row : rows) {
+				     System.out.println(row);
+				        System.out.println();
+				        
+				    }
 				
-				WebElement PartyData = driver.findElement(Party_details);
-				String PartyDataText = PartyData.getText();
-				System.out.println("The Party details are displayed: " + PartyDataText);
-						
-				WebElement PaymentData = driver.findElement(Payment_details);
-				String PaymentDataText = PaymentData.getText();
-				System.out.println("The Payment details are displayed: " + PaymentDataText);
+				}	    
+			
+//				WebElement CollectionData = driver.findElement(Collection_details_Col);
+//				String CollectionDataText = CollectionData.getText();
+//				System.out.println("The Collection details are displayed: " + CollectionDataText);
+//				
+//				WebElement PartyData = driver.findElement(Party_details);
+//				String PartyDataText = PartyData.getText();
+//				System.out.println("The Party details are displayed: " + PartyDataText);
+//						
+//				WebElement PaymentData = driver.findElement(Payment_details);
+//				String PaymentDataText = PaymentData.getText();
+//				System.out.println("The Payment details are displayed: " + PaymentDataText);
 			
 			}
 			public void check_whether_it_is_displaying_the_first_page_records_when_the_user_clicks_on_first_page_icon() throws Throwable {
