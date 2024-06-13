@@ -156,7 +156,7 @@ And  User Click on the Users screen
 Given The User enter the data in the Search field
 And The Search related Role data is displayed in the grid
 
-@Users_Exp
+@Users
 Scenario: Verify the Expansion Icon functionality
 Given User navigates to Login page
 When User enters the username and password
